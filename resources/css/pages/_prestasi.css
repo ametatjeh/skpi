@@ -1,0 +1,77 @@
+/* ===== PRESTASI PAGE STYLES ===== */
+.prestasi-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+    background: #f8fafc;
+    min-height: 100vh;
+}
+
+.prestasi-header {
+    background: linear-gradient(135deg, #48bb78, #38a169);
+    color: white;
+    padding: 2rem;
+    border-radius: 1rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.prestasi-main-title {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+.prestasi-subtitle {
+    font-size: 1.1rem;
+    opacity: 0.9;
+    margin: 0;
+}
+
+.prestasi-form-card,
+.prestasi-table-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 1rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.prestasi-form-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.prestasi-data-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+/* Badge Tingkat Prestasi */
+.tingkat-badge {
+    padding: 0.25rem 0.75rem;
+    border-radius: 1rem;
+    font-size: 0.875rem;
+    font-weight: 600;
+    text-transform: capitalize;
+}
+
+.tingkat-lokal {
+    background: #e0f2fe;
+    color: #0369a1;
+}
+
+.tingkat-nasional {
+    background: #fef3c7;
+    color: #92400e;
+}
+
+.tingkat-internasional {
+    background: #fce7f3;
+    color: #be185d;
+}

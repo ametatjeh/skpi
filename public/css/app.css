@@ -1,0 +1,179 @@
+/* --- Halaman Login --- */
+
+.login-container {
+    /* min-h-screen flex items-center justify-center bg-gray-100 */
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f3f4f6;
+    /* bg-gray-100 */
+    padding: 1rem;
+    /* Tambahkan padding agar responsif */
+}
+
+.login-card {
+    /* w-full max-w-md bg-white rounded-2xl shadow-lg p-8 */
+    width: 100%;
+    max-width: 480px;
+    /* max-w-md */
+    background-color: #ffffff;
+    border-radius: 1rem;
+    /* rounded-2xl */
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    /* shadow-lg */
+    padding: 2rem;
+    /* p-8 */
+}
+
+.title-h2 {
+    /* text-2xl font-bold text-center text-gray-800 mb-6 */
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-align: center;
+    color: #1f2937;
+    /* text-gray-800 */
+    margin-bottom: 1.5rem;
+}
+
+/* --- Form Elements --- */
+.login-form>div {
+    margin-bottom: 1.25rem;
+    /* space-y-5 */
+}
+
+.status-message {
+    /* mb-4 text-sm text-green-600 */
+    margin-bottom: 1rem;
+    font-size: 0.875rem;
+    color: #059669;
+    /* text-green-600 */
+    padding: 0.75rem;
+    background-color: #d1fae5;
+    border-radius: 0.5rem;
+}
+
+.form-label {
+    /* block text-sm font-medium text-gray-700 mb-1 */
+    display: block;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: #374151;
+    /* text-gray-700 */
+    margin-bottom: 0.25rem;
+}
+
+.form-input {
+    /* w-full px-4 py-2 border border-gray-300 rounded-lg bg-gray-50 */
+    width: 100%;
+    padding: 0.5rem 1rem;
+    border: 1px solid #d1d5db;
+    /* border-gray-300 */
+    border-radius: 0.5rem;
+    /* rounded-lg */
+    background-color: #f9fafb;
+    /* bg-gray-50 */
+    color: #1f2937;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.form-input:focus {
+    /* focus:ring-2 focus:ring-blue-500 focus:outline-none */
+    border-color: #3b82f6;
+    /* focus:ring-blue-500 */
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.5);
+    outline: none;
+}
+
+.error-text {
+    /* text-sm text-red-500 */
+    display: block;
+    font-size: 0.875rem;
+    color: #ef4444;
+    /* text-red-500 */
+    margin-top: 0.25rem;
+}
+
+/* --- Remember Me & Forgot Password --- */
+.form-footer-group {
+    /* flex items-center justify-between */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.remember-me-label {
+    /* inline-flex items-center text-sm text-gray-700 */
+    display: inline-flex;
+    align-items: center;
+    font-size: 0.875rem;
+    color: #374151;
+}
+
+.checkbox-input {
+    /* rounded border-gray-300 text-blue-600 focus:ring-blue-500 */
+    border-radius: 0.25rem;
+    border: 1px solid #d1d5db;
+    color: #2563eb;
+    /* text-blue-600 */
+    transition: all 0.15s ease-in-out;
+}
+
+.forgot-password-link {
+    /* text-sm text-blue-600 hover:text-blue-800 */
+    font-size: 0.875rem;
+    color: #2563eb;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.forgot-password-link:hover {
+    color: #1e40af;
+    /* hover:text-blue-800 */
+    text-decoration: underline;
+}
+
+/* --- Button --- */
+.submit-button {
+    /* w-full py-2 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg */
+    width: 100%;
+    padding: 0.5rem 0;
+    background-color: #2563eb;
+    /* bg-blue-600 */
+    color: white;
+    font-weight: 600;
+    border-radius: 0.5rem;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    /* shadow-sm */
+    transition: background-color 0.3s ease;
+}
+
+.submit-button:hover {
+    background-color: #1d4ed8;
+    /* hover:bg-blue-700 */
+}
+
+/* --- Register Link --- */
+.register-text {
+    /* text-center text-sm text-gray-600 mt-3 */
+    text-align: center;
+    font-size: 0.875rem;
+    color: #4b5563;
+    /* text-gray-600 */
+    margin-top: 0.75rem;
+}
+
+.register-link {
+    /* text-blue-600 hover:underline */
+    color: #2563eb;
+    text-decoration: none;
+    font-weight: 500;
+    transition: text-decoration 0.3s ease;
+}
+
+.register-link:hover {
+    text-decoration: underline;
+}
+

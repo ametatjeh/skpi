@@ -1,0 +1,29 @@
+/* Alert Components */
+.alert {
+    padding: var(--spacing-md);
+    border-radius: var(--radius-md);
+    margin-bottom: var(--spacing-lg);
+    border: 1px solid;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+}
+
+.alert-success {
+    background-color: #f0fff4;
+    color: #276749;
+    border-color: #9ae6b4;
+}
+
+.alert-error {
+    background-color: #fff5f5;
+    color: #c53030;
+    border-color: #fc8181;
+}
+
+.alert-info {
+    background-color: #ebf8ff;
+    color: #2c5aa0;
+    border-color: #90cdf4;
+}
