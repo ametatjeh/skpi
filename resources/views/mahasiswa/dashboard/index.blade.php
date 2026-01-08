@@ -6,7 +6,7 @@
 
 @section('content')
 <style>
-    /* ============ DASHBOARD MAHASISWA PREMIUM SKY BLUE ============ */
+    /* ============ DASHBOARD MAHASISWA PREMIUM CYAN ============ */
     .mhs-dashboard * {
         box-sizing: border-box;
     }
@@ -18,12 +18,12 @@
 
     /* Welcome Header */
     .mhs-welcome {
-        background: linear-gradient(135deg, #0ea5e9 0%, #38bdf8 50%, #7dd3fc 100%);
+        background: linear-gradient(135deg, #0891b2 0%, #06b6d4 50%, #22d3ee 100%);
         border-radius: 20px;
         padding: 32px;
         margin-bottom: 28px;
         color: #fff;
-        box-shadow: 0 8px 32px rgba(14, 165, 233, 0.25);
+        box-shadow: 0 8px 32px rgba(8, 145, 178, 0.25);
         position: relative;
         overflow: hidden;
     }
@@ -125,7 +125,7 @@
         height: 100%;
     }
 
-    .mhs-stat-card.sky::before { background: linear-gradient(180deg, #0ea5e9, #38bdf8); }
+    .mhs-stat-card.cyan::before { background: linear-gradient(180deg, #0891b2, #06b6d4); }
     .mhs-stat-card.amber::before { background: linear-gradient(180deg, #f59e0b, #fbbf24); }
     .mhs-stat-card.green::before { background: linear-gradient(180deg, #10b981, #34d399); }
     .mhs-stat-card.purple::before { background: linear-gradient(180deg, #8b5cf6, #a78bfa); }
@@ -152,7 +152,7 @@
         font-size: 20px;
     }
 
-    .mhs-stat-card.sky .mhs-stat-icon { background: #e0f2fe; color: #0ea5e9; }
+    .mhs-stat-card.cyan .mhs-stat-icon { background: #cffafe; color: #0891b2; }
     .mhs-stat-card.amber .mhs-stat-icon { background: #fef3c7; color: #f59e0b; }
     .mhs-stat-card.green .mhs-stat-icon { background: #dcfce7; color: #10b981; }
     .mhs-stat-card.purple .mhs-stat-icon { background: #f3e8ff; color: #8b5cf6; }
@@ -191,7 +191,7 @@
     }
 
     .mhs-section-title i {
-        color: #0ea5e9;
+        color: #0891b2;
     }
 
     .mhs-cards-grid {
@@ -212,8 +212,8 @@
 
     .mhs-card:hover {
         transform: translateY(-4px);
-        box-shadow: 0 12px 32px rgba(14, 165, 233, 0.12);
-        border-color: #0ea5e9;
+        box-shadow: 0 12px 32px rgba(8, 145, 178, 0.12);
+        border-color: #0891b2;
     }
 
     .mhs-card-body {
@@ -232,7 +232,7 @@
         font-size: 28px;
     }
 
-    .mhs-card.sertifikasi .mhs-card-icon { background: linear-gradient(135deg, #e0f2fe, #bae6fd); color: #0ea5e9; }
+    .mhs-card.sertifikasi .mhs-card-icon { background: linear-gradient(135deg, #cffafe, #a5f3fc); color: #0891b2; }
     .mhs-card.prestasi .mhs-card-icon { background: linear-gradient(135deg, #fef3c7, #fde68a); color: #f59e0b; }
     .mhs-card.organisasi .mhs-card-icon { background: linear-gradient(135deg, #dcfce7, #bbf7d0); color: #10b981; }
     .mhs-card.pkm .mhs-card-icon { background: linear-gradient(135deg, #f3e8ff, #e9d5ff); color: #8b5cf6; }
@@ -258,7 +258,7 @@
         gap: 8px;
         width: 100%;
         padding: 12px 20px;
-        background: linear-gradient(135deg, #0ea5e9 0%, #38bdf8 100%);
+        background: linear-gradient(135deg, #0891b2 0%, #06b6d4 100%);
         color: #fff;
         border: none;
         border-radius: 10px;
@@ -266,12 +266,12 @@
         font-weight: 600;
         text-decoration: none;
         transition: all 0.2s;
-        box-shadow: 0 4px 12px rgba(14, 165, 233, 0.25);
+        box-shadow: 0 4px 12px rgba(8, 145, 178, 0.25);
     }
 
     .mhs-card-btn:hover {
         transform: translateY(-2px);
-        box-shadow: 0 6px 20px rgba(14, 165, 233, 0.35);
+        box-shadow: 0 6px 20px rgba(8, 145, 178, 0.35);
     }
 
     /* Content Grid */
@@ -302,7 +302,7 @@
     .mhs-steps-header i {
         width: 40px;
         height: 40px;
-        background: linear-gradient(135deg, #0ea5e9 0%, #38bdf8 100%);
+        background: linear-gradient(135deg, #0891b2 0%, #06b6d4 100%);
         color: #fff;
         border-radius: 10px;
         display: flex;
@@ -338,7 +338,7 @@
     }
 
     .mhs-step:hover {
-        background: #e0f2fe;
+        background: #cffafe;
         transform: translateX(4px);
     }
 
@@ -346,7 +346,7 @@
         width: 36px;
         height: 36px;
         border-radius: 10px;
-        background: linear-gradient(135deg, #0ea5e9 0%, #38bdf8 100%);
+        background: linear-gradient(135deg, #0891b2 0%, #06b6d4 100%);
         color: #fff;
         display: flex;
         align-items: center;
@@ -354,7 +354,7 @@
         font-size: 14px;
         font-weight: 700;
         flex-shrink: 0;
-        box-shadow: 0 4px 12px rgba(14, 165, 233, 0.25);
+        box-shadow: 0 4px 12px rgba(8, 145, 178, 0.25);
     }
 
     .mhs-step-content h4 {
@@ -391,7 +391,7 @@
     .mhs-quick-header i {
         width: 40px;
         height: 40px;
-        background: linear-gradient(135deg, #0ea5e9 0%, #38bdf8 100%);
+        background: linear-gradient(135deg, #0891b2 0%, #06b6d4 100%);
         color: #fff;
         border-radius: 10px;
         display: flex;
@@ -428,7 +428,7 @@
     }
 
     .mhs-quick-item:hover {
-        background: #e0f2fe;
+        background: #cffafe;
         transform: translateX(4px);
     }
 
@@ -442,7 +442,7 @@
         font-size: 18px;
     }
 
-    .mhs-quick-icon.sky { background: #e0f2fe; color: #0ea5e9; }
+    .mhs-quick-icon.cyan { background: #cffafe; color: #0891b2; }
     .mhs-quick-icon.green { background: #dcfce7; color: #10b981; }
     .mhs-quick-icon.amber { background: #fef3c7; color: #f59e0b; }
 
@@ -716,7 +716,7 @@
     @endphp
 
     <div class="mhs-stats-grid">
-        <div class="mhs-stat-card sky">
+        <div class="mhs-stat-card cyan">
             <div class="mhs-stat-header">
                 <div class="mhs-stat-icon">
                     <i class="fas fa-certificate"></i>
@@ -881,7 +881,7 @@
             </div>
             <div class="mhs-quick-body">
                 <a href="{{ route('mahasiswa.verifikasi.index') }}" class="mhs-quick-item">
-                    <div class="mhs-quick-icon sky">
+                    <div class="mhs-quick-icon cyan">
                         <i class="fas fa-check-double"></i>
                     </div>
                     <div class="mhs-quick-info">
@@ -948,4 +948,5 @@
 @endpush
 @endif
 @endsection
+
 

@@ -11,9 +11,9 @@
     .achievement-container { max-width: 1400px; margin: 0 auto; }
 
     .achievement-header {
-        background: linear-gradient(135deg, #0ea5e9 0%, #38bdf8 50%, #7dd3fc 100%);
+        background: linear-gradient(135deg, #0891b2 0%, #06b6d4 50%, #22d3ee 100%);
         border-radius: 20px; padding: 28px 32px; margin-bottom: 24px; color: #fff;
-        box-shadow: 0 8px 32px rgba(14, 165, 233, 0.25);
+        box-shadow: 0 8px 32px rgba(8, 145, 178, 0.25);
         display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px;
         position: relative; overflow: hidden;
     }
@@ -57,13 +57,13 @@
 
     .alert-premium { display: flex; align-items: center; gap: 12px; padding: 14px 20px; border-radius: 12px; margin-bottom: 24px; font-size: 14px; font-weight: 500; }
     .alert-premium.success { background: linear-gradient(135deg, #dcfce7 0%, #bbf7d0 100%); color: #15803d; border: 1px solid #86efac; }
-    .alert-premium.info { background: linear-gradient(135deg, #e0f2fe 0%, #bae6fd 100%); color: #0369a1; border: 1px solid #7dd3fc; }
+    .alert-premium.info { background: linear-gradient(135deg, #cffafe 0%, #a5f3fc 100%); color: #0369a1; border: 1px solid #22d3ee; }
 
     .table-card { background: #fff; border-radius: 16px; border: 1px solid #e5e7eb; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04); overflow: hidden; }
     .table-header { padding: 20px 24px; background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%); border-bottom: 1px solid #e5e7eb; display: flex; align-items: center; justify-content: space-between; }
     .table-title { display: flex; align-items: center; gap: 12px; font-size: 16px; font-weight: 700; color: #111827; }
-    .table-title i { width: 36px; height: 36px; background: linear-gradient(135deg, #0ea5e9 0%, #38bdf8 100%); color: #fff; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 14px; }
-    .table-badge { padding: 6px 14px; background: #e0f2fe; color: #0ea5e9; border-radius: 20px; font-size: 12px; font-weight: 600; }
+    .table-title i { width: 36px; height: 36px; background: linear-gradient(135deg, #0891b2 0%, #06b6d4 100%); color: #fff; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 14px; }
+    .table-badge { padding: 6px 14px; background: #cffafe; color: #0891b2; border-radius: 20px; font-size: 12px; font-weight: 600; }
 
     .table-wrapper { overflow-x: auto; }
     .premium-table { width: 100%; border-collapse: collapse; min-width: 800px; }
@@ -74,7 +74,7 @@
     .premium-table tbody tr:last-child td { border-bottom: none; }
 
     .item-info { display: flex; align-items: center; gap: 14px; }
-    .item-icon { width: 42px; height: 42px; border-radius: 10px; background: linear-gradient(135deg, #e0f2fe 0%, #bae6fd 100%); color: #0ea5e9; display: flex; align-items: center; justify-content: center; font-size: 18px; flex-shrink: 0; }
+    .item-icon { width: 42px; height: 42px; border-radius: 10px; background: linear-gradient(135deg, #cffafe 0%, #a5f3fc 100%); color: #0891b2; display: flex; align-items: center; justify-content: center; font-size: 18px; flex-shrink: 0; }
     .item-detail h4 { font-size: 14px; font-weight: 600; color: #111827; margin: 0 0 4px 0; }
     .item-detail p { font-size: 12px; color: #6b7280; margin: 0; }
 
@@ -87,8 +87,8 @@
 
     .action-buttons { display: flex; gap: 8px; flex-wrap: wrap; }
     .btn-action { padding: 8px 14px; border-radius: 8px; font-size: 12px; font-weight: 600; text-decoration: none; display: inline-flex; align-items: center; gap: 6px; transition: all 0.2s; border: none; cursor: pointer; }
-    .btn-edit { background: #e0f2fe; color: #0ea5e9; }
-    .btn-edit:hover { background: #bae6fd; }
+    .btn-edit { background: #cffafe; color: #0891b2; }
+    .btn-edit:hover { background: #a5f3fc; }
     .btn-submit { background: linear-gradient(135deg, #10b981 0%, #34d399 100%); color: #fff; }
     .btn-submit:hover { transform: translateY(-2px); box-shadow: 0 4px 12px rgba(16, 185, 129, 0.35); }
     .btn-delete { background: #fee2e2; color: #ef4444; }
@@ -97,10 +97,10 @@
     .btn-waiting { background: #f3f4f6; color: #9ca3af; cursor: default; }
 
     .empty-state { text-align: center; padding: 60px 20px; }
-    .empty-state i { font-size: 56px; color: #e0f2fe; margin-bottom: 16px; }
+    .empty-state i { font-size: 56px; color: #cffafe; margin-bottom: 16px; }
     .empty-state h4 { font-size: 18px; font-weight: 700; color: #374151; margin-bottom: 8px; }
     .empty-state p { font-size: 14px; color: #9ca3af; margin-bottom: 24px; }
-    .empty-state .btn-add-new { background: linear-gradient(135deg, #0ea5e9 0%, #38bdf8 100%); border: none; box-shadow: 0 4px 12px rgba(14, 165, 233, 0.25); }
+    .empty-state .btn-add-new { background: linear-gradient(135deg, #0891b2 0%, #06b6d4 100%); border: none; box-shadow: 0 4px 12px rgba(8, 145, 178, 0.25); }
 
     @media (max-width: 1024px) { .stats-grid { grid-template-columns: repeat(2, 1fr); } }
     @media (max-width: 768px) { .achievement-header { flex-direction: column; align-items: flex-start; } .btn-add-new { width: 100%; justify-content: center; } .stats-grid { grid-template-columns: 1fr 1fr; } }
@@ -229,3 +229,4 @@
     </div>
 </div>
 @endsection
+

@@ -7,8 +7,14 @@
 
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="SKPI UMPAR - Sistem Surat Keterangan Pendamping Ijazah Universitas Muhammadiyah Parepare">
+    <meta name="author" content="Universitas Muhammadiyah Parepare">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>{{ config('app.name', 'SKPI UMPAR') }}</title>
+    <link rel="icon" type="image/png" href="{{ asset('images/skpi_logo.png') }}">
+    <link rel="apple-touch-icon" href="{{ asset('images/skpi_logo.png') }}">
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.bunny.net">

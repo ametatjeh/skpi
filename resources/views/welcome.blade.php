@@ -4,7 +4,62 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Education Web | SKPI UMPAR</title>
+    
+    {{-- SEO Meta Tags --}}
+    <title>SKPI UMPAR - Sistem Surat Keterangan Pendamping Ijazah | Universitas Muhammadiyah Parepare</title>
+    <meta name="description" content="Sistem Informasi SKPI (Surat Keterangan Pendamping Ijazah) Universitas Muhammadiyah Parepare. Kelola prestasi, sertifikasi, dan dokumen akademik mahasiswa secara digital.">
+    <meta name="keywords" content="SKPI, UMPAR, Universitas Muhammadiyah Parepare, Surat Keterangan Pendamping Ijazah, Diploma Supplement, Prestasi Mahasiswa, Sertifikasi Kompetensi, Sistem Akademik">
+    <meta name="author" content="Universitas Muhammadiyah Parepare">
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="Indonesian">
+    <meta name="revisit-after" content="7 days">
+    <link rel="canonical" href="{{ url('/') }}">
+    
+    {{-- Open Graph / Facebook --}}
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="{{ url('/') }}">
+    <meta property="og:title" content="SKPI UMPAR - Sistem Surat Keterangan Pendamping Ijazah">
+    <meta property="og:description" content="Sistem Informasi SKPI Universitas Muhammadiyah Parepare. Kelola prestasi, sertifikasi, dan dokumen akademik mahasiswa secara digital.">
+    <meta property="og:image" content="{{ asset('images/skpi_logo.png') }}">
+    <meta property="og:site_name" content="SKPI UMPAR">
+    <meta property="og:locale" content="id_ID">
+    
+    {{-- Twitter Card --}}
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="{{ url('/') }}">
+    <meta name="twitter:title" content="SKPI UMPAR - Sistem Surat Keterangan Pendamping Ijazah">
+    <meta name="twitter:description" content="Sistem Informasi SKPI Universitas Muhammadiyah Parepare. Kelola prestasi, sertifikasi, dan dokumen akademik mahasiswa.">
+    <meta name="twitter:image" content="{{ asset('images/skpi_logo.png') }}">
+    
+    {{-- Favicon --}}
+    <link rel="icon" type="image/png" href="{{ asset('images/skpi_logo.png') }}">
+    <link rel="apple-touch-icon" href="{{ asset('images/skpi_logo.png') }}">
+
+    {{-- Structured Data / JSON-LD --}}
+    @verbatim
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "EducationalOrganization",
+        "name": "Universitas Muhammadiyah Parepare",
+        "alternateName": "UMPAR",
+        "url": "https://skpi.umpar.ac.id",
+        "logo": "/images/skpi_logo.png",
+        "description": "Sistem Informasi SKPI (Surat Keterangan Pendamping Ijazah) untuk mengelola prestasi dan sertifikasi mahasiswa.",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Parepare",
+            "addressRegion": "Sulawesi Selatan",
+            "addressCountry": "ID"
+        },
+        "contactPoint": {
+            "@type": "ContactPoint",
+            "contactType": "customer service",
+            "availableLanguage": "Indonesian"
+        }
+    }
+    </script>
+    @endverbatim
 
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap"
         rel="stylesheet" />
@@ -145,7 +200,7 @@
         }
 
         .nav-brand img {
-            height: 22px;
+            height: 45px;
         }
 
         .nav-menu {
@@ -428,7 +483,7 @@
     <div class="header-info">
         <div class="header-info-inner">
             <div class="logo-box">
-                <i class="fas fa-graduation-cap"></i>
+                <img src="{{ asset('images/skpi_logo.png') }}" alt="SKPI Logo" style="height: 45px;">
                 <div>
                     <div class="logo-text-main">Education Web</div>
                     <div class="logo-text-sub">SKPI UMPAR Digital Certificate System</div>
@@ -465,14 +520,14 @@
     <nav class="nav-bar">
         <div class="nav-inner">
             <div class="nav-brand">
-                <img src="{{ asset('images/logo_umpar-removebg-preview.png') }}" alt="Logo SKPI UMPAR">
+                <i class="fas fa-graduation-cap" style="font-size: 28px; color: #fff;"></i>
                 <span>SKPI UMPAR</span>
             </div>
 
             <!-- MENU DESKTOP -->
             <ul class="nav-menu">
                 <li><a href="#">Home</a></li>
-                <li><a href="#about">About us</a></li>
+                <!-- <li><a href="#about">About us</a></li> -->
                 <li>
                     <span>
                         Login
@@ -486,7 +541,7 @@
                         <a href="{{ route('admin.login') }}">Admin</a>
                     </div>
                 </li>
-                <li><a href="#contact">Contact us</a></li>
+                <!-- <li><a href="#contact">Contact us</a></li> -->
             </ul>
 
             <!-- HAMBURGER BUTTON (MOBILE) -->

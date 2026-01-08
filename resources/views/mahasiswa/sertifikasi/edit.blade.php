@@ -39,12 +39,12 @@
     }
 
     .form-header {
-        background: linear-gradient(135deg, #0ea5e9 0%, #38bdf8 50%, #7dd3fc 100%);
+        background: linear-gradient(135deg, #0891b2 0%, #06b6d4 50%, #22d3ee 100%);
         border-radius: 20px;
         padding: 28px 32px;
         margin-bottom: 24px;
         color: #fff;
-        box-shadow: 0 8px 32px rgba(14, 165, 233, 0.25);
+        box-shadow: 0 8px 32px rgba(8, 145, 178, 0.25);
         position: relative;
         overflow: hidden;
     }
@@ -173,13 +173,13 @@
     }
 
     .form-control:hover {
-        border-color: #bae6fd;
+        border-color: #a5f3fc;
     }
 
     .form-control:focus {
         outline: none;
-        border-color: #0ea5e9;
-        box-shadow: 0 0 0 4px rgba(14, 165, 233, 0.1);
+        border-color: #0891b2;
+        box-shadow: 0 0 0 4px rgba(8, 145, 178, 0.1);
     }
 
     textarea.form-control {
@@ -202,7 +202,7 @@
 
     .current-file {
         padding: 12px 16px;
-        background: linear-gradient(135deg, #e0f2fe 0%, #bae6fd 100%);
+        background: linear-gradient(135deg, #cffafe 0%, #a5f3fc 100%);
         border-radius: 10px;
         margin-bottom: 12px;
         display: flex;
@@ -210,7 +210,7 @@
         gap: 10px;
         font-size: 13px;
         color: #0369a1;
-        border: 1px solid #7dd3fc;
+        border: 1px solid #22d3ee;
     }
 
     .current-file i {
@@ -234,21 +234,21 @@
     }
 
     .upload-box:hover {
-        border-color: #0ea5e9;
-        background: #e0f2fe;
+        border-color: #0891b2;
+        background: #cffafe;
     }
 
     .upload-icon {
         width: 48px;
         height: 48px;
         margin: 0 auto 10px;
-        background: linear-gradient(135deg, #e0f2fe, #bae6fd);
+        background: linear-gradient(135deg, #cffafe, #a5f3fc);
         border-radius: 12px;
         display: flex;
         align-items: center;
         justify-content: center;
         font-size: 20px;
-        color: #0ea5e9;
+        color: #0891b2;
     }
 
     .upload-text {
@@ -305,14 +305,14 @@
     }
 
     .form-btn-submit {
-        background: linear-gradient(135deg, #0ea5e9 0%, #38bdf8 100%);
+        background: linear-gradient(135deg, #0891b2 0%, #06b6d4 100%);
         color: #fff;
-        box-shadow: 0 4px 12px rgba(14, 165, 233, 0.3);
+        box-shadow: 0 4px 12px rgba(8, 145, 178, 0.3);
     }
 
     .form-btn-submit:hover {
         transform: translateY(-2px);
-        box-shadow: 0 6px 20px rgba(14, 165, 233, 0.4);
+        box-shadow: 0 6px 20px rgba(8, 145, 178, 0.4);
     }
 
     .form-btn-cancel {
@@ -504,3 +504,4 @@
     });
 </script>
 @endsection
+

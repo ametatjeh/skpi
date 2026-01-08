@@ -256,7 +256,7 @@
         display: block;
     }
     
-    .kategori-card.sikap i { color: #10b981; }
+    .kategori-card.sikap i { color: #06b6d4; }
     .kategori-card.pengetahuan i { color: #f59e0b; }
     .kategori-card.keterampilan_umum i { color: #3b82f6; }
     .kategori-card.keterampilan_khusus i { color: #8b5cf6; }
@@ -290,7 +290,7 @@
     }
     
     .status-option.selected.aktif {
-        border-color: #10b981;
+        border-color: #06b6d4;
         background: #dcfce7;
     }
     
@@ -310,7 +310,7 @@
         display: block;
     }
     
-    .status-option.aktif i { color: #10b981; }
+    .status-option.aktif i { color: #06b6d4; }
     .status-option.nonaktif i { color: #ef4444; }
     
     .status-option span {
@@ -602,3 +602,4 @@ document.querySelectorAll('.kategori-card').forEach(card => {
 });
 </script>
 @endpush
+

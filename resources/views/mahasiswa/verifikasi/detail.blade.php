@@ -50,12 +50,12 @@
 
     /* Premium Header */
     .detail-header {
-        background: linear-gradient(135deg, #0ea5e9 0%, #38bdf8 50%, #7dd3fc 100%);
+        background: linear-gradient(135deg, #0891b2 0%, #06b6d4 50%, #22d3ee 100%);
         border-radius: 20px;
         padding: 32px;
         margin-bottom: 24px;
         color: #fff;
-        box-shadow: 0 8px 32px rgba(14, 165, 233, 0.25);
+        box-shadow: 0 8px 32px rgba(8, 145, 178, 0.25);
         position: relative;
         overflow: hidden;
     }
@@ -190,14 +190,14 @@
     .detail-info-header-icon {
         width: 44px;
         height: 44px;
-        background: linear-gradient(135deg, #0ea5e9 0%, #38bdf8 100%);
+        background: linear-gradient(135deg, #0891b2 0%, #06b6d4 100%);
         color: #fff;
         border-radius: 12px;
         display: flex;
         align-items: center;
         justify-content: center;
         font-size: 18px;
-        box-shadow: 0 4px 12px rgba(14, 165, 233, 0.25);
+        box-shadow: 0 4px 12px rgba(8, 145, 178, 0.25);
     }
 
     .detail-info-header h3 {
@@ -247,15 +247,15 @@
 
     .detail-table strong {
         font-weight: 700;
-        color: #0ea5e9;
+        color: #0891b2;
     }
 
     /* Note Box */
     .detail-note-box {
-        background: linear-gradient(135deg, #e0f2fe 0%, #bae6fd 100%);
+        background: linear-gradient(135deg, #cffafe 0%, #a5f3fc 100%);
         padding: 16px 20px;
         border-radius: 12px;
-        border-left: 4px solid #0ea5e9;
+        border-left: 4px solid #0891b2;
         color: #0369a1;
         font-size: 14px;
         line-height: 1.6;
@@ -278,7 +278,7 @@
         font-weight: 600;
     }
 
-    .detail-category-badge.sertifikasi { background: #e0f2fe; color: #0369a1; }
+    .detail-category-badge.sertifikasi { background: #cffafe; color: #0369a1; }
     .detail-category-badge.prestasi { background: #fef3c7; color: #92400e; }
     .detail-category-badge.organisasi { background: #f3e8ff; color: #7c3aed; }
     .detail-category-badge.pkm { background: #dcfce7; color: #166534; }
@@ -308,14 +308,14 @@
     }
 
     .detail-btn-primary {
-        background: linear-gradient(135deg, #0ea5e9 0%, #38bdf8 100%);
+        background: linear-gradient(135deg, #0891b2 0%, #06b6d4 100%);
         color: #fff;
-        box-shadow: 0 4px 12px rgba(14, 165, 233, 0.25);
+        box-shadow: 0 4px 12px rgba(8, 145, 178, 0.25);
     }
 
     .detail-btn-primary:hover {
         transform: translateY(-2px);
-        box-shadow: 0 6px 20px rgba(14, 165, 233, 0.35);
+        box-shadow: 0 6px 20px rgba(8, 145, 178, 0.35);
     }
 
     .detail-btn-warning {
@@ -361,9 +361,9 @@
         width: 18px;
         height: 18px;
         border-radius: 50%;
-        background: #0ea5e9;
+        background: #0891b2;
         border: 3px solid #fff;
-        box-shadow: 0 2px 8px rgba(14, 165, 233, 0.3);
+        box-shadow: 0 2px 8px rgba(8, 145, 178, 0.3);
     }
 
     .detail-timeline-content {
@@ -632,3 +632,4 @@
     @endif
 </div>
 @endsection
+

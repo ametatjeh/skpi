@@ -5,12 +5,12 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
-        background: linear-gradient(135deg, #0ea5e9 0%, #38bdf8 50%, #7dd3fc 100%);
+        background: linear-gradient(135deg, #0891b2 0%, #06b6d4 50%, #22d3ee 100%);
         border-bottom: none;
         position: sticky;
         top: 0;
         z-index: 30;
-        box-shadow: 0 4px 20px rgba(14, 165, 233, 0.15);
+        box-shadow: 0 4px 20px rgba(8, 145, 178, 0.15);
     }
 
     .mahasiswa-navbar-left {
@@ -128,3 +128,4 @@
         });
     }
 </script>
+

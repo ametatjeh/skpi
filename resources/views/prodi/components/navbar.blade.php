@@ -1,4 +1,4 @@
-<!-- resources/views/prodi/components/navbar.blade.php - EMERALD GREEN THEME -->
+<!-- resources/views/prodi/components/navbar.blade.php - CYAN THEME -->
 
 <style>
     /* NAVBAR top + main content offset sidebar */
@@ -21,12 +21,12 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
-        background: linear-gradient(135deg, #059669 0%, #10b981 50%, #34d399 100%);
+        background: linear-gradient(135deg, #0891b2 0%, #06b6d4 50%, #22d3ee 100%);
         border-bottom: none;
         position: sticky;
         top: 0;
         z-index: 30;
-        box-shadow: 0 4px 20px rgba(5, 150, 105, 0.15);
+        box-shadow: 0 4px 20px rgba(8, 145, 178, 0.15);
     }
 
     .prodi-navbar-title {
@@ -151,7 +151,7 @@
         height: 36px;
         border-radius: 10px;
         background: rgba(255, 255, 255, 0.9);
-        color: #059669;
+        color: #0891b2;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -303,3 +303,4 @@
         }
     </script>
 @endpush
+

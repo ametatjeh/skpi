@@ -50,12 +50,12 @@
 
     /* Premium Header */
     .detail-header {
-        background: linear-gradient(135deg, #0ea5e9 0%, #38bdf8 50%, #7dd3fc 100%);
+        background: linear-gradient(135deg, #0891b2 0%, #06b6d4 50%, #22d3ee 100%);
         border-radius: 20px;
         padding: 32px;
         margin-bottom: 24px;
         color: #fff;
-        box-shadow: 0 8px 32px rgba(14, 165, 233, 0.25);
+        box-shadow: 0 8px 32px rgba(8, 145, 178, 0.25);
         position: relative;
         overflow: hidden;
     }
@@ -185,14 +185,14 @@
     .detail-info-header-icon {
         width: 44px;
         height: 44px;
-        background: linear-gradient(135deg, #0ea5e9 0%, #38bdf8 100%);
+        background: linear-gradient(135deg, #0891b2 0%, #06b6d4 100%);
         color: #fff;
         border-radius: 12px;
         display: flex;
         align-items: center;
         justify-content: center;
         font-size: 18px;
-        box-shadow: 0 4px 12px rgba(14, 165, 233, 0.25);
+        box-shadow: 0 4px 12px rgba(8, 145, 178, 0.25);
     }
 
     .detail-info-header h3 {
@@ -240,7 +240,7 @@
     }
 
     .detail-info-value.highlight {
-        color: #0ea5e9;
+        color: #0891b2;
     }
 
     /* Category Badge */
@@ -254,7 +254,7 @@
         font-weight: 600;
     }
 
-    .detail-category-badge.sertifikasi { background: #e0f2fe; color: #0369a1; }
+    .detail-category-badge.sertifikasi { background: #cffafe; color: #0369a1; }
     .detail-category-badge.prestasi { background: #fef3c7; color: #92400e; }
     .detail-category-badge.organisasi { background: #f3e8ff; color: #7c3aed; }
     .detail-category-badge.pkm { background: #dcfce7; color: #166534; }
@@ -274,7 +274,7 @@
         top: 16px;
         bottom: 16px;
         width: 2px;
-        background: linear-gradient(180deg, #0ea5e9, #38bdf8);
+        background: linear-gradient(180deg, #0891b2, #06b6d4);
     }
 
     .detail-timeline-item {
@@ -293,9 +293,9 @@
         width: 22px;
         height: 22px;
         border-radius: 50%;
-        background: linear-gradient(135deg, #0ea5e9, #38bdf8);
+        background: linear-gradient(135deg, #0891b2, #06b6d4);
         border: 3px solid #fff;
-        box-shadow: 0 2px 8px rgba(14, 165, 233, 0.3);
+        box-shadow: 0 2px 8px rgba(8, 145, 178, 0.3);
         display: flex;
         align-items: center;
         justify-content: center;
@@ -315,8 +315,8 @@
     }
 
     .detail-timeline-content:hover {
-        background: #e0f2fe;
-        border-color: #0ea5e9;
+        background: #cffafe;
+        border-color: #0891b2;
         transform: translateX(4px);
     }
 
@@ -343,7 +343,7 @@
         border-radius: 50px;
         font-size: 11px;
         font-weight: 600;
-        background: #e0f2fe;
+        background: #cffafe;
         color: #0369a1;
     }
 
@@ -362,14 +362,14 @@
         background: #fff;
         padding: 12px 14px;
         border-radius: 8px;
-        border-left: 3px solid #0ea5e9;
+        border-left: 3px solid #0891b2;
         font-size: 13px;
         color: #374151;
         margin-top: 8px;
     }
 
     .detail-timeline-note i {
-        color: #0ea5e9;
+        color: #0891b2;
         margin-right: 6px;
     }
 
@@ -538,7 +538,7 @@
                 <div class="detail-info-item">
                     <div class="detail-info-label">Tanggal Pengajuan</div>
                     <div class="detail-info-value">
-                        <i class="fas fa-calendar" style="color: #0ea5e9; margin-right: 6px;"></i>
+                        <i class="fas fa-calendar" style="color: #0891b2; margin-right: 6px;"></i>
                         {{ $approval->tanggal_pengajuan->format('d F Y') }}
                     </div>
                 </div>
@@ -603,3 +603,4 @@
     </div>
 </div>
 @endsection
+

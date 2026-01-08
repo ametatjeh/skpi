@@ -18,12 +18,12 @@
 
     /* Premium Header */
     .profile-header {
-        background: linear-gradient(135deg, #0ea5e9 0%, #38bdf8 50%, #7dd3fc 100%);
+        background: linear-gradient(135deg, #0891b2 0%, #06b6d4 50%, #22d3ee 100%);
         border-radius: 20px;
         padding: 32px;
         margin-bottom: 28px;
         color: #fff;
-        box-shadow: 0 8px 32px rgba(14, 165, 233, 0.25);
+        box-shadow: 0 8px 32px rgba(8, 145, 178, 0.25);
         position: relative;
         overflow: hidden;
     }
@@ -128,9 +128,9 @@
     }
 
     .profile-section-header {
-        background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+        background: linear-gradient(135deg, #f0f9ff 0%, #cffafe 100%);
         padding: 16px 24px;
-        border-bottom: 1px solid #bae6fd;
+        border-bottom: 1px solid #a5f3fc;
         display: flex;
         align-items: center;
         gap: 12px;
@@ -140,13 +140,13 @@
         width: 40px;
         height: 40px;
         border-radius: 10px;
-        background: linear-gradient(135deg, #0ea5e9 0%, #38bdf8 100%);
+        background: linear-gradient(135deg, #0891b2 0%, #06b6d4 100%);
         display: flex;
         align-items: center;
         justify-content: center;
         color: #fff;
         font-size: 18px;
-        box-shadow: 0 4px 12px rgba(14, 165, 233, 0.25);
+        box-shadow: 0 4px 12px rgba(8, 145, 178, 0.25);
     }
 
     .profile-section-title {
@@ -185,7 +185,7 @@
 
     .profile-form-group label i {
         margin-right: 6px;
-        color: #0ea5e9;
+        color: #0891b2;
     }
 
     .profile-input,
@@ -205,8 +205,8 @@
     .profile-select:focus,
     .profile-textarea:focus {
         outline: none;
-        border-color: #0ea5e9;
-        box-shadow: 0 0 0 4px rgba(14, 165, 233, 0.1);
+        border-color: #0891b2;
+        box-shadow: 0 0 0 4px rgba(8, 145, 178, 0.1);
     }
 
     .profile-input[readonly] {
@@ -252,7 +252,7 @@
         align-items: center;
         gap: 10px;
         padding: 14px 32px;
-        background: linear-gradient(135deg, #0ea5e9 0%, #38bdf8 100%);
+        background: linear-gradient(135deg, #0891b2 0%, #06b6d4 100%);
         color: #fff;
         border: none;
         border-radius: 12px;
@@ -260,12 +260,12 @@
         font-weight: 700;
         cursor: pointer;
         transition: all 0.2s ease;
-        box-shadow: 0 4px 15px rgba(14, 165, 233, 0.35);
+        box-shadow: 0 4px 15px rgba(8, 145, 178, 0.35);
     }
 
     .btn-save-profile:hover {
         transform: translateY(-2px);
-        box-shadow: 0 8px 25px rgba(14, 165, 233, 0.45);
+        box-shadow: 0 8px 25px rgba(8, 145, 178, 0.45);
     }
 
     .btn-save-profile i {
@@ -494,3 +494,4 @@
     </form>
 </div>
 @endsection
+

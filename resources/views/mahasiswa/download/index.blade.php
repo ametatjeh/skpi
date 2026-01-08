@@ -18,12 +18,12 @@
 
     /* Premium Header */
     .download-header {
-        background: linear-gradient(135deg, #0ea5e9 0%, #38bdf8 50%, #7dd3fc 100%);
+        background: linear-gradient(135deg, #0891b2 0%, #06b6d4 50%, #22d3ee 100%);
         border-radius: 20px;
         padding: 32px;
         margin-bottom: 28px;
         color: #fff;
-        box-shadow: 0 8px 32px rgba(14, 165, 233, 0.25);
+        box-shadow: 0 8px 32px rgba(8, 145, 178, 0.25);
         position: relative;
         overflow: hidden;
     }
@@ -98,20 +98,20 @@
 
     /* Info Card */
     .download-info-card {
-        background: linear-gradient(135deg, #e0f2fe 0%, #bae6fd 100%);
+        background: linear-gradient(135deg, #cffafe 0%, #a5f3fc 100%);
         border-radius: 16px;
         padding: 24px;
         margin-bottom: 24px;
         display: flex;
         align-items: flex-start;
         gap: 20px;
-        border: 1px solid #7dd3fc;
+        border: 1px solid #22d3ee;
     }
 
     .download-info-icon {
         width: 56px;
         height: 56px;
-        background: linear-gradient(135deg, #0ea5e9 0%, #38bdf8 100%);
+        background: linear-gradient(135deg, #0891b2 0%, #06b6d4 100%);
         border-radius: 14px;
         display: flex;
         align-items: center;
@@ -119,7 +119,7 @@
         font-size: 24px;
         color: #fff;
         flex-shrink: 0;
-        box-shadow: 0 4px 12px rgba(14, 165, 233, 0.3);
+        box-shadow: 0 4px 12px rgba(8, 145, 178, 0.3);
     }
 
     .download-info-content h3 {
@@ -167,7 +167,7 @@
     .download-step-num {
         width: 36px;
         height: 36px;
-        background: linear-gradient(135deg, #0ea5e9 0%, #38bdf8 100%);
+        background: linear-gradient(135deg, #0891b2 0%, #06b6d4 100%);
         color: #fff;
         border-radius: 50%;
         display: flex;
@@ -176,7 +176,7 @@
         font-size: 14px;
         font-weight: 700;
         margin: 0 auto 12px;
-        box-shadow: 0 4px 12px rgba(14, 165, 233, 0.3);
+        box-shadow: 0 4px 12px rgba(8, 145, 178, 0.3);
     }
 
     .download-step h4 {
@@ -214,14 +214,14 @@
     .download-table-header-icon {
         width: 44px;
         height: 44px;
-        background: linear-gradient(135deg, #0ea5e9 0%, #38bdf8 100%);
+        background: linear-gradient(135deg, #0891b2 0%, #06b6d4 100%);
         color: #fff;
         border-radius: 12px;
         display: flex;
         align-items: center;
         justify-content: center;
         font-size: 18px;
-        box-shadow: 0 4px 12px rgba(14, 165, 233, 0.25);
+        box-shadow: 0 4px 12px rgba(8, 145, 178, 0.25);
     }
 
     .download-table-header h3 {
@@ -277,7 +277,7 @@
     /* SKPI Number */
     .download-skpi-number {
         font-weight: 700;
-        color: #0ea5e9;
+        color: #0891b2;
         font-family: 'Courier New', monospace;
     }
 
@@ -303,7 +303,7 @@
     }
 
     .download-badge.selesai {
-        background: linear-gradient(135deg, #e0f2fe, #bae6fd);
+        background: linear-gradient(135deg, #cffafe, #a5f3fc);
         color: #0369a1;
     }
 
@@ -372,13 +372,13 @@
         width: 80px;
         height: 80px;
         margin: 0 auto 20px;
-        background: linear-gradient(135deg, #e0f2fe, #bae6fd);
+        background: linear-gradient(135deg, #cffafe, #a5f3fc);
         border-radius: 50%;
         display: flex;
         align-items: center;
         justify-content: center;
         font-size: 36px;
-        color: #0ea5e9;
+        color: #0891b2;
     }
 
     .download-empty-title {
@@ -399,19 +399,19 @@
         align-items: center;
         gap: 8px;
         padding: 12px 24px;
-        background: linear-gradient(135deg, #0ea5e9 0%, #38bdf8 100%);
+        background: linear-gradient(135deg, #0891b2 0%, #06b6d4 100%);
         color: #fff;
         border-radius: 10px;
         font-size: 14px;
         font-weight: 600;
         text-decoration: none;
-        box-shadow: 0 4px 12px rgba(14, 165, 233, 0.25);
+        box-shadow: 0 4px 12px rgba(8, 145, 178, 0.25);
         transition: all 0.2s;
     }
 
     .download-empty-btn:hover {
         transform: translateY(-2px);
-        box-shadow: 0 6px 20px rgba(14, 165, 233, 0.35);
+        box-shadow: 0 6px 20px rgba(8, 145, 178, 0.35);
     }
 
     /* Responsive */
@@ -605,3 +605,4 @@
     @endif
 </div>
 @endsection
+

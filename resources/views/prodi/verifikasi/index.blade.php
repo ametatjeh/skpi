@@ -62,8 +62,8 @@
     }
     
     .stat-card.active {
-        border: 2px solid #059669;
-        background: #ecfdf5;
+        border: 2px solid #0891b2;
+        background: #f0fdfa;
     }
     
     .stat-icon {
@@ -77,9 +77,9 @@
         margin-bottom: 12px;
     }
     
-    .stat-card.all .stat-icon { background: #d1fae5; color: #059669; }
+    .stat-card.all .stat-icon { background: #cffafe; color: #0891b2; }
     .stat-card.pending .stat-icon { background: #fef3c7; color: #f59e0b; }
-    .stat-card.approved .stat-icon { background: #dcfce7; color: #10b981; }
+    .stat-card.approved .stat-icon { background: #dcfce7; color: #06b6d4; }
     .stat-card.rejected .stat-icon { background: #fee2e2; color: #ef4444; }
     .stat-card.revision .stat-icon { background: #f3e8ff; color: #7c3aed; }
     
@@ -123,7 +123,7 @@
     }
     
     .filter-title i {
-        color: #059669;
+        color: #0891b2;
     }
     
     .filter-form {
@@ -158,13 +158,13 @@
     
     .form-input:focus {
         outline: none;
-        border-color: #059669;
-        box-shadow: 0 0 0 3px rgba(5, 150, 105, 0.1);
+        border-color: #0891b2;
+        box-shadow: 0 0 0 3px rgba(8, 145, 178, 0.1);
     }
     
     .btn-filter {
         padding: 10px 20px;
-        background: linear-gradient(135deg, #059669 0%, #10b981 100%);
+        background: linear-gradient(135deg, #0891b2 0%, #06b6d4 100%);
         color: #fff;
         border: none;
         border-radius: 10px;
@@ -179,7 +179,7 @@
     
     .btn-filter:hover {
         transform: translateY(-2px);
-        box-shadow: 0 4px 12px rgba(5, 150, 105, 0.35);
+        box-shadow: 0 4px 12px rgba(8, 145, 178, 0.35);
     }
     
     .btn-reset {
@@ -270,7 +270,7 @@
     }
     
     .mahasiswa-header:hover {
-        background: #ecfdf5;
+        background: #f0fdfa;
     }
     
     .mahasiswa-info {
@@ -283,7 +283,7 @@
         width: 48px;
         height: 48px;
         border-radius: 12px;
-        background: linear-gradient(135deg, #059669 0%, #10b981 100%);
+        background: linear-gradient(135deg, #0891b2 0%, #06b6d4 100%);
         color: #fff;
         display: flex;
         align-items: center;
@@ -345,9 +345,9 @@
     }
     
     .mahasiswa-header:hover .toggle-icon {
-        background: #059669;
+        background: #0891b2;
         color: #fff;
-        border-color: #059669;
+        border-color: #0891b2;
     }
     
     .toggle-icon.open {
@@ -463,13 +463,13 @@
     }
     
     .btn-detail {
-        background: linear-gradient(135deg, #059669 0%, #10b981 100%);
+        background: linear-gradient(135deg, #0891b2 0%, #06b6d4 100%);
         color: #fff;
     }
     
     .btn-detail:hover {
         transform: translateY(-2px);
-        box-shadow: 0 4px 12px rgba(5, 150, 105, 0.35);
+        box-shadow: 0 4px 12px rgba(8, 145, 178, 0.35);
     }
     
     /* Empty State */
@@ -813,3 +813,4 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 </script>
 @endpush
+

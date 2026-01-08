@@ -18,12 +18,12 @@
 
     /* Page Header */
     .achievement-header {
-        background: linear-gradient(135deg, #0ea5e9 0%, #38bdf8 50%, #7dd3fc 100%);
+        background: linear-gradient(135deg, #0891b2 0%, #06b6d4 50%, #22d3ee 100%);
         border-radius: 20px;
         padding: 28px 32px;
         margin-bottom: 24px;
         color: #fff;
-        box-shadow: 0 8px 32px rgba(14, 165, 233, 0.25);
+        box-shadow: 0 8px 32px rgba(8, 145, 178, 0.25);
         display: flex;
         align-items: center;
         justify-content: space-between;
@@ -189,9 +189,9 @@
     }
 
     .alert-premium.info {
-        background: linear-gradient(135deg, #e0f2fe 0%, #bae6fd 100%);
+        background: linear-gradient(135deg, #cffafe 0%, #a5f3fc 100%);
         color: #0369a1;
-        border: 1px solid #7dd3fc;
+        border: 1px solid #22d3ee;
     }
 
     /* Table Card */
@@ -224,7 +224,7 @@
     .table-title i {
         width: 36px;
         height: 36px;
-        background: linear-gradient(135deg, #0ea5e9 0%, #38bdf8 100%);
+        background: linear-gradient(135deg, #0891b2 0%, #06b6d4 100%);
         color: #fff;
         border-radius: 10px;
         display: flex;
@@ -235,8 +235,8 @@
 
     .table-badge {
         padding: 6px 14px;
-        background: #e0f2fe;
-        color: #0ea5e9;
+        background: #cffafe;
+        color: #0891b2;
         border-radius: 20px;
         font-size: 12px;
         font-weight: 600;
@@ -351,12 +351,12 @@
     }
 
     .btn-edit {
-        background: #e0f2fe;
-        color: #0ea5e9;
+        background: #cffafe;
+        color: #0891b2;
     }
 
     .btn-edit:hover {
-        background: #bae6fd;
+        background: #a5f3fc;
     }
 
     .btn-submit {
@@ -402,7 +402,7 @@
 
     .empty-state i {
         font-size: 56px;
-        color: #e0f2fe;
+        color: #cffafe;
         margin-bottom: 16px;
     }
 
@@ -420,9 +420,9 @@
     }
 
     .empty-state .btn-add-new {
-        background: linear-gradient(135deg, #0ea5e9 0%, #38bdf8 100%);
+        background: linear-gradient(135deg, #0891b2 0%, #06b6d4 100%);
         border: none;
-        box-shadow: 0 4px 12px rgba(14, 165, 233, 0.25);
+        box-shadow: 0 4px 12px rgba(8, 145, 178, 0.25);
     }
 
     /* Responsive */
@@ -636,3 +636,4 @@
     </div>
 </div>
 @endsection
+

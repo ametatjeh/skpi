@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@yield('title', 'Dashboard Mahasiswa') - Sistem SKPI</title>
+    <link rel="icon" type="image/png" href="{{ asset('images/skpi_logo.png') }}">
 
     <!-- Font Family -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -91,14 +92,14 @@
         }
 
         .btn-primary {
-            background: linear-gradient(135deg, #0ea5e9 0%, #38bdf8 100%);
+            background: linear-gradient(135deg, #0891b2 0%, #06b6d4 100%);
             color: white;
-            box-shadow: 0 4px 12px rgba(14, 165, 233, 0.25);
+            box-shadow: 0 4px 12px rgba(8, 145, 178, 0.25);
         }
 
         .btn-primary:hover {
             transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(14, 165, 233, 0.35);
+            box-shadow: 0 6px 20px rgba(8, 145, 178, 0.35);
         }
 
         .btn-secondary {
@@ -145,8 +146,8 @@
 
         .form-control:focus {
             outline: none;
-            border-color: #0ea5e9;
-            box-shadow: 0 0 0 3px rgba(14, 165, 233, 0.1);
+            border-color: #0891b2;
+            box-shadow: 0 0 0 3px rgba(8, 145, 178, 0.1);
         }
 
         /* ===== BADGE STYLES ===== */
@@ -161,8 +162,8 @@
         }
 
         .badge-primary {
-            background: #e0f2fe;
-            color: #0369a1;
+            background: #cffafe;
+            color: #0e7490;
         }
 
         .badge-success {
@@ -288,3 +289,4 @@
 </body>
 
 </html>
+

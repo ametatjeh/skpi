@@ -24,8 +24,8 @@ class LaporanProdiController extends Controller
 
         $stats = [
             'total' => (clone $baseQuery)->count(),
-            'pending' => (clone $baseQuery)->where('status', 'pending')->count(),
-            'approved' => (clone $baseQuery)->where('status', 'approved')->count(),
+            'pending' => (clone $baseQuery)->whereIn('status', ['pending', 'diajukan'])->count(),
+            'approved' => (clone $baseQuery)->whereIn('status', ['approved', 'included_in_summary'])->count(),
             'rejected' => (clone $baseQuery)->where('status', 'rejected')->count(),
             'revision' => (clone $baseQuery)->where('status', 'revision_required')->count(),
         ];
@@ -54,9 +54,9 @@ class LaporanProdiController extends Controller
             ->whereYear('created_at', $tahun)
             ->whereMonth('created_at', $i);
             
-            $chartApproved[] = (clone $monthQuery)->where('status', 'approved')->count();
+            $chartApproved[] = (clone $monthQuery)->whereIn('status', ['approved', 'included_in_summary'])->count();
             $chartRejected[] = (clone $monthQuery)->where('status', 'rejected')->count();
-            $chartPending[] = (clone $monthQuery)->where('status', 'pending')->count();
+            $chartPending[] = (clone $monthQuery)->whereIn('status', ['pending', 'diajukan'])->count();
         }
 
         // ============ CHART: PER KATEGORI ACHIEVEMENT ============
@@ -102,7 +102,7 @@ class LaporanProdiController extends Controller
             $trendData[] = [
                 'bulan' => $date->translatedFormat('M Y'),
                 'total' => (clone $monthQuery)->count(),
-                'approved' => (clone $monthQuery)->where('status', 'approved')->count(),
+                'approved' => (clone $monthQuery)->whereIn('status', ['approved', 'included_in_summary'])->count(),
                 'rejected' => (clone $monthQuery)->where('status', 'rejected')->count(),
             ];
         }
@@ -116,7 +116,7 @@ class LaporanProdiController extends Controller
         $avgProcessTime = VerifikasiSkpi::whereHas('mahasiswa', function ($q) use ($prodiId) {
             $q->where('prodi_id', $prodiId);
         })
-        ->where('status', 'approved')
+        ->whereIn('status', ['approved', 'included_in_summary'])
         ->whereYear('created_at', $tahun)
         ->whereNotNull('tanggal_verifikasi')
         ->get()
@@ -139,7 +139,7 @@ class LaporanProdiController extends Controller
         // ============ TOP MAHASISWA (paling banyak achievement) ============
         $topMahasiswa = Mahasiswa::where('prodi_id', $prodiId)
             ->withCount(['verifikasiSkpi as approved_count' => function ($q) use ($tahun) {
-                $q->where('status', 'approved')->whereYear('created_at', $tahun);
+                $q->whereIn('status', ['approved', 'included_in_summary'])->whereYear('created_at', $tahun);
             }])
             ->having('approved_count', '>', 0)
             ->orderByDesc('approved_count')

@@ -75,7 +75,7 @@
     }
     
     .stat-card.eligible .stat-icon { background: #dcfce7; color: #15803d; }
-    .stat-card.draft .stat-icon { background: #d1fae5; color: #059669; }
+    .stat-card.draft .stat-icon { background: #cffafe; color: #0891b2; }
     .stat-card.pending .stat-icon { background: #fef3c7; color: #f59e0b; }
     .stat-card.final .stat-icon { background: #f3e8ff; color: #7c3aed; }
     
@@ -159,7 +159,7 @@
     .section-title i {
         width: 32px;
         height: 32px;
-        background: linear-gradient(135deg, #059669 0%, #10b981 100%);
+        background: linear-gradient(135deg, #0891b2 0%, #06b6d4 100%);
         color: #fff;
         border-radius: 8px;
         display: flex;
@@ -170,8 +170,8 @@
     
     .section-badge {
         padding: 4px 12px;
-        background: #d1fae5;
-        color: #059669;
+        background: #cffafe;
+        color: #0891b2;
         border-radius: 20px;
         font-size: 12px;
         font-weight: 600;
@@ -202,8 +202,8 @@
     }
     
     .eligible-card:hover {
-        border-color: #059669;
-        box-shadow: 0 8px 24px rgba(5, 150, 105, 0.12);
+        border-color: #0891b2;
+        box-shadow: 0 8px 24px rgba(8, 145, 178, 0.12);
         transform: translateY(-2px);
     }
     
@@ -220,7 +220,7 @@
         width: 48px;
         height: 48px;
         border-radius: 12px;
-        background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+        background: linear-gradient(135deg, #06b6d4 0%, #0891b2 100%);
         color: #fff;
         display: flex;
         align-items: center;
@@ -257,7 +257,7 @@
         display: block;
         width: 100%;
         padding: 12px 16px;
-        background: linear-gradient(135deg, #059669 0%, #10b981 100%);
+        background: linear-gradient(135deg, #0891b2 0%, #06b6d4 100%);
         color: #fff;
         border: none;
         border-radius: 10px;
@@ -276,7 +276,7 @@
     
     .btn-create-draft:hover {
         transform: translateY(-2px);
-        box-shadow: 0 6px 16px rgba(5, 150, 105, 0.35);
+        box-shadow: 0 6px 16px rgba(8, 145, 178, 0.35);
     }
     
     /* Empty State */
@@ -350,7 +350,7 @@
         width: 42px;
         height: 42px;
         border-radius: 10px;
-        background: linear-gradient(135deg, #059669 0%, #10b981 100%);
+        background: linear-gradient(135deg, #0891b2 0%, #06b6d4 100%);
         color: #fff;
         display: flex;
         align-items: center;
@@ -432,13 +432,13 @@
     }
     
     .btn-preview {
-        background: linear-gradient(135deg, #059669 0%, #10b981 100%);
+        background: linear-gradient(135deg, #0891b2 0%, #06b6d4 100%);
         color: #fff;
     }
     
     .btn-preview:hover {
         transform: translateY(-2px);
-        box-shadow: 0 4px 12px rgba(5, 150, 105, 0.35);
+        box-shadow: 0 4px 12px rgba(8, 145, 178, 0.35);
     }
     
     /* Pagination */
@@ -671,3 +671,4 @@
     </div>
 </div>
 @endsection
+

@@ -1,4 +1,4 @@
-<!-- resources/views/prodi/components/sidebar.blade.php - EMERALD GREEN THEME -->
+<!-- resources/views/prodi/components/sidebar.blade.php - CYAN THEME -->
 
 <style>
     :root {
@@ -7,14 +7,14 @@
         --prodi-sidebar-border: #e5e7eb;
         --prodi-sidebar-text: #111827;
         --prodi-sidebar-muted: #6b7280;
-        /* EMERALD GREEN THEME */
-        --prodi-sidebar-brand: #059669;
-        --prodi-sidebar-brand-dark: #047857;
-        --prodi-sidebar-brand-light: #10b981;
-        --prodi-sidebar-hover-bg: rgba(5, 150, 105, 0.08);
-        --prodi-sidebar-active-bg: linear-gradient(135deg, #059669 0%, #10b981 100%);
+        /* CYAN THEME */
+        --prodi-sidebar-brand: #0891b2;
+        --prodi-sidebar-brand-dark: #0e7490;
+        --prodi-sidebar-brand-light: #06b6d4;
+        --prodi-sidebar-hover-bg: rgba(8, 145, 178, 0.08);
+        --prodi-sidebar-active-bg: linear-gradient(135deg, #0891b2 0%, #06b6d4 100%);
         --prodi-sidebar-danger: #ef4444;
-        --prodi-sidebar-bg-soft: #ecfdf5;
+        --prodi-sidebar-bg-soft: #f0fdfa;
     }
 
     /* SIDEBAR FIXED 100vh */
@@ -38,7 +38,7 @@
         align-items: center;
         gap: 12px;
         padding: 20px 18px;
-        background: linear-gradient(135deg, #059669 0%, #10b981 50%, #34d399 100%);
+        background: linear-gradient(135deg, #0891b2 0%, #06b6d4 50%, #22d3ee 100%);
         border-bottom: none;
     }
 
@@ -114,7 +114,7 @@
         background: var(--prodi-sidebar-active-bg) !important;
         color: #fff !important;
         font-weight: 600;
-        box-shadow: 0 4px 12px rgba(5, 150, 105, 0.35);
+        box-shadow: 0 4px 12px rgba(8, 145, 178, 0.35);
     }
 
     .prodi-nav-active i {
@@ -146,14 +146,14 @@
         padding: 12px;
         background: #fff;
         border-radius: 12px;
-        border: 1px solid #d1fae5;
+        border: 1px solid #cffafe;
     }
 
     .prodi-sidebar-user-avatar {
         width: 42px;
         height: 42px;
         border-radius: 12px;
-        background: linear-gradient(135deg, #059669 0%, #10b981 100%);
+        background: linear-gradient(135deg, #0891b2 0%, #06b6d4 100%);
         display: flex;
         align-items: center;
         justify-content: center;
@@ -171,7 +171,7 @@
     .prodi-badge-role {
         font-size: 10px;
         font-weight: 700;
-        background: linear-gradient(135deg, #059669 0%, #10b981 100%);
+        background: linear-gradient(135deg, #0891b2 0%, #06b6d4 100%);
         color: #fff;
         padding: 3px 8px;
         border-radius: 6px;
@@ -200,14 +200,14 @@
     }
 
     .prodi-sidebar-btn-profile {
-        background: linear-gradient(135deg, #059669 0%, #10b981 100%);
+        background: linear-gradient(135deg, #0891b2 0%, #06b6d4 100%);
         color: #fff;
-        box-shadow: 0 4px 12px rgba(5, 150, 105, 0.35);
+        box-shadow: 0 4px 12px rgba(8, 145, 178, 0.35);
     }
 
     .prodi-sidebar-btn-profile:hover {
         transform: translateY(-2px);
-        box-shadow: 0 6px 20px rgba(5, 150, 105, 0.45);
+        box-shadow: 0 6px 20px rgba(8, 145, 178, 0.45);
     }
 
     .prodi-sidebar-btn-logout {
@@ -310,3 +310,4 @@
         </div>
     </div>
 </aside>
+

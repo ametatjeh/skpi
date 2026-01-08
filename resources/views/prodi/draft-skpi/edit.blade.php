@@ -299,7 +299,7 @@
     }
     
     .btn-success {
-        background: linear-gradient(135deg, #10b981 0%, #34d399 100%);
+        background: linear-gradient(135deg, #06b6d4 0%, #22d3ee 100%);
         color: #fff;
     }
     
@@ -694,7 +694,7 @@
     }
     
     .modal-icon.success {
-        background: linear-gradient(135deg, #10b981 0%, #34d399 100%);
+        background: linear-gradient(135deg, #06b6d4 0%, #22d3ee 100%);
         color: #fff;
         box-shadow: 0 8px 32px rgba(16, 185, 129, 0.4);
     }
@@ -811,3 +811,4 @@
     @endif
 </script>
 @endpush
+

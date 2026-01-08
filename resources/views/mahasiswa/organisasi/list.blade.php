@@ -10,9 +10,9 @@
     .achievement-container { max-width: 1400px; margin: 0 auto; }
 
     .achievement-header {
-        background: linear-gradient(135deg, #0ea5e9 0%, #38bdf8 50%, #7dd3fc 100%);
+        background: linear-gradient(135deg, #0891b2 0%, #06b6d4 50%, #22d3ee 100%);
         border-radius: 20px; padding: 28px 32px; margin-bottom: 24px; color: #fff;
-        box-shadow: 0 8px 32px rgba(14, 165, 233, 0.25);
+        box-shadow: 0 8px 32px rgba(8, 145, 178, 0.25);
         display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px;
         position: relative; overflow: hidden;
     }
@@ -60,8 +60,8 @@
     .table-card { background: #fff; border-radius: 16px; border: 1px solid #e5e7eb; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04); overflow: hidden; }
     .table-header { padding: 20px 24px; background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%); border-bottom: 1px solid #e5e7eb; display: flex; align-items: center; justify-content: space-between; }
     .table-title { display: flex; align-items: center; gap: 12px; font-size: 16px; font-weight: 700; color: #111827; }
-    .table-title i { width: 36px; height: 36px; background: linear-gradient(135deg, #0ea5e9 0%, #38bdf8 100%); color: #fff; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 14px; }
-    .table-badge { padding: 6px 14px; background: #e0f2fe; color: #0ea5e9; border-radius: 20px; font-size: 12px; font-weight: 600; }
+    .table-title i { width: 36px; height: 36px; background: linear-gradient(135deg, #0891b2 0%, #06b6d4 100%); color: #fff; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 14px; }
+    .table-badge { padding: 6px 14px; background: #cffafe; color: #0891b2; border-radius: 20px; font-size: 12px; font-weight: 600; }
 
     .table-wrapper { overflow-x: auto; }
     .premium-table { width: 100%; border-collapse: collapse; min-width: 800px; }
@@ -84,7 +84,7 @@
 
     .action-buttons { display: flex; gap: 8px; flex-wrap: wrap; }
     .btn-action { padding: 8px 14px; border-radius: 8px; font-size: 12px; font-weight: 600; text-decoration: none; display: inline-flex; align-items: center; gap: 6px; transition: all 0.2s; border: none; cursor: pointer; }
-    .btn-edit { background: #e0f2fe; color: #0ea5e9; }
+    .btn-edit { background: #cffafe; color: #0891b2; }
     .btn-submit { background: linear-gradient(135deg, #10b981 0%, #34d399 100%); color: #fff; }
     .btn-delete { background: #fee2e2; color: #ef4444; }
     .btn-revision { background: #ffedd5; color: #c2410c; }
@@ -92,10 +92,10 @@
     .btn-waiting { background: #f3f4f6; color: #9ca3af; cursor: default; }
 
     .empty-state { text-align: center; padding: 60px 20px; }
-    .empty-state i { font-size: 56px; color: #e0f2fe; margin-bottom: 16px; }
+    .empty-state i { font-size: 56px; color: #cffafe; margin-bottom: 16px; }
     .empty-state h4 { font-size: 18px; font-weight: 700; color: #374151; margin-bottom: 8px; }
     .empty-state p { font-size: 14px; color: #9ca3af; margin-bottom: 24px; }
-    .empty-state .btn-add-new { background: linear-gradient(135deg, #0ea5e9 0%, #38bdf8 100%); border: none; box-shadow: 0 4px 12px rgba(14, 165, 233, 0.25); }
+    .empty-state .btn-add-new { background: linear-gradient(135deg, #0891b2 0%, #06b6d4 100%); border: none; box-shadow: 0 4px 12px rgba(8, 145, 178, 0.25); }
 
     @media (max-width: 1024px) { .stats-grid { grid-template-columns: repeat(2, 1fr); } }
     @media (max-width: 768px) { .achievement-header { flex-direction: column; align-items: flex-start; } .btn-add-new { width: 100%; justify-content: center; } }
@@ -219,3 +219,4 @@
     </div>
 </div>
 @endsection
+

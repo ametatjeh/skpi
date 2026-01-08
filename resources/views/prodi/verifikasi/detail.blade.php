@@ -29,7 +29,7 @@
     }
     
     .breadcrumb a:hover {
-        color: #059669;
+        color: #0891b2;
     }
     
     .breadcrumb-separator {
@@ -43,12 +43,12 @@
     
     /* Header Card */
     .header-card {
-        background: linear-gradient(135deg, #059669 0%, #10b981 100%);
+        background: linear-gradient(135deg, #0891b2 0%, #06b6d4 100%);
         border-radius: 20px;
         padding: 28px 32px;
         color: #fff;
         margin-bottom: 24px;
-        box-shadow: 0 8px 32px rgba(5, 150, 105, 0.25);
+        box-shadow: 0 8px 32px rgba(8, 145, 178, 0.25);
         display: flex;
         align-items: center;
         justify-content: space-between;
@@ -149,7 +149,7 @@
     .card-header i {
         width: 36px;
         height: 36px;
-        background: linear-gradient(135deg, #059669 0%, #10b981 100%);
+        background: linear-gradient(135deg, #0891b2 0%, #06b6d4 100%);
         color: #fff;
         border-radius: 10px;
         display: flex;
@@ -233,7 +233,7 @@
         width: 48px;
         height: 48px;
         border-radius: 12px;
-        background: linear-gradient(135deg, #059669 0%, #10b981 100%);
+        background: linear-gradient(135deg, #0891b2 0%, #06b6d4 100%);
         color: #fff;
         display: flex;
         align-items: center;
@@ -260,7 +260,7 @@
     
     .btn-download {
         padding: 8px 16px;
-        background: linear-gradient(135deg, #10b981 0%, #34d399 100%);
+        background: linear-gradient(135deg, #06b6d4 0%, #22d3ee 100%);
         color: #fff;
         border-radius: 8px;
         font-size: 12px;
@@ -323,7 +323,7 @@
         color: #fff;
     }
     
-    .timeline-icon.approve { background: #10b981; }
+    .timeline-icon.approve { background: #06b6d4; }
     .timeline-icon.reject { background: #ef4444; }
     .timeline-icon.revision { background: #f59e0b; }
     
@@ -400,7 +400,7 @@
     }
     
     .btn-approve {
-        background: linear-gradient(135deg, #10b981 0%, #34d399 100%);
+        background: linear-gradient(135deg, #06b6d4 0%, #22d3ee 100%);
         color: #fff;
     }
     
@@ -442,8 +442,8 @@
     
     .textarea-catatan:focus {
         outline: none;
-        border-color: #059669;
-        box-shadow: 0 0 0 3px rgba(5, 150, 105, 0.1);
+        border-color: #0891b2;
+        box-shadow: 0 0 0 3px rgba(8, 145, 178, 0.1);
     }
     
     /* Draft Eligibility */
@@ -507,7 +507,7 @@
     .btn-create-draft {
         margin-top: 12px;
         padding: 10px 20px;
-        background: linear-gradient(135deg, #059669 0%, #10b981 100%);
+        background: linear-gradient(135deg, #0891b2 0%, #06b6d4 100%);
         color: #fff;
         border: none;
         border-radius: 8px;
@@ -522,7 +522,7 @@
     
     .btn-create-draft:hover {
         transform: translateY(-2px);
-        box-shadow: 0 4px 12px rgba(5, 150, 105, 0.35);
+        box-shadow: 0 4px 12px rgba(8, 145, 178, 0.35);
     }
     
     /* No Document */
@@ -874,3 +874,4 @@
     </div>
 </div>
 @endsection
+

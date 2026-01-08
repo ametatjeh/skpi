@@ -50,12 +50,12 @@
 
     /* Premium Header */
     .preview-header {
-        background: linear-gradient(135deg, #0ea5e9 0%, #38bdf8 50%, #7dd3fc 100%);
+        background: linear-gradient(135deg, #0891b2 0%, #06b6d4 50%, #22d3ee 100%);
         border-radius: 20px;
         padding: 32px;
         margin-bottom: 24px;
         color: #fff;
-        box-shadow: 0 8px 32px rgba(14, 165, 233, 0.25);
+        box-shadow: 0 8px 32px rgba(8, 145, 178, 0.25);
         position: relative;
         overflow: hidden;
     }
@@ -143,14 +143,14 @@
     .preview-info-header-icon {
         width: 44px;
         height: 44px;
-        background: linear-gradient(135deg, #0ea5e9 0%, #38bdf8 100%);
+        background: linear-gradient(135deg, #0891b2 0%, #06b6d4 100%);
         color: #fff;
         border-radius: 12px;
         display: flex;
         align-items: center;
         justify-content: center;
         font-size: 18px;
-        box-shadow: 0 4px 12px rgba(14, 165, 233, 0.25);
+        box-shadow: 0 4px 12px rgba(8, 145, 178, 0.25);
     }
 
     .preview-info-header h3 {
@@ -180,8 +180,8 @@
     }
 
     .preview-info-item:hover {
-        background: #e0f2fe;
-        border-color: #0ea5e9;
+        background: #cffafe;
+        border-color: #0891b2;
     }
 
     .preview-info-item.full-width {
@@ -212,12 +212,12 @@
     }
 
     .preview-info-value.highlight {
-        color: #0ea5e9;
+        color: #0891b2;
     }
 
     .preview-info-value.mono {
         font-family: 'Courier New', monospace;
-        color: #0ea5e9;
+        color: #0891b2;
     }
 
     /* Status Badge in Grid */
@@ -242,16 +242,16 @@
     }
 
     .preview-status.selesai {
-        background: linear-gradient(135deg, #e0f2fe, #bae6fd);
+        background: linear-gradient(135deg, #cffafe, #a5f3fc);
         color: #0369a1;
     }
 
     /* Summary Box */
     .preview-summary-box {
-        background: linear-gradient(135deg, #e0f2fe 0%, #bae6fd 100%);
+        background: linear-gradient(135deg, #cffafe 0%, #a5f3fc 100%);
         border-radius: 12px;
         padding: 16px;
-        border-left: 4px solid #0ea5e9;
+        border-left: 4px solid #0891b2;
         font-size: 14px;
         color: #0c4a6e;
         line-height: 1.6;
@@ -282,14 +282,14 @@
     }
 
     .preview-btn-primary {
-        background: linear-gradient(135deg, #0ea5e9 0%, #38bdf8 100%);
+        background: linear-gradient(135deg, #0891b2 0%, #06b6d4 100%);
         color: #fff;
-        box-shadow: 0 4px 12px rgba(14, 165, 233, 0.3);
+        box-shadow: 0 4px 12px rgba(8, 145, 178, 0.3);
     }
 
     .preview-btn-primary:hover {
         transform: translateY(-2px);
-        box-shadow: 0 8px 24px rgba(14, 165, 233, 0.4);
+        box-shadow: 0 8px 24px rgba(8, 145, 178, 0.4);
     }
 
     .preview-btn-secondary {
@@ -534,3 +534,4 @@
     @endif
 </div>
 @endsection
+

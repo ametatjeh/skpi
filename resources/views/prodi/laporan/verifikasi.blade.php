@@ -53,13 +53,13 @@
     
     .filter-select:focus {
         outline: none;
-        border-color: #059669;
-        box-shadow: 0 0 0 3px rgba(5, 150, 105, 0.1);
+        border-color: #0891b2;
+        box-shadow: 0 0 0 3px rgba(8, 145, 178, 0.1);
     }
     
     .filter-btn {
         padding: 10px 20px;
-        background: linear-gradient(135deg, #059669 0%, #10b981 100%);
+        background: linear-gradient(135deg, #0891b2 0%, #06b6d4 100%);
         color: #fff;
         border: none;
         border-radius: 10px;
@@ -71,7 +71,7 @@
     
     .filter-btn:hover {
         transform: translateY(-2px);
-        box-shadow: 0 4px 12px rgba(5, 150, 105, 0.35);
+        box-shadow: 0 4px 12px rgba(8, 145, 178, 0.35);
     }
     
     /* Overview Cards Grid */
@@ -102,9 +102,9 @@
         height: 100%;
     }
     
-    .overview-card.blue::before { background: linear-gradient(180deg, #059669, #10b981); }
+    .overview-card.blue::before { background: linear-gradient(180deg, #0891b2, #06b6d4); }
     .overview-card.yellow::before { background: linear-gradient(180deg, #f59e0b, #fbbf24); }
-    .overview-card.green::before { background: linear-gradient(180deg, #10b981, #34d399); }
+    .overview-card.green::before { background: linear-gradient(180deg, #06b6d4, #22d3ee); }
     .overview-card.red::before { background: linear-gradient(180deg, #ef4444, #f87171); }
     .overview-card.purple::before { background: linear-gradient(180deg, #7c3aed, #a78bfa); }
     
@@ -124,9 +124,9 @@
         margin-bottom: 12px;
     }
     
-    .overview-card.blue .overview-icon { background: #d1fae5; color: #059669; }
+    .overview-card.blue .overview-icon { background: #cffafe; color: #0891b2; }
     .overview-card.yellow .overview-icon { background: #fef3c7; color: #f59e0b; }
-    .overview-card.green .overview-icon { background: #dcfce7; color: #10b981; }
+    .overview-card.green .overview-icon { background: #dcfce7; color: #06b6d4; }
     .overview-card.red .overview-icon { background: #fee2e2; color: #ef4444; }
     .overview-card.purple .overview-icon { background: #f3e8ff; color: #7c3aed; }
     
@@ -152,18 +152,18 @@
     }
     
     .info-card {
-        background: linear-gradient(135deg, #059669 0%, #047857 100%);
+        background: linear-gradient(135deg, #0891b2 0%, #0e7490 100%);
         border-radius: 16px;
         padding: 24px;
         color: #fff;
         display: flex;
         align-items: center;
         gap: 16px;
-        box-shadow: 0 4px 20px rgba(5, 150, 105, 0.25);
+        box-shadow: 0 4px 20px rgba(8, 145, 178, 0.25);
     }
     
     .info-card.green {
-        background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+        background: linear-gradient(135deg, #06b6d4 0%, #0891b2 100%);
         box-shadow: 0 4px 20px rgba(16, 185, 129, 0.25);
     }
     
@@ -236,13 +236,13 @@
     }
     
     .chart-title i {
-        color: #059669;
+        color: #0891b2;
     }
     
     .chart-badge {
         padding: 4px 10px;
-        background: #d1fae5;
-        color: #059669;
+        background: #cffafe;
+        color: #0891b2;
         border-radius: 20px;
         font-size: 11px;
         font-weight: 600;
@@ -274,7 +274,7 @@
     }
     
     .trend-item:hover {
-        background: #d1fae5;
+        background: #cffafe;
         transform: translateY(-2px);
     }
     
@@ -299,7 +299,7 @@
         font-size: 11px;
     }
     
-    .trend-approved { color: #10b981; }
+    .trend-approved { color: #06b6d4; }
     .trend-rejected { color: #ef4444; }
     
     /* Top Mahasiswa */
@@ -320,7 +320,7 @@
     }
     
     .top-item:hover {
-        background: #d1fae5;
+        background: #cffafe;
         transform: translateX(4px);
     }
     
@@ -328,7 +328,7 @@
         width: 32px;
         height: 32px;
         border-radius: 50%;
-        background: linear-gradient(135deg, #059669, #10b981);
+        background: linear-gradient(135deg, #0891b2, #06b6d4);
         color: #fff;
         display: flex;
         align-items: center;
@@ -404,7 +404,7 @@
     .status-badge.pending { background: #fef3c7; color: #92400e; }
     .status-badge.approved { background: #dcfce7; color: #15803d; }
     .status-badge.rejected { background: #fee2e2; color: #b91c1c; }
-    .status-badge.revision { background: #d1fae5; color: #059669; }
+    .status-badge.revision { background: #cffafe; color: #0891b2; }
     
     .type-badge {
         display: inline-flex;
@@ -963,3 +963,4 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 </script>
 @endpush
+

@@ -15,6 +15,11 @@ use App\Http\Controllers\Auth\ActivationController;
 use Illuminate\Support\Facades\Auth;
 
 // ===============================================
+// SEO ROUTES
+// ===============================================
+Route::get('/sitemap.xml', [App\Http\Controllers\SitemapController::class, 'index'])->name('sitemap');
+
+// ===============================================
 // HALAMAN AWAL
 // ===============================================
 Route::get('/', fn() => view('welcome'))->name('home');

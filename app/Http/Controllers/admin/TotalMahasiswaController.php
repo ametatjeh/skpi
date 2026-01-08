@@ -33,7 +33,13 @@ class TotalMahasiswaController extends Controller
             $mahasiswa = $query->limit((int)$perPage)->get();
         }
 
-        return view('admin.total-mahasiswa.index', compact('mahasiswa', 'search'));
+        // Total keseluruhan mahasiswa (tanpa filter)
+        $totalMahasiswa = Mahasiswa::count();
+        
+        // Total hasil filter
+        $totalFiltered = $mahasiswa->count();
+
+        return view('admin.total-mahasiswa.index', compact('mahasiswa', 'search', 'totalMahasiswa', 'totalFiltered'));
     }
 
 

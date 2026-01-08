@@ -125,7 +125,7 @@
     }
     
     .btn-download {
-        background: linear-gradient(135deg, #10b981 0%, #34d399 100%);
+        background: linear-gradient(135deg, #06b6d4 0%, #22d3ee 100%);
         color: #fff;
         box-shadow: 0 4px 16px rgba(16, 185, 129, 0.35);
     }
@@ -392,7 +392,7 @@
     }
     
     .flow-step.completed {
-        color: #10b981;
+        color: #06b6d4;
     }
     
     .flow-step.pending {
@@ -400,7 +400,7 @@
     }
     
     .flow-step i.check {
-        color: #10b981;
+        color: #06b6d4;
     }
     
     .flow-arrow {
@@ -468,7 +468,7 @@
     }
     
     .modal-icon.success {
-        background: linear-gradient(135deg, #10b981 0%, #34d399 100%);
+        background: linear-gradient(135deg, #06b6d4 0%, #22d3ee 100%);
         color: #fff;
     }
     
@@ -527,7 +527,7 @@
     }
     
     .modal-btn.success {
-        background: linear-gradient(135deg, #10b981 0%, #34d399 100%);
+        background: linear-gradient(135deg, #06b6d4 0%, #22d3ee 100%);
         color: #fff;
     }
     
@@ -1001,3 +1001,4 @@ document.addEventListener('keydown', function(e) {
 });
 </script>
 @endpush
+

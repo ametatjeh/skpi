@@ -421,6 +421,14 @@
             box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.1);
         }
 
+        @media (max-width: 992px) {
+            /* Stats cards responsive */
+            .stats-cards-container {
+                flex-direction: column;
+                width: 100%;
+            }
+        }
+
         @media (max-width: 768px) {
             /* Add box-sizing to prevent padding from increasing width */
             * {
@@ -428,80 +436,83 @@
             }
 
             .content-wrapper {
-                padding: 15px; /* Reduce padding for mobile */
+                padding: 15px;
             }
 
-            .header-actions {
-                flex-direction: column;
-                align-items: stretch;
-                gap: 15px; /* Reduced gap */
-            }
-
-            .page-header {
+            /* Header stack on mobile */
+            .header-section {
+                flex-direction: column !important;
+                align-items: stretch !important;
                 text-align: center;
-                margin-bottom: 5px;
             }
 
-            .action-group {
-                display: flex;
-                flex-direction: column;
-                gap: 10px;
+            /* Stats cards full width on mobile */
+            .stats-card {
+                min-width: 100% !important;
+            }
+
+            /* Action bar stack on mobile */
+            .action-bar {
+                flex-direction: column !important;
+                padding: 12px !important;
+            }
+
+            .action-bar > div {
                 width: 100%;
+                justify-content: center;
             }
 
-            /* Back Button & Search Form - Full Width (Span 2 Columns) */
-            .btn-back, 
-            .search-form {
-                grid-column: 1 / -1;
-                width: 100%;
-            }
-
-            /* Search Form: Keep Inline (Side-by-side) */
+            /* Search form full width */
             .search-form {
                 display: flex !important;
                 flex-direction: row !important;
                 gap: 8px;
+                width: 100%;
             }
 
             .search-input {
-                width: auto !important;
-                flex: 1; /* Input takes remaining space */
-                font-size: 13px; /* Slightly smaller font */
+                min-width: auto !important;
+                flex: 1;
+                font-size: 13px;
             }
 
             .btn-search {
-                width: auto; /* Button fits content */
+                width: auto;
                 padding: 10px 15px;
             }
 
-            /* Buttons inside stack take full width */
-            .btn {
+            /* Buttons stack on mobile */
+            .btn-back,
+            .btn-primary,
+            .btn-import {
                 width: 100%;
                 justify-content: center;
                 text-align: center;
-                padding: 12px;
             }
 
             .action-buttons {
                 flex-direction: column;
             }
 
-            /* Per Page Selector Compact */
-            .per-page-selector {
-                flex-direction: row;
-                justify-content: center;
-                gap: 10px;
-                margin-top: 5px;
-                padding: 8px;
+            /* Table responsive */
+            table {
+                font-size: 11px;
             }
 
-            .per-page-selector label {
-                display: none; /* Hide label to save space */
+            th, td {
+                padding: 8px 6px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .search-input {
+                font-size: 12px;
+                padding: 8px 12px;
             }
 
-            .per-page-selector select {
-                width: auto;
-                font-size: 13px;
+            .btn {
+                font-size: 12px;
+                padding: 8px 12px !important;
             }
         }
     </style>
@@ -536,49 +547,269 @@
             </div>
         @endif
 
-        {{-- HEADER --}}
-        <div class="header-actions">
-            <div class="page-header">
+        {{-- HEADER WITH STATS --}}
+        <div class="page-header-section">
+            {{-- Left: Title --}}
+            <div class="page-title">
                 <h2><i class="fas fa-user-graduate"></i> Data Mahasiswa</h2>
-                <p style="color: #64748b; font-size: 14px; margin-top: 5px;">
-                    Daftar seluruh mahasiswa terdaftar
-                </p>
+                <p>Daftar seluruh mahasiswa terdaftar dalam sistem</p>
             </div>
 
-            <div class="action-group">
+            {{-- Right: Stats Card --}}
+            <div class="stats-card">
+                <div class="stats-number">{{ number_format($totalMahasiswa) }}</div>
+                <div class="stats-label">Total Mahasiswa</div>
+            </div>
+        </div>
+
+        {{-- ACTION BAR --}}
+        <div class="action-bar">
+            {{-- Row 1: Back + Search --}}
+            <div class="action-row">
                 <a href="{{ route('admin.dashboard') }}" class="btn-back">
-                    <i class="fas fa-arrow-left"></i> Kembali
+                    <i class="fas fa-arrow-left"></i> <span class="btn-text">Kembali</span>
                 </a>
 
-                <form action="{{ route('admin.total-mahasiswa.index') }}" method="GET" class="search-form" style="display: flex; gap: 10px;">
-                    <input type="text" name="search" class="search-input" placeholder="Cari nama, NIM, atau email..."
+                <form action="{{ route('admin.total-mahasiswa.index') }}" method="GET" class="search-form">
+                    <input type="text" name="search" class="search-input" placeholder="Cari nama, NIM, email..."
                         value="{{ request('search') }}">
                     <input type="hidden" name="per_page" value="{{ request('per_page', 50) }}">
-                    <button type="submit" class="btn btn-search btn-sm">
-                        <i class="fas fa-search"></i> Cari
+                    <button type="submit" class="btn btn-search">
+                        <i class="fas fa-search"></i>
                     </button>
                 </form>
+            </div>
+
+            {{-- Row 2: Per Page + Buttons --}}
+            <div class="action-row action-row-buttons">
+                {{-- Per Page Selector --}}
+                <div class="per-page-box">
+                    <i class="fas fa-list"></i>
+                    <select id="perPageSelect" onchange="changePerPage(this.value)">
+                        <option value="50" {{ request('per_page', 50) == 50 ? 'selected' : '' }}>50</option>
+                        <option value="200" {{ request('per_page') == 200 ? 'selected' : '' }}>200</option>
+                        <option value="500" {{ request('per_page') == 500 ? 'selected' : '' }}>500</option>
+                        <option value="all" {{ request('per_page') == 'all' ? 'selected' : '' }}>All</option>
+                    </select>
+                </div>
 
                 <a href="#addModal" class="btn btn-primary">
-                    <i class="fas fa-plus"></i> Tambah Mahasiswa
+                    <i class="fas fa-plus"></i> <span class="btn-text">Tambah</span>
                 </a>
 
-                <a href="#importModal" class="btn btn-import" style="background: linear-gradient(135deg, #f59e0b, #d97706); color: white;">
-                    <i class="fas fa-file-excel"></i> Import Excel
+                <a href="#importModal" class="btn btn-import">
+                    <i class="fas fa-file-excel"></i> <span class="btn-text">Import</span>
                 </a>
             </div>
         </div>
 
-        {{-- PER PAGE SELECTOR --}}
-        <div class="per-page-selector">
-            <label><i class="fas fa-list"></i> Tampilkan:</label>
-            <select id="perPageSelect" onchange="changePerPage(this.value)">
-                <option value="50" {{ request('per_page', 50) == 50 ? 'selected' : '' }}>50 Data</option>
-                <option value="200" {{ request('per_page') == 200 ? 'selected' : '' }}>200 Data</option>
-                <option value="500" {{ request('per_page') == 500 ? 'selected' : '' }}>500 Data</option>
-                <option value="all" {{ request('per_page') == 'all' ? 'selected' : '' }}>Semua Data</option>
-            </select>
-        </div>
+        <style>
+            /* Page Header Section */
+            .page-header-section {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                margin-bottom: 20px;
+                gap: 16px;
+                flex-wrap: wrap;
+            }
+
+            .page-title h2 {
+                font-size: 22px;
+                font-weight: 700;
+                color: #1e293b;
+                margin: 0 0 4px 0;
+                display: flex;
+                align-items: center;
+                gap: 10px;
+            }
+
+            .page-title h2 i {
+                color: #10b981;
+            }
+
+            .page-title p {
+                color: #64748b;
+                font-size: 13px;
+                margin: 0;
+            }
+
+            .stats-card {
+                background: linear-gradient(135deg, #10b981, #059669);
+                padding: 14px 24px;
+                border-radius: 12px;
+                color: white;
+                box-shadow: 0 4px 15px rgba(16, 185, 129, 0.25);
+                text-align: center;
+                min-width: 130px;
+            }
+
+            .stats-number {
+                font-size: 28px;
+                font-weight: 800;
+                line-height: 1;
+            }
+
+            .stats-label {
+                font-size: 10px;
+                opacity: 0.9;
+                font-weight: 600;
+                text-transform: uppercase;
+                letter-spacing: 0.5px;
+                margin-top: 4px;
+            }
+
+            /* Action Bar */
+            .action-bar {
+                background: #f8fafc;
+                border-radius: 12px;
+                padding: 14px;
+                margin-bottom: 16px;
+                border: 1px solid #e2e8f0;
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .action-row {
+                display: flex;
+                align-items: center;
+                gap: 8px;
+                flex-wrap: wrap;
+            }
+
+            .action-row-buttons {
+                justify-content: flex-start;
+            }
+
+            .search-form {
+                display: flex;
+                gap: 6px;
+                flex: 1;
+                min-width: 200px;
+            }
+
+            .search-input {
+                flex: 1;
+                padding: 10px 14px;
+                border: 2px solid #e2e8f0;
+                border-radius: 8px;
+                font-size: 13px;
+            }
+
+            .per-page-box {
+                display: flex;
+                align-items: center;
+                gap: 6px;
+                background: white;
+                padding: 8px 12px;
+                border-radius: 8px;
+                border: 1px solid #e2e8f0;
+            }
+
+            .per-page-box i {
+                color: #64748b;
+                font-size: 12px;
+            }
+
+            .per-page-box select {
+                border: none;
+                font-size: 13px;
+                font-weight: 600;
+                color: #1e293b;
+                cursor: pointer;
+                background: transparent;
+                padding-right: 4px;
+            }
+
+            .btn-import {
+                background: linear-gradient(135deg, #f59e0b, #d97706);
+                color: white;
+            }
+
+            /* Mobile Responsive */
+            @media (max-width: 768px) {
+                .page-header-section {
+                    flex-direction: column;
+                    align-items: stretch;
+                    text-align: center;
+                }
+
+                .stats-card {
+                    width: 100%;
+                    padding: 12px 20px;
+                }
+
+                .stats-number {
+                    font-size: 32px;
+                }
+
+                .action-bar {
+                    padding: 12px;
+                }
+
+                .action-row {
+                    width: 100%;
+                }
+
+                .btn-back {
+                    padding: 10px 14px !important;
+                }
+
+                .search-form {
+                    flex: 1;
+                    min-width: auto;
+                }
+
+                .search-input {
+                    padding: 10px 12px;
+                    font-size: 13px;
+                }
+
+                .action-row-buttons {
+                    display: grid;
+                    grid-template-columns: auto 1fr 1fr;
+                    gap: 8px;
+                    width: 100%;
+                }
+
+                .per-page-box {
+                    padding: 8px 10px;
+                }
+
+                .btn-primary,
+                .btn-import {
+                    flex: 1;
+                    justify-content: center;
+                    padding: 10px 12px !important;
+                }
+            }
+
+            @media (max-width: 480px) {
+                .page-title h2 {
+                    font-size: 18px;
+                    justify-content: center;
+                }
+
+                .page-title p {
+                    font-size: 12px;
+                }
+
+                .btn-text {
+                    display: none;
+                }
+
+                .btn-back,
+                .btn-primary,
+                .btn-import {
+                    padding: 10px 14px !important;
+                }
+
+                .action-row-buttons {
+                    grid-template-columns: auto 1fr 1fr;
+                }
+            }
+        </style>
 
         {{-- SCROLLABLE TABLE --}}
         <div class="table-container">
@@ -633,9 +864,9 @@
                 </div>
 
                 <div class="info-count">
-                    Menampilkan: <strong>{{ $mahasiswa->count() }}</strong> mahasiswa
+                    Menampilkan: <strong>{{ $mahasiswa->count() }}</strong> dari <strong>{{ $totalMahasiswa }}</strong> mahasiswa
                     @if (request('search'))
-                        dari hasil pencarian "<strong>{{ request('search') }}</strong>"
+                        | Hasil pencarian "<strong>{{ request('search') }}</strong>"
                     @endif
                 </div>
             @else

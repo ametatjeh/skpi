@@ -56,12 +56,12 @@
 
         .sla-stat-ok {
             background: #f0fdf4;
-            border-color: #10b981;
+            border-color: #06b6d4;
         }
 
         .sla-stat-ok .sla-stat-value,
         .sla-stat-ok .sla-stat-label {
-            color: #10b981;
+            color: #06b6d4;
         }
 
         .sla-stat-bad {
@@ -270,3 +270,4 @@
     </div>
 
 @endsection
+

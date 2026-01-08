@@ -1,2 +1,21 @@
 User-agent: *
-Disallow:
+Allow: /
+
+# Allow search engines to crawl public pages
+Allow: /verify/
+Allow: /login
+
+# Disallow admin and internal pages
+Disallow: /admin/
+Disallow: /mahasiswa/
+Disallow: /prodi/
+Disallow: /fakultas/
+Disallow: /pusat/
+Disallow: /storage/
+Disallow: /api/
+
+# Sitemap location
+Sitemap: https://skpi.umpar.ac.id/sitemap.xml
+
+# Crawl-delay (optional, be gentle on server)
+Crawl-delay: 10

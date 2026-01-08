@@ -17,12 +17,12 @@
     
     /* Page Header */
     .page-header {
-        background: linear-gradient(135deg, #059669 0%, #10b981 100%);
+        background: linear-gradient(135deg, #0891b2 0%, #06b6d4 100%);
         border-radius: 20px;
         padding: 28px 32px;
         margin-bottom: 24px;
         color: #fff;
-        box-shadow: 0 8px 32px rgba(5, 150, 105, 0.25);
+        box-shadow: 0 8px 32px rgba(8, 145, 178, 0.25);
     }
     
     .page-header-content {
@@ -117,7 +117,7 @@
         font-size: 20px;
     }
     
-    .stat-card.total .stat-icon { background: #d1fae5; color: #059669; }
+    .stat-card.total .stat-icon { background: #cffafe; color: #0891b2; }
     .stat-card.sikap .stat-icon { background: #dcfce7; color: #15803d; }
     .stat-card.pengetahuan .stat-icon { background: #fef3c7; color: #92400e; }
     .stat-card.keterampilan .stat-icon { background: #f3e8ff; color: #7c3aed; }
@@ -200,7 +200,7 @@
     .section-title i {
         width: 40px;
         height: 40px;
-        background: linear-gradient(135deg, #059669 0%, #10b981 100%);
+        background: linear-gradient(135deg, #0891b2 0%, #06b6d4 100%);
         color: #fff;
         border-radius: 12px;
         display: flex;
@@ -211,8 +211,8 @@
     
     .section-badge {
         padding: 8px 16px;
-        background: #d1fae5;
-        color: #059669;
+        background: #cffafe;
+        color: #0891b2;
         border-radius: 20px;
         font-size: 13px;
         font-weight: 700;
@@ -269,7 +269,7 @@
         align-items: center;
         gap: 6px;
         padding: 8px 14px;
-        background: linear-gradient(135deg, #059669 0%, #10b981 100%);
+        background: linear-gradient(135deg, #0891b2 0%, #06b6d4 100%);
         color: #fff;
         border-radius: 10px;
         font-size: 12px;
@@ -297,7 +297,7 @@
     
     .kategori-badge.sikap { background: #dcfce7; color: #15803d; }
     .kategori-badge.pengetahuan { background: #fef3c7; color: #92400e; }
-    .kategori-badge.keterampilan_umum { background: #d1fae5; color: #059669; }
+    .kategori-badge.keterampilan_umum { background: #cffafe; color: #0891b2; }
     .kategori-badge.keterampilan_khusus { background: #f3e8ff; color: #7c3aed; }
     
     /* Urutan Badge */
@@ -356,8 +356,8 @@
     }
     
     .btn-edit {
-        background: #d1fae5;
-        color: #059669;
+        background: #cffafe;
+        color: #0891b2;
     }
     
     .btn-edit:hover {
@@ -406,7 +406,7 @@
         align-items: center;
         gap: 8px;
         padding: 12px 24px;
-        background: linear-gradient(135deg, #059669 0%, #10b981 100%);
+        background: linear-gradient(135deg, #0891b2 0%, #06b6d4 100%);
         color: #fff;
         border-radius: 12px;
         text-decoration: none;
@@ -416,7 +416,7 @@
     
     .empty-state a:hover {
         transform: translateY(-2px);
-        box-shadow: 0 4px 12px rgba(5, 150, 105, 0.35);
+        box-shadow: 0 4px 12px rgba(8, 145, 178, 0.35);
     }
     
     /* Modal */
@@ -786,3 +786,4 @@ document.addEventListener('keydown', function(e) {
 });
 </script>
 @endpush
+

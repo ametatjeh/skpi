@@ -41,12 +41,12 @@
 
     /* Premium Header */
     .form-header {
-        background: linear-gradient(135deg, #0ea5e9 0%, #38bdf8 50%, #7dd3fc 100%);
+        background: linear-gradient(135deg, #0891b2 0%, #06b6d4 50%, #22d3ee 100%);
         border-radius: 20px;
         padding: 28px 32px;
         margin-bottom: 24px;
         color: #fff;
-        box-shadow: 0 8px 32px rgba(14, 165, 233, 0.25);
+        box-shadow: 0 8px 32px rgba(8, 145, 178, 0.25);
         position: relative;
         overflow: hidden;
     }
@@ -115,14 +115,14 @@
     .form-card-header-icon {
         width: 44px;
         height: 44px;
-        background: linear-gradient(135deg, #0ea5e9 0%, #38bdf8 100%);
+        background: linear-gradient(135deg, #0891b2 0%, #06b6d4 100%);
         color: #fff;
         border-radius: 12px;
         display: flex;
         align-items: center;
         justify-content: center;
         font-size: 18px;
-        box-shadow: 0 4px 12px rgba(14, 165, 233, 0.25);
+        box-shadow: 0 4px 12px rgba(8, 145, 178, 0.25);
     }
 
     .form-card-header h3 {
@@ -178,13 +178,13 @@
     }
 
     .form-control:hover {
-        border-color: #bae6fd;
+        border-color: #a5f3fc;
     }
 
     .form-control:focus {
         outline: none;
-        border-color: #0ea5e9;
-        box-shadow: 0 0 0 4px rgba(14, 165, 233, 0.1);
+        border-color: #0891b2;
+        box-shadow: 0 0 0 4px rgba(8, 145, 178, 0.1);
     }
 
     .form-control::placeholder {
@@ -235,13 +235,13 @@
     }
 
     .upload-box:hover {
-        border-color: #0ea5e9;
-        background: #e0f2fe;
+        border-color: #0891b2;
+        background: #cffafe;
     }
 
     .upload-box.dragover {
-        border-color: #0ea5e9;
-        background: #e0f2fe;
+        border-color: #0891b2;
+        background: #cffafe;
         transform: scale(1.02);
     }
 
@@ -249,13 +249,13 @@
         width: 56px;
         height: 56px;
         margin: 0 auto 12px;
-        background: linear-gradient(135deg, #e0f2fe, #bae6fd);
+        background: linear-gradient(135deg, #cffafe, #a5f3fc);
         border-radius: 14px;
         display: flex;
         align-items: center;
         justify-content: center;
         font-size: 24px;
-        color: #0ea5e9;
+        color: #0891b2;
     }
 
     .upload-text {
@@ -293,11 +293,11 @@
 
     /* Info Box */
     .info-box {
-        background: linear-gradient(135deg, #e0f2fe 0%, #bae6fd 100%);
+        background: linear-gradient(135deg, #cffafe 0%, #a5f3fc 100%);
         border-radius: 12px;
         padding: 18px 20px;
         margin-top: 24px;
-        border: 1px solid #7dd3fc;
+        border: 1px solid #22d3ee;
     }
 
     .info-box-title {
@@ -585,3 +585,4 @@
     }
 </script>
 @endsection
+

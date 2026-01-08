@@ -263,7 +263,7 @@
         display: block;
     }
     
-    .kategori-card.sikap i { color: #10b981; }
+    .kategori-card.sikap i { color: #06b6d4; }
     .kategori-card.pengetahuan i { color: #f59e0b; }
     .kategori-card.keterampilan_umum i { color: #3b82f6; }
     .kategori-card.keterampilan_khusus i { color: #8b5cf6; }
@@ -529,3 +529,4 @@ document.querySelectorAll('.kategori-card').forEach(card => {
 });
 </script>
 @endpush
+

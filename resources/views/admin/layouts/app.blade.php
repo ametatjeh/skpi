@@ -4,8 +4,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="noindex, nofollow">
+    <meta name="description" content="Admin Panel SKPI - Sistem Surat Keterangan Pendamping Ijazah Universitas Muhammadiyah Parepare">
 
-    <title>@yield('title', 'Admin SKPI')</title>
+    <title>@yield('title', 'Admin SKPI') | UMPAR</title>
+    <link rel="icon" type="image/png" href="{{ asset('images/skpi_logo.png') }}">
+    <link rel="apple-touch-icon" href="{{ asset('images/skpi_logo.png') }}">
 
     <!-- Google Font: Inter & Poppins -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">

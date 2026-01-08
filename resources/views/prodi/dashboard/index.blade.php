@@ -5,18 +5,18 @@
 
 @push('styles')
 <style>
-    /* ============ DASHBOARD PRODI PREMIUM - EMERALD GREEN THEME ============ */
+    /* ============ DASHBOARD PRODI PREMIUM - CYAN THEME ============ */
     
     /* Page Header */
     .page-header {
-        background: linear-gradient(135deg, #059669 0%, #10b981 50%, #34d399 100%);
+        background: linear-gradient(135deg, #0891b2 0%, #06b6d4 50%, #22d3ee 100%);
         border-radius: 20px;
         padding: 32px 36px;
         margin-bottom: 28px;
         color: #fff;
         position: relative;
         overflow: hidden;
-        box-shadow: 0 10px 40px rgba(5, 150, 105, 0.25);
+        box-shadow: 0 10px 40px rgba(8, 145, 178, 0.25);
     }
     
     .page-header::before {
@@ -116,8 +116,8 @@
         box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
     }
     
-    .stat-card.emerald::before { background: linear-gradient(180deg, #059669 0%, #34d399 100%); }
-    .stat-card.green::before { background: linear-gradient(180deg, #10b981 0%, #34d399 100%); }
+    .stat-card.emerald::before { background: linear-gradient(180deg, #0891b2 0%, #22d3ee 100%); }
+    .stat-card.green::before { background: linear-gradient(180deg, #06b6d4 0%, #22d3ee 100%); }
     .stat-card.yellow::before { background: linear-gradient(180deg, #f59e0b 0%, #fbbf24 100%); }
     .stat-card.red::before { background: linear-gradient(180deg, #ef4444 0%, #f87171 100%); }
     .stat-card.purple::before { background: linear-gradient(180deg, #8b5cf6 0%, #a78bfa 100%); }
@@ -134,7 +134,7 @@
         flex-shrink: 0;
     }
     
-    .stat-card.emerald .stat-icon { background: linear-gradient(135deg, #d1fae5 0%, #a7f3d0 100%); color: #059669; }
+    .stat-card.emerald .stat-icon { background: linear-gradient(135deg, #cffafe 0%, #a7f3d0 100%); color: #0891b2; }
     .stat-card.green .stat-icon { background: linear-gradient(135deg, #dcfce7 0%, #bbf7d0 100%); color: #16a34a; }
     .stat-card.yellow .stat-icon { background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%); color: #f59e0b; }
     .stat-card.red .stat-icon { background: linear-gradient(135deg, #fee2e2 0%, #fecaca 100%); color: #ef4444; }
@@ -170,7 +170,7 @@
         gap: 4px;
     }
     
-    .stat-change.up { color: #10b981; }
+    .stat-change.up { color: #06b6d4; }
     .stat-change.down { color: #ef4444; }
     .stat-change.neutral { color: #6b7280; }
     
@@ -197,7 +197,7 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
-        background: linear-gradient(135deg, #ecfdf5 0%, #d1fae5 100%);
+        background: linear-gradient(135deg, #f0fdfa 0%, #cffafe 100%);
     }
     
     .card-header-left {
@@ -209,7 +209,7 @@
     .card-header-icon {
         width: 40px;
         height: 40px;
-        background: linear-gradient(135deg, #059669 0%, #10b981 100%);
+        background: linear-gradient(135deg, #0891b2 0%, #06b6d4 100%);
         color: #fff;
         border-radius: 10px;
         display: flex;
@@ -227,7 +227,7 @@
     
     .card-header-badge {
         padding: 6px 14px;
-        background: linear-gradient(135deg, #059669 0%, #10b981 100%);
+        background: linear-gradient(135deg, #0891b2 0%, #06b6d4 100%);
         color: #fff;
         border-radius: 20px;
         font-size: 12px;
@@ -241,7 +241,7 @@
     
     .card-header-badge:hover {
         transform: translateY(-2px);
-        box-shadow: 0 4px 12px rgba(5, 150, 105, 0.35);
+        box-shadow: 0 4px 12px rgba(8, 145, 178, 0.35);
     }
     
     .card-body {
@@ -266,7 +266,7 @@
     }
     
     .table-wrapper::-webkit-scrollbar-thumb {
-        background: linear-gradient(135deg, #059669 0%, #34d399 100%);
+        background: linear-gradient(135deg, #0891b2 0%, #22d3ee 100%);
         border-radius: 10px;
     }
     
@@ -297,7 +297,7 @@
     }
     
     .modern-table tbody tr:hover {
-        background: #ecfdf5;
+        background: #f0fdfa;
     }
     
     .modern-table tbody tr:last-child td {
@@ -315,7 +315,7 @@
         width: 40px;
         height: 40px;
         border-radius: 10px;
-        background: linear-gradient(135deg, #059669 0%, #34d399 100%);
+        background: linear-gradient(135deg, #0891b2 0%, #22d3ee 100%);
         color: #fff;
         display: flex;
         align-items: center;
@@ -348,12 +348,12 @@
     .status-badge.approved { background: #dcfce7; color: #15803d; }
     .status-badge.pending { background: #fef3c7; color: #92400e; }
     .status-badge.rejected { background: #fee2e2; color: #dc2626; }
-    .status-badge.process { background: #d1fae5; color: #059669; }
+    .status-badge.process { background: #cffafe; color: #0891b2; }
     
     /* Action Button */
     .btn-view {
         padding: 8px 16px;
-        background: linear-gradient(135deg, #059669 0%, #10b981 100%);
+        background: linear-gradient(135deg, #0891b2 0%, #06b6d4 100%);
         color: #fff;
         border: none;
         border-radius: 8px;
@@ -368,7 +368,7 @@
     
     .btn-view:hover {
         transform: translateY(-2px);
-        box-shadow: 0 4px 12px rgba(5, 150, 105, 0.35);
+        box-shadow: 0 4px 12px rgba(8, 145, 178, 0.35);
         color: #fff;
     }
     
@@ -393,7 +393,7 @@
     }
     
     .quick-action-btn:hover {
-        background: #ecfdf5;
+        background: #f0fdfa;
         transform: translateX(4px);
     }
     
@@ -407,8 +407,8 @@
         font-size: 18px;
     }
     
-    .quick-action-icon.emerald { background: linear-gradient(135deg, #059669 0%, #10b981 100%); color: #fff; }
-    .quick-action-icon.green { background: linear-gradient(135deg, #10b981 0%, #34d399 100%); color: #fff; }
+    .quick-action-icon.emerald { background: linear-gradient(135deg, #0891b2 0%, #06b6d4 100%); color: #fff; }
+    .quick-action-icon.green { background: linear-gradient(135deg, #06b6d4 0%, #22d3ee 100%); color: #fff; }
     .quick-action-icon.blue { background: linear-gradient(135deg, #3b82f6 0%, #60a5fa 100%); color: #fff; }
     .quick-action-icon.purple { background: linear-gradient(135deg, #8b5cf6 0%, #a78bfa 100%); color: #fff; }
     
@@ -436,7 +436,7 @@
         font-size: 48px;
         opacity: 0.4;
         margin-bottom: 12px;
-        color: #34d399;
+        color: #22d3ee;
     }
     
     .empty-state h4 {
@@ -694,3 +694,4 @@
         </div>
     </div>
 @endsection
+
