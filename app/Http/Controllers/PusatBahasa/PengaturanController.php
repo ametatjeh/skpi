@@ -15,8 +15,23 @@ class PengaturanController extends Controller
 
     public function update(Request $request)
     {
-        // simpan update pengaturan: misal password, email, dsb
-        // Validasi + proses logic di sini
-        return back()->with('success', 'Pengaturan berhasil diperbarui');
+        $user = auth()->guard('pusat_bahasa')->user();
+
+        $request->validate([
+            'name' => 'required|string|max:255',
+            'email' => 'required|string|email|max:255|unique:pusat_bahasa_users,email,' . $user->id,
+            'password' => 'nullable|string|min:8|confirmed',
+        ]);
+
+        $user->name = $request->name;
+        $user->email = $request->email;
+
+        if ($request->filled('password')) {
+            $user->password = bcrypt($request->password);
+        }
+
+        $user->save();
+
+        return back()->with('success', 'Profil dan pengaturan berhasil diperbarui!');
     }
 }

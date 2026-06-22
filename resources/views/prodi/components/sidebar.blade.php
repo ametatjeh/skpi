@@ -258,7 +258,7 @@
                 <i class="fas fa-tasks"></i> Verifikasi Draft SKPI
                 @php
                     $pendingCount = \App\Models\VerifikasiSkpi::whereHas('mahasiswa', function ($q) {
-                        $q->where('prodi_id', auth()->user()->prodi_id);
+                        $q->where('prodi_id', auth('prodi')->user()->prodi_id);
                     })->where('status', 'diajukan')->count();
                 @endphp
                 @if($pendingCount > 0)
@@ -286,10 +286,10 @@
     <div class="prodi-sidebar-footer">
         <div class="prodi-sidebar-user">
             <div class="prodi-sidebar-user-avatar">
-                {{ strtoupper(substr(auth()->user()->name ?? 'P', 0, 1)) }}
+                {{ strtoupper(substr(auth('prodi')->user()->name ?? 'P', 0, 1)) }}
             </div>
             <div>
-                <div class="prodi-sidebar-user-name">{{ auth()->user()->name ?? 'Prodi' }}</div>
+                <div class="prodi-sidebar-user-name">{{ auth('prodi')->user()->name ?? 'Prodi' }}</div>
                 <div>
                     <span class="prodi-badge-role">Prodi</span>
                 </div>
@@ -297,7 +297,7 @@
         </div>
 
         <div class="prodi-sidebar-actions">
-            <a href="#" class="prodi-sidebar-btn prodi-sidebar-btn-profile">
+            <a href="{{ route('prodi.pengaturan.index') }}" class="prodi-sidebar-btn prodi-sidebar-btn-profile">
                 <i class="fas fa-cog"></i> Pengaturan
             </a>
 

@@ -249,7 +249,7 @@
         </div>
 
         @php
-            $unreadCountProdi = \App\Models\Notifikasi::where('user_id', auth()->id())
+            $unreadCountProdi = \App\Models\Notifikasi::where('user_id', auth('prodi')->id())
                 ->where('is_read', false)
                 ->count();
         @endphp
@@ -262,9 +262,9 @@
         </button>
 
         <button type="button" class="prodi-navbar-profile" onclick="toggleProfileProdi()">
-            <div class="prodi-profile-avatar">{{ strtoupper(substr(auth()->user()->name ?? 'PR', 0, 2)) }}</div>
+            <div class="prodi-profile-avatar">{{ strtoupper(substr(auth('prodi')->user()->name ?? 'PR', 0, 2)) }}</div>
             <div class="prodi-profile-info">
-                <div class="prodi-profile-name">{{ auth()->user()->name ?? 'Operator' }}</div>
+                <div class="prodi-profile-name">{{ auth('prodi')->user()->name ?? 'Operator' }}</div>
                 <div class="prodi-profile-role">Program Studi</div>
             </div>
             <i class="fas fa-chevron-down"></i>

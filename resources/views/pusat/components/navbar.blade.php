@@ -242,7 +242,7 @@
         @php
             $unreadCount = 0;
             try {
-                $unreadCount = \App\Models\Notifikasi::where('user_id', auth()->id())
+                $unreadCount = \App\Models\Notifikasi::where('user_id', Auth::guard('pusat_bahasa')->id())
                     ->where('is_read', false)
                     ->count();
             } catch (\Exception $e) {
@@ -258,9 +258,9 @@
         </button>
 
         <button type="button" class="pusat-navbar-profile" onclick="toggleProfilePusat()">
-            <div class="pusat-profile-avatar">{{ strtoupper(substr(auth()->user()->name ?? 'PB', 0, 2)) }}</div>
+            <div class="pusat-profile-avatar">{{ strtoupper(substr(Auth::guard('pusat_bahasa')->user()->name ?? 'PB', 0, 2)) }}</div>
             <div class="pusat-profile-info">
-                <div class="pusat-profile-name">{{ auth()->user()->name ?? 'Operator' }}</div>
+                <div class="pusat-profile-name">{{ Auth::guard('pusat_bahasa')->user()->name ?? 'Operator' }}</div>
                 <div class="pusat-profile-role">Pusat Bahasa</div>
             </div>
             <i class="fas fa-chevron-down"></i>
