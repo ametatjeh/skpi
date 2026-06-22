@@ -19,7 +19,7 @@ class TemplateSkpiController extends Controller
 
         if (! $template) {
             $template = TemplateSkpi::create([
-                'nama_pt' => 'Universitas Muhammadiyah Parepare',
+                'nama_pt' => 'Universitas Iskandar Muda',
                 'bahasa_pengantar' => 'Indonesia',
             ]);
         }
@@ -50,7 +50,7 @@ class TemplateSkpiController extends Controller
         $template->update($data);
 
         return redirect()
-            ->route('admin.skpi.template.edit')
+            ->route('admin.template-skpi.edit')
             ->with('success', 'Template SKPI berhasil diperbarui');
     }
 }

@@ -14,17 +14,19 @@ class PendukungSeeder extends Seeder
         DB::table('sertifikasi_kompetensi')->insert([
             'mahasiswa_id' => $mhs,
             'nama_sertifikasi' => 'TOEFL ITP',
-            'lembaga_penerbit' => 'Lembaga Bahasa UMPAR',
-            'tahun' => 2022,
+            'penerbit' => 'Lembaga Bahasa UNIDA',
+            'tanggal_terbit' => '2022-01-01',
+            'status' => 'approved',
             'created_at' => now(),
             'updated_at' => now()
         ]);
 
         DB::table('prestasi')->insert([
             'mahasiswa_id' => $mhs,
-            'nama_kegiatan' => 'Juara 1 Lomba Coding Nasional',
+            'judul_prestasi' => 'Juara 1 Lomba Coding Nasional',
             'tingkat' => 'nasional',
-            'tahun' => 2023,
+            'tanggal_perolehan' => '2023-05-15',
+            'status' => 'approved',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -32,16 +34,19 @@ class PendukungSeeder extends Seeder
         DB::table('organisasi')->insert([
             'mahasiswa_id' => $mhs,
             'nama_organisasi' => 'Himpunan Mahasiswa Informatika',
-            'jabatan' => 'Ketua Umum',
-            'periode' => '2022-2023',
+            'posisi' => 'Ketua Umum',
+            'tahun_masuk' => '2022',
+            'tahun_keluar' => '2023',
+            'status' => 'approved',
             'created_at' => now(),
             'updated_at' => now()
         ]);
 
         DB::table('pengabdian_masyarakat')->insert([
             'mahasiswa_id' => $mhs,
-            'nama_kegiatan' => 'Pelatihan Komputer untuk Masyarakat',
-            'tahun' => 2023,
+            'judul_pkm' => 'Pelatihan Komputer untuk Masyarakat',
+            'tahun_pelaksanaan' => '2023',
+            'status' => 'approved',
             'created_at' => now(),
             'updated_at' => now()
         ]);

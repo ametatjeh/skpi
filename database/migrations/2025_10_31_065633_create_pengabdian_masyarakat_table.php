@@ -14,8 +14,13 @@ return new class extends Migration
         Schema::create('pengabdian_masyarakat', function (Blueprint $table) {
             $table->id();
             $table->foreignId('mahasiswa_id')->constrained('mahasiswa')->cascadeOnDelete();
-            $table->string('nama_kegiatan');
-            $table->year('tahun');
+            $table->string('judul_pkm');
+            $table->string('pendanaan')->nullable();
+            $table->string('tahun_pelaksanaan')->nullable();
+            $table->string('anggota_tim')->nullable();
+            $table->text('deskripsi')->nullable();
+            $table->string('file_path')->nullable();
+            $table->string('status')->default('pending');
             $table->timestamps();
         });
     }

@@ -17,9 +17,15 @@ return new class extends Migration
             $table->foreignId('prodi_id')->constrained('prodi')->cascadeOnDelete();
             $table->string('nim')->unique();
             $table->string('nama');
-            $table->string('tempat_lahir');
-            $table->date('tanggal_lahir');
-            $table->string('tahun_masuk');
+            $table->string('nik')->nullable();
+            $table->enum('jenis_kelamin', ['L', 'P'])->nullable();
+            $table->string('agama')->nullable();
+            $table->text('alamat')->nullable();
+            $table->string('tempat_tanggal_lahir')->nullable();
+            $table->string('tahun_masuk')->nullable();
+            $table->string('angkatan')->nullable();
+            $table->date('tanggal_masuk')->nullable();
+            $table->string('status_mahasiswa')->nullable();
             $table->date('tanggal_lulus')->nullable();
             $table->string('gelar')->nullable();
             $table->string('no_ijazah')->nullable();

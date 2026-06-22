@@ -13,10 +13,16 @@ return new class extends Migration
     {
         Schema::create('verifikasi_skpi', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('skpi_id')->constrained('skpi')->cascadeOnDelete();
-            $table->foreignId('user_id')->constrained('users')->cascadeOnDelete();
-            $table->enum('tahapan', ['prodi', 'fakultas', 'pusat_bahasa', 'biro_akademik', 'bpm', 'rektorat']);
-            $table->enum('status', ['pending', 'valid', 'tidak_valid'])->default('pending');
+            $table->foreignId('mahasiswa_id')->nullable()->constrained('mahasiswa')->onDelete('cascade');
+            $table->foreignId('prodi_id')->nullable()->constrained('prodi')->onDelete('cascade');
+            $table->string('verifiable_type')->nullable();
+            $table->unsignedBigInteger('verifiable_id')->nullable();
+            $table->string('level_verifikasi')->nullable();
+            $table->string('status')->default('pending');
+            $table->foreignId('verifikator_id')->nullable()->constrained('users')->onDelete('set null');
+            $table->string('verifikator_role')->nullable();
+            $table->timestamp('tanggal_pengajuan')->nullable();
+            $table->timestamp('tanggal_verifikasi')->nullable();
             $table->text('catatan')->nullable();
             $table->timestamps();
         });

@@ -15,8 +15,13 @@ return new class extends Migration
             $table->id();
             $table->foreignId('mahasiswa_id')->constrained('mahasiswa')->cascadeOnDelete();
             $table->string('nama_sertifikasi');
-            $table->string('lembaga_penerbit');
-            $table->year('tahun');
+            $table->string('nomor_sertifikat')->nullable();
+            $table->string('penerbit')->nullable();
+            $table->date('tanggal_terbit')->nullable();
+            $table->date('tanggal_kadaluarsa')->nullable();
+            $table->text('deskripsi')->nullable();
+            $table->string('file_path')->nullable();
+            $table->string('status')->default('pending');
             $table->timestamps();
         });
     }

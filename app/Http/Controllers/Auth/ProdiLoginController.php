@@ -17,13 +17,13 @@ class ProdiLoginController extends Controller
     public function login(Request $request)
     {
         $credentials = $request->only('email', 'password');
-        $credentials['is_activated'] = 1; // tambah syarat aktif
+        $credentials['role'] = 'prodi';
 
         if (Auth::guard('prodi')->attempt($credentials, $request->filled('remember'))) {
             return redirect()->intended(route('prodi.dashboard'));
         }
 
-        return back()->withErrors(['email' => 'Email atau password prodi salah, atau akun belum aktif.']);
+        return back()->withErrors(['email' => 'Email atau password prodi salah, atau Anda bukan Prodi.']);
     }
 
 

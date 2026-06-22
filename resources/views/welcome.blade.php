@@ -6,10 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     
     {{-- SEO Meta Tags --}}
-    <title>SKPI UMPAR - Sistem Surat Keterangan Pendamping Ijazah | Universitas Muhammadiyah Parepare</title>
-    <meta name="description" content="Sistem Informasi SKPI (Surat Keterangan Pendamping Ijazah) Universitas Muhammadiyah Parepare. Kelola prestasi, sertifikasi, dan dokumen akademik mahasiswa secara digital.">
-    <meta name="keywords" content="SKPI, UMPAR, Universitas Muhammadiyah Parepare, Surat Keterangan Pendamping Ijazah, Diploma Supplement, Prestasi Mahasiswa, Sertifikasi Kompetensi, Sistem Akademik">
-    <meta name="author" content="Universitas Muhammadiyah Parepare">
+    <title>SKPI UNIDA - Sistem Surat Keterangan Pendamping Ijazah | Universitas Iskandar Muda</title>
+    <meta name="description" content="Sistem Informasi SKPI (Surat Keterangan Pendamping Ijazah) Universitas Iskandar Muda. Kelola prestasi, sertifikasi, dan dokumen akademik mahasiswa secara digital.">
+    <meta name="keywords" content="SKPI, UNIDA, Universitas Iskandar Muda, Surat Keterangan Pendamping Ijazah, Diploma Supplement, Prestasi Mahasiswa, Sertifikasi Kompetensi, Sistem Akademik">
+    <meta name="author" content="Universitas Iskandar Muda">
     <meta name="robots" content="index, follow">
     <meta name="language" content="Indonesian">
     <meta name="revisit-after" content="7 days">
@@ -18,17 +18,17 @@
     {{-- Open Graph / Facebook --}}
     <meta property="og:type" content="website">
     <meta property="og:url" content="{{ url('/') }}">
-    <meta property="og:title" content="SKPI UMPAR - Sistem Surat Keterangan Pendamping Ijazah">
-    <meta property="og:description" content="Sistem Informasi SKPI Universitas Muhammadiyah Parepare. Kelola prestasi, sertifikasi, dan dokumen akademik mahasiswa secara digital.">
+    <meta property="og:title" content="SKPI UNIDA - Sistem Surat Keterangan Pendamping Ijazah">
+    <meta property="og:description" content="Sistem Informasi SKPI Universitas Iskandar Muda. Kelola prestasi, sertifikasi, dan dokumen akademik mahasiswa secara digital.">
     <meta property="og:image" content="{{ asset('images/skpi_logo.png') }}">
-    <meta property="og:site_name" content="SKPI UMPAR">
+    <meta property="og:site_name" content="SKPI UNIDA">
     <meta property="og:locale" content="id_ID">
     
     {{-- Twitter Card --}}
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:url" content="{{ url('/') }}">
-    <meta name="twitter:title" content="SKPI UMPAR - Sistem Surat Keterangan Pendamping Ijazah">
-    <meta name="twitter:description" content="Sistem Informasi SKPI Universitas Muhammadiyah Parepare. Kelola prestasi, sertifikasi, dan dokumen akademik mahasiswa.">
+    <meta name="twitter:title" content="SKPI UNIDA - Sistem Surat Keterangan Pendamping Ijazah">
+    <meta name="twitter:description" content="Sistem Informasi SKPI Universitas Iskandar Muda. Kelola prestasi, sertifikasi, dan dokumen akademik mahasiswa.">
     <meta name="twitter:image" content="{{ asset('images/skpi_logo.png') }}">
     
     {{-- Favicon --}}
@@ -41,9 +41,9 @@
     {
         "@context": "https://schema.org",
         "@type": "EducationalOrganization",
-        "name": "Universitas Muhammadiyah Parepare",
-        "alternateName": "UMPAR",
-        "url": "https://skpi.umpar.ac.id",
+        "name": "Universitas Iskandar Muda",
+        "alternateName": "UNIDA",
+        "url": "https://skpi.unida-aceh.ac.id",
         "logo": "/images/skpi_logo.png",
         "description": "Sistem Informasi SKPI (Surat Keterangan Pendamping Ijazah) untuk mengelola prestasi dan sertifikasi mahasiswa.",
         "address": {
@@ -486,7 +486,7 @@
                 <img src="{{ asset('images/skpi_logo.png') }}" alt="SKPI Logo" style="height: 45px;">
                 <div>
                     <div class="logo-text-main">Education Web</div>
-                    <div class="logo-text-sub">SKPI UMPAR Digital Certificate System</div>
+                    <div class="logo-text-sub">SKPI UNIDA Digital Certificate System</div>
                 </div>
             </div>
 
@@ -502,14 +502,14 @@
                     <i class="fas fa-envelope"></i>
                     <div>
                         <strong>EMAIL US</strong>
-                        skpi@umpar.ac.id
+                        skpi@unida-aceh.ac.id
                     </div>
                 </div>
                 <div class="info-item">
                     <i class="fas fa-location-dot"></i>
                     <div>
                         <strong>LOCATE US</strong>
-                        Kampus UMPAR, Indonesia
+                        Kampus UNIDA, Indonesia
                     </div>
                 </div>
             </div>
@@ -521,7 +521,7 @@
         <div class="nav-inner">
             <div class="nav-brand">
                 <i class="fas fa-graduation-cap" style="font-size: 28px; color: #fff;"></i>
-                <span>SKPI UMPAR</span>
+                <span>SKPI UNIDA</span>
             </div>
 
             <!-- MENU DESKTOP -->
@@ -575,7 +575,7 @@
         <div class="hero-inner">
             <div class="hero-text">
                 <div class="hero-sub">Belum Registrasi Email Untuk Login?</div>
-                <h1 class="hero-title">Activasi Email Untuk Login<br>SKPI Umpar</h1>
+                <h1 class="hero-title">Activasi Email Untuk Login<br>SKPI Unida</h1>
                 <a href="{{ route('email.registration.form') }}" class="hero-btn">
                     Registrasi Email
                 </a>

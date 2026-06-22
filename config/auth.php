@@ -66,25 +66,25 @@ return [
         // Admin (tabel admin_users)
         'admin_users' => [
             'driver' => 'eloquent',
-            'model'  => App\Models\AdminUser::class,
+            'model'  => App\Models\User::class,
         ],
 
         // Operator Prodi (tabel prodi_users)
         'prodis' => [
             'driver' => 'eloquent',
-            'model'  => App\Models\ProdiUser::class,
+            'model'  => App\Models\User::class,
         ],
 
         // Operator Fakultas (tabel fakultas_users)
         'fakultas_users' => [
             'driver' => 'eloquent',
-            'model'  => App\Models\FakultasUser::class,
+            'model'  => App\Models\User::class,
         ],
 
         // Operator Pusat Bahasa (tabel pusat_bahasa_users)
         'pusat_bahasa_users' => [
             'driver' => 'eloquent',
-            'model'  => App\Models\PusatBahasaUser::class,
+            'model'  => App\Models\User::class,
         ],
     ],
 

@@ -11,8 +11,18 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('template_s_k_p_i_s', function (Blueprint $table) {
+        Schema::create('template_skpi', function (Blueprint $table) {
             $table->id();
+            $table->string('nama_pt')->nullable();
+            $table->string('alamat_pt')->nullable();
+            $table->string('bahasa_pengantar')->nullable();
+            $table->string('sk_pendirian')->nullable();
+            $table->string('status_akreditasi')->nullable();
+            $table->string('nomor_sk_akreditasi')->nullable();
+            $table->string('nomor_sk_pt')->nullable();
+            $table->text('persyaratan_penerimaan')->nullable();
+            $table->text('sistem_penilaian')->nullable();
+            $table->string('lama_studi_reguler')->nullable();
             $table->timestamps();
         });
     }
@@ -22,6 +32,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('template_s_k_p_i_s');
+        Schema::dropIfExists('template_skpi');
     }
 };

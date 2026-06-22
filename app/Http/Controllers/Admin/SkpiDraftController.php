@@ -210,7 +210,7 @@ class SkpiDraftController extends Controller
 
     /**
      * Helper: Generate nomor SKPI.
-     * Format: 001/SKPI/TI/UMPAR/2025
+     * Format: 001/SKPI/TI/UNIDA/2025
      */
     private function generateNomorSkpi($mahasiswa)
     {
@@ -221,7 +221,7 @@ class SkpiDraftController extends Controller
             ->count() + 1;
 
         return sprintf(
-            '%03d/SKPI/%s/UMPAR/%d',
+            '%03d/SKPI/%s/UNIDA/%d',
             $count,
             strtoupper($mahasiswa->prodi->kode_prodi ?? 'XX'),
             $tahun

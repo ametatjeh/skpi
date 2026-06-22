@@ -2,7 +2,7 @@
 <html lang="id">
 
 <head>
-    <title>Aktivasi Akun SKPI - UMPAR</title>
+    <title>Aktivasi Akun SKPI - UNIDA</title>
     <link rel="icon" type="image/png" href="{{ asset('images/skpi_logo.png') }}">
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />

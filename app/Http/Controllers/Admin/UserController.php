@@ -40,49 +40,23 @@ class UserController extends Controller
                     ->orWhere('mahasiswa.nim', 'like', "%{$search}%");
             });
 
-        $prodi = DB::table('prodi_users')->select(
-            'prodi_users.id',
-            DB::raw("prodi_users.name COLLATE utf8mb4_unicode_ci as name"),
-            DB::raw("prodi_users.email COLLATE utf8mb4_unicode_ci as email"),
-            'prodi_users.prodi_id as identifier',
-            DB::raw("'prodi' COLLATE utf8mb4_unicode_ci as user_type"),
-            DB::raw("'prodi' COLLATE utf8mb4_unicode_ci as role")
+        $otherUsers = DB::table('users')->select(
+            'users.id',
+            DB::raw("users.name COLLATE utf8mb4_unicode_ci as name"),
+            DB::raw("users.email COLLATE utf8mb4_unicode_ci as email"),
+            DB::raw("COALESCE(users.prodi_id, users.fakultas_id) as identifier"),
+            DB::raw("users.role COLLATE utf8mb4_unicode_ci as user_type"),
+            DB::raw("users.role COLLATE utf8mb4_unicode_ci as role")
         )
+            ->whereIn('users.role', ['prodi', 'fakultas', 'pusat_bahasa'])
             ->when($search, function ($q) use ($search) {
-                $q->where('prodi_users.name', 'like', "%{$search}%")
-                    ->orWhere('prodi_users.email', 'like', "%{$search}%");
+                $q->where(function ($sub) use ($search) {
+                    $sub->where('users.name', 'like', "%{$search}%")
+                        ->orWhere('users.email', 'like', "%{$search}%");
+                });
             });
 
-        $fakultas = DB::table('fakultas_users')->select(
-            'fakultas_users.id',
-            DB::raw("fakultas_users.name COLLATE utf8mb4_unicode_ci as name"),
-            DB::raw("fakultas_users.email COLLATE utf8mb4_unicode_ci as email"),
-            'fakultas_users.fakultas_id as identifier',
-            DB::raw("'fakultas' COLLATE utf8mb4_unicode_ci as user_type"),
-            DB::raw("'fakultas' COLLATE utf8mb4_unicode_ci as role")
-        )
-            ->when($search, function ($q) use ($search) {
-                $q->where('fakultas_users.name', 'like', "%{$search}%")
-                    ->orWhere('fakultas_users.email', 'like', "%{$search}%");
-            });
-
-        $bahasa = DB::table('pusat_bahasa_users')->select(
-            'pusat_bahasa_users.id',
-            DB::raw("pusat_bahasa_users.name COLLATE utf8mb4_unicode_ci as name"),
-            DB::raw("pusat_bahasa_users.email COLLATE utf8mb4_unicode_ci as email"),
-            DB::raw("NULL as identifier"),
-            DB::raw("'pusat_bahasa' COLLATE utf8mb4_unicode_ci as user_type"),
-            DB::raw("pusat_bahasa_users.role COLLATE utf8mb4_unicode_ci as role")
-        )
-            ->when($search, function ($q) use ($search) {
-                $q->where('pusat_bahasa_users.name', 'like', "%{$search}%")
-                    ->orWhere('pusat_bahasa_users.email', 'like', "%{$search}%");
-            });
-
-        $unionQuery = $mahasiswa
-            ->unionAll($prodi)
-            ->unionAll($fakultas)
-            ->unionAll($bahasa);
+        $unionQuery = $mahasiswa->unionAll($otherUsers);
 
         $paginatedUsers = $unionQuery->paginate(10);
 
@@ -140,7 +114,7 @@ class UserController extends Controller
     {
         $request->validate([
             'name' => 'required|string|max:255',
-            'email' => 'required|email|unique:prodi_users,email,' . $id,
+            'email' => 'required|email|unique:users,email,' . $id,
             'prodi_id' => 'required|exists:prodi,id',
             'password' => 'nullable|min:6|confirmed',
         ]);
@@ -174,7 +148,7 @@ class UserController extends Controller
     {
         $request->validate([
             'name' => 'required|string|max:255',
-            'email' => 'required|email|unique:fakultas_users,email,' . $id,
+            'email' => 'required|email|unique:users,email,' . $id,
             'fakultas_id' => 'required|exists:fakultas,id',
             'password' => 'nullable|min:6|confirmed',
         ]);
@@ -208,7 +182,7 @@ class UserController extends Controller
     {
         $request->validate([
             'name' => 'required|string|max:255',
-            'email' => 'required|email|unique:pusat_bahasa_users,email,' . $id,
+            'email' => 'required|email|unique:users,email,' . $id,
             'password' => 'nullable|min:6|confirmed',
         ]);
 
@@ -266,7 +240,7 @@ class UserController extends Controller
     {
         $request->validate([
             'name' => 'required|string|max:255',
-            'email' => 'required|email|unique:prodi_users,email',
+            'email' => 'required|email|unique:users,email',
             'password' => 'required|min:6',
             'prodi_id' => 'required|exists:prodi,id',
         ]);
@@ -360,7 +334,7 @@ class UserController extends Controller
     {
         $request->validate([
             'name' => 'required|string|max:255',
-            'email' => 'required|email|unique:fakultas_users,email',
+            'email' => 'required|email|unique:users,email',
             'password' => 'required|min:6',
             'fakultas_id' => 'required|exists:fakultas,id',
         ]);
@@ -448,7 +422,7 @@ class UserController extends Controller
     {
         $request->validate([
             'name' => 'required|string|max:255',
-            'email' => 'required|email|unique:pusat_bahasa_users,email',
+            'email' => 'required|email|unique:users,email',
             'password' => 'required|min:6',
         ]);
 

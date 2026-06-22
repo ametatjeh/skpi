@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>SKPI Digital UMPAR</title>
+    <title>SKPI Digital UNIDA</title>
     <link rel="icon" type="image/png" href="{{ asset('images/skpi_logo.png') }}">
 
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800;900&display=swap" rel="stylesheet" />
@@ -408,8 +408,8 @@
     <nav class="navbar">
         <div class="navbar-inner">
             <a href="#" class="logo-group">
-                <img src="https://via.placeholder.com/40x40.png?text=Logo" class="logo-img" alt="Logo UMPAR">
-                <span class="logo-title">SKPI UMPAR</span>
+                <img src="https://via.placeholder.com/40x40.png?text=Logo" class="logo-img" alt="Logo UNIDA">
+                <span class="logo-title">SKPI UNIDA</span>
             </a>
 
             <div class="menu">
@@ -461,7 +461,7 @@
         </div>
 
         <h1 class="hero-title">
-            Verifikasi dan Akses <span>SKPI Digital</span> UMPAR
+            Verifikasi dan Akses <span>SKPI Digital</span> UNIDA
         </h1>
 
         <p class="hero-desc">

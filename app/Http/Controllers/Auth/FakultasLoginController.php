@@ -21,9 +21,9 @@ class FakultasLoginController extends Controller
         ]);
 
         $credentials = [
-            'email'        => $request->email,
-            'password'     => $request->password,
-            'is_activated' => 1
+            'email'    => $request->email,
+            'password' => $request->password,
+            'role'     => 'fakultas'
         ];
 
         if (Auth::guard('fakultas')->attempt($credentials, $request->remember)) {
@@ -31,7 +31,7 @@ class FakultasLoginController extends Controller
         }
 
         return back()->withErrors([
-            'email' => 'Email atau password salah, atau akun belum diaktifkan.'
+            'email' => 'Email atau password salah, atau Anda bukan Fakultas.'
         ]);
     }
 

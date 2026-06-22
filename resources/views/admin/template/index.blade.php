@@ -271,7 +271,7 @@
                         <label>Nama Perguruan Tinggi</label>
                         <input type="text" name="nama_pt" class="form-control"
                             value="{{ old('nama_pt', $template->nama_pt) }}"
-                            placeholder="Contoh: Universitas Muhammadiyah Parepare">
+                            placeholder="Contoh: Universitas Iskandar Muda">
                     </div>
 
                     <div class="form-group">

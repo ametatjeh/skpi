@@ -9,14 +9,14 @@ class PusatBahasaUser extends Authenticatable
 {
     use Notifiable;
 
-    protected $table = 'pusat_bahasa_users';
+    protected $table = 'users';
 
     protected $fillable = [
         'name',
         'email',
         'password',
         'is_activated',
-        'role', // tambahkan ini kalau memang ada kolomnya
+        'role',
     ];
 
     protected $hidden = [
@@ -27,4 +27,15 @@ class PusatBahasaUser extends Authenticatable
     protected $casts = [
         'is_activated' => 'boolean',
     ];
+
+    protected static function boot()
+    {
+        parent::boot();
+        static::addGlobalScope('role', function ($builder) {
+            $builder->where('role', 'pusat_bahasa');
+        });
+        static::creating(function ($model) {
+            $model->role = 'pusat_bahasa';
+        });
+    }
 }

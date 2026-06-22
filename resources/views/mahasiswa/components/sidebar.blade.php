@@ -289,7 +289,7 @@
                 <i class="fas fa-user-graduate"></i>
             </div>
             <div>
-                <div class="sidebar-title">SKPI UMPAR</div>
+                <div class="sidebar-title">SKPI UNIDA</div>
                 <div class="sidebar-subtitle">Portal Mahasiswa</div>
             </div>
         </div>

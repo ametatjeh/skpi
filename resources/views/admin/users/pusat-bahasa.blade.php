@@ -570,7 +570,7 @@
 
                     <div class="form-group">
                         <label>Email <span style="color: #ef4444;">*</span></label>
-                        <input type="email" name="email" class="form-control" placeholder="contoh@umpar.ac.id"
+                        <input type="email" name="email" class="form-control" placeholder="contoh@unida-aceh.ac.id"
                             value="{{ old('email') }}" required>
                         <small style="color: #64748b; font-size: 12px; display: block; margin-top: 5px;">
                             Email ini digunakan untuk login ke sistem

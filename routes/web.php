@@ -20,9 +20,13 @@ use Illuminate\Support\Facades\Auth;
 Route::get('/sitemap.xml', [App\Http\Controllers\SitemapController::class, 'index'])->name('sitemap');
 
 // ===============================================
-// HALAMAN AWAL
+// HALAMAN AWAL & VERIFIKASI SKPI
 // ===============================================
 Route::get('/', fn() => view('welcome'))->name('home');
+
+Route::get('/skpi/verify/{nomor_skpi}', [\App\Http\Controllers\VerificationController::class, 'verify'])
+    ->where('nomor_skpi', '.*')
+    ->name('skpi.verify');
 
 // ===============================================
 // HALAMAN PILIHAN LOGIN (HUB)

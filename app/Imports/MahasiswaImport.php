@@ -130,7 +130,7 @@ class MahasiswaImport implements ToCollection, SkipsOnFailure
             $angkatan = $this->getValue($values, 'angkatan');
 
             // Generate email (hanya untuk data mahasiswa, tidak create user)
-            $email = !empty($email) ? $email : $nim . '@umpar.ac.id';
+            $email = !empty($email) ? $email : $nim . '@unida-aceh.ac.id';
             
             // Parsing Data Helper
             $jkClean = strtoupper(trim((string) ($jk ?? 'L')));

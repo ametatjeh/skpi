@@ -116,9 +116,15 @@
 
     <div class="page-header">
         <h1>Detail SKPI Mahasiswa</h1>
-        <a href="{{ route('fakultas.draft-skpi.preview', $draft->id) }}">
-            Kembali ke Preview Draft
-        </a>
+        @if($draft)
+            <a href="{{ route('fakultas.draft-skpi.preview', $draft->id) }}">
+                Kembali ke Preview Draft
+            </a>
+        @else
+            <a href="{{ route('fakultas.verifikasi.index') }}">
+                Kembali ke Daftar Verifikasi
+            </a>
+        @endif
     </div>
 
     @if (session('success'))

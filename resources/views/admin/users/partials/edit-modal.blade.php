@@ -142,7 +142,7 @@
                     <div class="form-group">
                         <label>Tanggal Masuk <span class="required">*</span></label>
                         <input type="date" name="tanggal_masuk" class="form-control"
-                            value="{{ $user->tanggal_masuk }}" required>
+                            value="{{ $user->tanggal_masuk ? \Carbon\Carbon::parse($user->tanggal_masuk)->format('Y-m-d') : '' }}" required>
                     </div>
 
                     <div class="form-group">
@@ -174,7 +174,7 @@
                     <div class="form-group">
                         <label>Tanggal Lulus</label>
                         <input type="date" name="tanggal_lulus" class="form-control"
-                            value="{{ $user->tanggal_lulus }}">
+                            value="{{ $user->tanggal_lulus ? \Carbon\Carbon::parse($user->tanggal_lulus)->format('Y-m-d') : '' }}">
                     </div>
 
                     <div class="form-group">

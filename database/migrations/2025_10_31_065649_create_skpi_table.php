@@ -22,7 +22,8 @@ return new class extends Migration
                 'diterjemahkan',
                 'disahkan',
                 'dicetak',
-                'selesai'
+                'selesai',
+                'ditolak'
             ])->default('diajukan');
             $table->text('catatan')->nullable();
             $table->date('tanggal_pengajuan');

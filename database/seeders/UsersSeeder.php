@@ -10,18 +10,23 @@ class UsersSeeder extends Seeder
 {
     public function run(): void
     {
+        $ftId = DB::table('fakultas')->where('nama_fakultas', 'Fakultas Teknik')->value('id');
+        $tiId = DB::table('prodi')->where('nama_prodi', 'Teknik Informatika')->value('id');
+
         $users = [
-            ['name' => 'Ahmad Mahasiswa', 'email' => 'ahmad@student.umpar.ac.id', 'role' => 'mahasiswa'],
-            ['name' => 'Admin Prodi Teknik Informatika', 'email' => 'prodi.ti@umpar.ac.id', 'role' => 'prodi'],
-            ['name' => 'Wakil Dekan I FT', 'email' => 'wd1.ft@umpar.ac.id', 'role' => 'fakultas'],
-            ['name' => 'Petugas Pusat Bahasa', 'email' => 'pusatbahasa@umpar.ac.id', 'role' => 'pusat_bahasa'],
-            ['name' => 'Biro Akademik UMPAR', 'email' => 'biroakademik@umpar.ac.id', 'role' => 'biro_akademik'],
-            ['name' => 'Petugas BPM', 'email' => 'bpm@umpar.ac.id', 'role' => 'bpm'],
-            ['name' => 'Rektor UMPAR', 'email' => 'rektor@umpar.ac.id', 'role' => 'rektorat']
+            ['name' => 'Ahmad Mahasiswa', 'email' => 'ahmad@student.unida-aceh.ac.id', 'role' => 'mahasiswa', 'prodi_id' => $tiId, 'fakultas_id' => $ftId],
+            ['name' => 'Admin Prodi Teknik Informatika', 'email' => 'prodi.ti@unida-aceh.ac.id', 'role' => 'prodi', 'prodi_id' => $tiId, 'fakultas_id' => $ftId],
+            ['name' => 'Wakil Dekan I FT', 'email' => 'wd1.ft@unida-aceh.ac.id', 'role' => 'fakultas', 'prodi_id' => null, 'fakultas_id' => $ftId],
+            ['name' => 'Petugas Pusat Bahasa', 'email' => 'pusatbahasa@unida-aceh.ac.id', 'role' => 'pusat_bahasa', 'prodi_id' => null, 'fakultas_id' => null],
+            ['name' => 'Biro Akademik UNIDA', 'email' => 'biroakademik@unida-aceh.ac.id', 'role' => 'biro_akademik', 'prodi_id' => null, 'fakultas_id' => null],
+            ['name' => 'Petugas BPM', 'email' => 'bpm@unida-aceh.ac.id', 'role' => 'bpm', 'prodi_id' => null, 'fakultas_id' => null],
+            ['name' => 'Rektor UNIDA', 'email' => 'rektor@unida-aceh.ac.id', 'role' => 'rektorat', 'prodi_id' => null, 'fakultas_id' => null]
         ];
 
         foreach ($users as $user) {
             DB::table('users')->insert([
+                'prodi_id' => $user['prodi_id'],
+                'fakultas_id' => $user['fakultas_id'],
                 'name' => $user['name'],
                 'email' => $user['email'],
                 'password' => Hash::make('password123'),

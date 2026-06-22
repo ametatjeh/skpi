@@ -14,9 +14,13 @@ return new class extends Migration
         Schema::create('prestasi', function (Blueprint $table) {
             $table->id();
             $table->foreignId('mahasiswa_id')->constrained('mahasiswa')->cascadeOnDelete();
-            $table->string('nama_kegiatan');
-            $table->enum('tingkat', ['lokal', 'nasional', 'internasional']);
-            $table->year('tahun');
+            $table->string('judul_prestasi');
+            $table->enum('tingkat', ['lokal', 'nasional', 'internasional'])->nullable();
+            $table->string('penyelenggara')->nullable();
+            $table->date('tanggal_perolehan')->nullable();
+            $table->text('deskripsi')->nullable();
+            $table->string('file_path')->nullable();
+            $table->string('status')->default('pending');
             $table->timestamps();
         });
     }

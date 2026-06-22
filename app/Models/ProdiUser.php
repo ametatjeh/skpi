@@ -6,7 +6,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 
 class ProdiUser extends Authenticatable
 {
-    protected $table = 'prodi_users';
+    protected $table = 'users';
 
     protected $fillable = [
         'prodi_id',
@@ -16,6 +16,7 @@ class ProdiUser extends Authenticatable
         'is_activated',
         'activation_token',
         'activation_token_expires_at',
+        'role'
     ];
 
     protected $hidden = [
@@ -27,6 +28,17 @@ class ProdiUser extends Authenticatable
         'activation_token_expires_at' => 'datetime',
         'is_activated' => 'boolean',
     ];
+
+    protected static function boot()
+    {
+        parent::boot();
+        static::addGlobalScope('role', function ($builder) {
+            $builder->where('role', 'prodi');
+        });
+        static::creating(function ($model) {
+            $model->role = 'prodi';
+        });
+    }
 
     public function prodi()
     {

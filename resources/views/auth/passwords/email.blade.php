@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Lupa Password - SKPI UMPAR</title>
+    <title>Lupa Password - SKPI UNIDA</title>
     <link rel="icon" type="image/png" href="{{ asset('images/skpi_logo.png') }}">
 
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap"
@@ -178,7 +178,7 @@
             <div class="form-group">
                 <label for="email">Email atau NIM</label>
                 <input type="text" class="form-control" id="email" name="email"
-                    value="{{ old('email') }}" placeholder="Contoh: 20010101 atau email@umpar.ac.id" required autofocus>
+                    value="{{ old('email') }}" placeholder="Contoh: 20010101 atau email@unida-aceh.ac.id" required autofocus>
             </div>
 
             <button type="submit" class="btn-primary">

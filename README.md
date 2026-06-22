@@ -1,7 +1,7 @@
 # SKPI Kampus - Multi-Level Approval System
 
 <p align="center">
-  <img src="public/images/logo_umpar-removebg-preview.png" alt="SKPI UMPAR Logo" width="120">
+  <img src="public/images/logo_unida-removebg-preview.png" alt="SKPI UNIDA Logo" width="120">
 </p>
 
 <p align="center">
@@ -106,7 +106,7 @@ php artisan key:generate
 # DB_CONNECTION=mysql
 # DB_HOST=127.0.0.1
 # DB_PORT=3306
-# DB_DATABASE=skpi_umpar
+# DB_DATABASE=skpi_unida
 # DB_USERNAME=root
 # DB_PASSWORD=
 
@@ -204,7 +204,7 @@ php artisan serve
 ## 📁 Struktur Proyek
 
 ```
-skpi_umpar/
+skpi_unida/
 ├── app/
 │   ├── Http/
 │   │   └── Controllers/
@@ -321,7 +321,7 @@ This project is open-sourced under the [MIT license](https://opensource.org/lice
 ## 👥 Kontributor
 
 - **Developer:** Gilbransyah
-- **Institution:** Universitas Muhammadiyah Parepare (UMPAR)
+- **Institution:** Universitas Iskandar Muda (UNIDA)
 
 ---
 

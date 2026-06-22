@@ -25,19 +25,19 @@ class DummyDataSeeder extends Seeder
         $mahasiswaData = [
             [
                 'name' => 'Budi Santoso',
-                'email' => 'budi@student.umpar.ac.id',
+                'email' => 'budi@student.unida-aceh.ac.id',
                 'nim' => '215180002',
                 'prodi_id' => 1
             ],
             [
                 'name' => 'Siti Rahma',
-                'email' => 'siti@student.umpar.ac.id',
+                'email' => 'siti@student.unida-aceh.ac.id',
                 'nim' => '215180003',
                 'prodi_id' => 1
             ],
             [
                 'name' => 'Andi Wijaya',
-                'email' => 'andi@student.umpar.ac.id',
+                'email' => 'andi@student.unida-aceh.ac.id',
                 'nim' => '215180004',
                 'prodi_id' => 1
             ]
@@ -121,7 +121,7 @@ class DummyDataSeeder extends Seeder
         // 4. BUAT DATA SERTIFIKASI
         $sertifikasiData = [
             // Budi Santoso
-            ['mahasiswa_id' => $mahasiswaIds[0], 'nama_sertifikasi' => 'TOEFL ITP', 'lembaga_penerbit' => 'Lembaga Bahasa UMPAR', 'tahun' => 2022],
+            ['mahasiswa_id' => $mahasiswaIds[0], 'nama_sertifikasi' => 'TOEFL ITP', 'lembaga_penerbit' => 'Lembaga Bahasa UNIDA', 'tahun' => 2022],
             ['mahasiswa_id' => $mahasiswaIds[0], 'nama_sertifikasi' => 'AWS Cloud Practitioner', 'lembaga_penerbit' => 'Amazon Web Services', 'tahun' => 2023],
 
             // Siti Rahma
@@ -167,7 +167,7 @@ class DummyDataSeeder extends Seeder
             ['mahasiswa_id' => $mahasiswaIds[2], 'status' => 'diajukan', 'catatan' => null, 'tanggal_pengajuan' => now()->subDays(3)],
 
             // Status: DIVERIFIKASI_PRODI (sudah disetujui)
-            ['mahasiswa_id' => $mahasiswaIds[0], 'status' => 'diverifikasi_prodi', 'catatan' => 'Data sudah lengkap dan valid', 'tanggal_pengajuan' => now()->subDays(10), 'nomor_skpi' => 'SKPI-UMPAR-2024-TI-0001'],
+            ['mahasiswa_id' => $mahasiswaIds[0], 'status' => 'diverifikasi_prodi', 'catatan' => 'Data sudah lengkap dan valid', 'tanggal_pengajuan' => now()->subDays(10), 'nomor_skpi' => 'SKPI-UNIDA-2024-TI-0001'],
 
             // Status: DITOLAK (sudah ditolak)
             ['mahasiswa_id' => $mahasiswaIds[1], 'status' => 'ditolak', 'catatan' => 'Data prestasi belum dilengkapi dengan bukti yang valid', 'tanggal_pengajuan' => now()->subDays(7)],
@@ -199,7 +199,7 @@ class DummyDataSeeder extends Seeder
         $this->command->info('• Pengabdian: ' . DB::table('pengabdian_masyarakat')->count());
         $this->command->info('================================');
         $this->command->info('🔑 LOGIN UNTUK TESTING:');
-        $this->command->info('Prodi: prodi.ti@umpar.ac.id / password');
-        $this->command->info('Mahasiswa: budi@student.umpar.ac.id / password');
+        $this->command->info('Prodi: prodi.ti@unida-aceh.ac.id / password');
+        $this->command->info('Mahasiswa: budi@student.unida-aceh.ac.id / password');
     }
 }

@@ -858,7 +858,7 @@
                 </div>
                 
                 @if($isDraftEligible)
-                    <a href="{{ route('prodi.draft-skpi.create', ['mahasiswa_id' => $mahasiswa->id]) }}" class="btn-create-draft">
+                    <a href="{{ route('prodi.draft-skpi.create', ['verifikasi_id' => $verifikasi->id]) }}" class="btn-create-draft">
                         <i class="fas fa-file-signature"></i> Buat Draft SKPI
                     </a>
                 @endif

@@ -130,19 +130,19 @@
 
     <!-- HEADER -->
     <div class="kop-wrap">
-        <img src="{{ public_path('images/logo_umpar-removebg-preview.png') }}" class="kop-logo">
+        <img src="{{ public_path('images/logo_unida-removebg-preview.png') }}" class="kop-logo">
 
         <div>
             <div class="kop-title">{{ $templateSkpi->nama_pt ?? 'UNIVERSITAS MUHAMMADIYAH PAREPARE' }}</div>
             <div class="kop-address">
                 {{ $templateSkpi->alamat_pt ?? 'Jl. Jend. Ahmad Yani KM. 6 Parepare 91131 Sulawesi Selatan, Indonesia' }}<br>
-                Tel: (0421) 22757 - Website: www.umpar.ac.id
+                Tel: (0651) 44413 - Website: www.unida-aceh.ac.id
             </div>
         </div>
     </div>
 
     <div class="nomor-kanan-box">
-        Nomor : {{ $arsip->nomor_skpi ?? 'SKPI/UMPAR/2025/FT-00001' }}
+        Nomor : {{ $arsip->nomor_skpi ?? 'SKPI/UNIDA/2025/FT-00001' }}
     </div>
 
     <div class="hr-bold"></div>
@@ -235,7 +235,7 @@
             <td>
                 <span class="label-cell">NAMA PERGURUAN TINGGI</span>
                 <span class="en-label">/ Name of Institution</span><br>
-                <div class="value-bg">{{ $templateSkpi->nama_pt ?? 'Universitas Muhammadiyah Parepare' }}</div>
+                <div class="value-bg">{{ $templateSkpi->nama_pt ?? 'Universitas Iskandar Muda' }}</div>
             </td>
             <td>
                 <span class="label-cell">BAHASA PENGANTAR KULIAH</span><br>

@@ -404,7 +404,7 @@
         
         {{-- Footer --}}
         <div class="footer">
-            <p>Dokumen ini digenerate secara otomatis oleh Sistem SKPI UMPAR</p>
+            <p>Dokumen ini digenerate secara otomatis oleh Sistem SKPI UNIDA</p>
             <p>{{ $tanggalCetak }} | Halaman 1</p>
         </div>
     </div>

@@ -37,7 +37,7 @@
             content: '';
             position: fixed;
             inset: 0;
-            background-image: url('{{ asset('images/logo_umpar.jpg') }}');
+            background-image: url('{{ asset('images/logo_unida.jpg') }}');
             background-size: 200px auto;
             background-repeat: space;
             background-position: center;

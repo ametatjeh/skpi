@@ -16,6 +16,7 @@ class DatabaseSeeder extends Seeder
             CplSeeder::class,
             PendukungSeeder::class,
             SkpiSeeder::class,
+            SettingSeeder::class,
         ]);
     }
 }

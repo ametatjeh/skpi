@@ -241,7 +241,7 @@
             <i class="fas fa-university"></i>
         </div>
         <div>
-            <div class="fakultas-sidebar-title">SKPI UMPAR</div>
+            <div class="fakultas-sidebar-title">SKPI UNIDA</div>
             <div class="fakultas-sidebar-subtitle">Dashboard Fakultas</div>
         </div>
     </div>
@@ -290,7 +290,7 @@
         </div>
 
         <div class="fakultas-sidebar-actions">
-            <a href="#" class="fakultas-sidebar-btn fakultas-sidebar-btn-profile">
+            <a href="{{ route('fakultas.profile.edit') }}" class="fakultas-sidebar-btn fakultas-sidebar-btn-profile">
                 <i class="fas fa-cog"></i> Pengaturan
             </a>
 

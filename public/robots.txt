@@ -15,7 +15,7 @@ Disallow: /storage/
 Disallow: /api/
 
 # Sitemap location
-Sitemap: https://skpi.umpar.ac.id/sitemap.xml
+Sitemap: https://skpi.unida-aceh.ac.id/sitemap.xml
 
 # Crawl-delay (optional, be gentle on server)
 Crawl-delay: 10

@@ -8,7 +8,8 @@ use App\Http\Controllers\Prodi\{
     LaporanProdiController,
     ApprovalController,
     ExportProdiController,
-    ProdiCplController
+    ProdiCplController,
+    PengaturanController
 };
 
 // Semua route dalam group ini butuh login via guard:prodi
@@ -19,6 +20,13 @@ Route::middleware(['auth:prodi'])
 
         // ===== DASHBOARD =====
         Route::get('/dashboard', [DashboardProdiController::class, 'index'])->name('dashboard');
+
+        // ===== PENGATURAN AKUN =====
+        Route::prefix('pengaturan')->name('pengaturan.')->group(function () {
+            Route::get('/', [PengaturanController::class, 'index'])->name('index');
+            Route::put('/profile', [PengaturanController::class, 'updateProfile'])->name('profile.update');
+            Route::put('/password', [PengaturanController::class, 'updatePassword'])->name('password.update');
+        });
 
         // ===== VERIFIKASI =====
         Route::get('verifikasi', [VerifikasiProdiController::class, 'index'])->name('verifikasi.index');
@@ -47,7 +55,7 @@ Route::middleware(['auth:prodi'])
                 Route::get('create', [ProdiCplController::class, 'create'])->name('create');
                 Route::post('store', [ProdiCplController::class, 'store'])->name('store');
                 Route::get('{id}/edit', [ProdiCplController::class, 'edit'])->name('edit');
-                Route::post('{id}/update', [ProdiCplController::class, 'update'])->name('update');
+                Route::put('{id}/update', [ProdiCplController::class, 'update'])->name('update');
                 Route::post('{id}/delete', [ProdiCplController::class, 'destroy'])->name('destroy');
                 Route::get('api/statistics', [ProdiCplController::class, 'statistics'])->name('statistics');
             });

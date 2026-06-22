@@ -37,7 +37,7 @@
             content: '';
             position: fixed;
             inset: 0;
-            background-image: url('{{ asset('images/logo_umpar.jpg') }}');
+            background-image: url('{{ asset('images/logo_unida.jpg') }}');
             background-size: 200px auto;
             background-repeat: space;
             background-position: center;
@@ -459,7 +459,7 @@
 
             <p class="subtitle">
                 Selamat datang, <strong>{{ Auth::user()->name ?? 'Mahasiswa' }}</strong>.
-                Silakan lengkapi data non-akademik Anda sesuai dengan Petunjuk Teknis SKPI UMPAR 2025.
+                Silakan lengkapi data non-akademik Anda sesuai dengan Petunjuk Teknis SKPI UNIDA 2025.
             </p>
 
             <div class="status-card">

@@ -14,8 +14,11 @@ return new class extends Migration
         Schema::create('cpl', function (Blueprint $table) {
             $table->id();
             $table->foreignId('prodi_id')->constrained('prodi')->cascadeOnDelete();
+            $table->string('kode')->nullable();
             $table->enum('kategori', ['sikap', 'pengetahuan', 'keterampilan_umum', 'keterampilan_khusus']);
             $table->text('deskripsi');
+            $table->boolean('status')->default(true);
+            $table->integer('urutan')->default(0);
             $table->timestamps();
         });
     }

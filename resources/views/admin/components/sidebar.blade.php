@@ -144,6 +144,18 @@
             <span>SKPI per Prodi</span>
         </a>
 
+        <a href="{{ route('admin.qr.index') }}"
+            class="admin-menu-item {{ request()->routeIs('admin.qr.*') ? 'active' : '' }}">
+            <i class="fas fa-qrcode"></i>
+            <span>Pengaturan QR Code</span>
+        </a>
+
+        <a href="{{ route('admin.blanko.index') }}"
+            class="admin-menu-item {{ request()->routeIs('admin.blanko.*') ? 'active' : '' }}">
+            <i class="fas fa-copy"></i>
+            <span>Stok Blanko</span>
+        </a>
+
         <!-- User -->
         <div class="admin-menu-section">
             <i class="fas fa-user-shield"></i>

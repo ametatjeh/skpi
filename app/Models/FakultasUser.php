@@ -10,7 +10,7 @@ class FakultasUser extends Authenticatable
     use Notifiable;
 
     // Penamaan tabel di database
-    protected $table = 'fakultas_users';
+    protected $table = 'users';
 
     // Field yang boleh diisi/assign massal
     protected $fillable = [
@@ -21,6 +21,7 @@ class FakultasUser extends Authenticatable
         'is_activated',
         'activation_token',
         'activation_token_expires_at',
+        'role'
     ];
 
     // Field yang disembunyikan di serialisasi/jika dikirim ke API/json
@@ -34,6 +35,17 @@ class FakultasUser extends Authenticatable
         'is_activated' => 'boolean',
         'activation_token_expires_at' => 'datetime',
     ];
+
+    protected static function boot()
+    {
+        parent::boot();
+        static::addGlobalScope('role', function ($builder) {
+            $builder->where('role', 'fakultas');
+        });
+        static::creating(function ($model) {
+            $model->role = 'fakultas';
+        });
+    }
 
     // Relasi ke model Fakultas (jika ada)
     public function fakultas()

@@ -16,9 +16,10 @@ class AdminLoginController extends Controller
 
     public function login(Request $request)
     {
-        // Ambil data email, password, dan wajib ada kolom is_activated = 1
+        // Ambil data email, password
         $credentials = $request->only('email', 'password');
-        $credentials['is_activated'] = 1; // hanya akun aktif yang bisa login
+        // Anggap admin adalah biro_akademik
+        $credentials['role'] = 'biro_akademik';
 
         $remember = $request->filled('remember');
 
@@ -31,7 +32,7 @@ class AdminLoginController extends Controller
         }
 
         // Gagal login, kembali ke form dengan pesan error
-        return back()->withErrors(['email' => 'Email atau password admin salah, atau akun belum aktif.']);
+        return back()->withErrors(['email' => 'Email atau password admin salah.']);
     }
 
     public function logout(Request $request)

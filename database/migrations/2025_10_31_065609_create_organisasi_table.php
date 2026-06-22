@@ -15,8 +15,12 @@ return new class extends Migration
             $table->id();
             $table->foreignId('mahasiswa_id')->constrained('mahasiswa')->cascadeOnDelete();
             $table->string('nama_organisasi');
-            $table->string('jabatan');
-            $table->string('periode');
+            $table->string('posisi')->nullable();
+            $table->string('tahun_masuk')->nullable();
+            $table->string('tahun_keluar')->nullable();
+            $table->text('deskripsi_peran')->nullable();
+            $table->string('file_path')->nullable();
+            $table->string('status')->default('pending');
             $table->timestamps();
         });
     }

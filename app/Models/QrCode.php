@@ -30,9 +30,9 @@ class QrCode extends Model
 
     // ===== RELATIONSHIPS =====
 
-    public function skpi()
+    public function draftSkpi()
     {
-        return $this->belongsTo(Skpi::class);
+        return $this->belongsTo(DraftSkpi::class, 'skpi_id', 'id');
     }
 
     public function mahasiswa()

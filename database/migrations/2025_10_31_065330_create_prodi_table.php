@@ -20,6 +20,16 @@ return new class extends Migration
             $table->string('no_sk')->nullable();
             $table->string('jenjang_kkni')->nullable();
             $table->string('bahasa_pengantar')->default('Indonesia');
+            
+            // SKPI Specific Fields
+            $table->string('status_akreditasi')->nullable();
+            $table->string('nomor_sk_akreditasi')->nullable();
+            $table->string('akses_lanjut')->nullable();
+            $table->string('status_profesi')->nullable();
+            $table->string('jenis_jenjang')->nullable();
+            $table->string('nama_prodi_en')->nullable();
+            $table->string('kkni_level')->nullable();
+
             $table->timestamps();
         });
     }

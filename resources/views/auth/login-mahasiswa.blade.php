@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Login Mahasiswa - SKPI UMPAR</title>
+    <title>Login Mahasiswa - SKPI UNIDA</title>
     <link rel="icon" type="image/png" href="{{ asset('images/skpi_logo.png') }}">
 
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap"
@@ -553,7 +553,7 @@
         <div class="form-side">
             <div class="login-header">
                 <h2><i class="fa-solid fa-graduation-cap"></i> Login Mahasiswa</h2>
-                <p>Silakan login menggunakan akun SKPI Mahasiswa UMPAR.</p>
+                <p>Silakan login menggunakan akun SKPI Mahasiswa UNIDA.</p>
             </div>
 
             {{-- Warning: Cek Email setelah registrasi --}}

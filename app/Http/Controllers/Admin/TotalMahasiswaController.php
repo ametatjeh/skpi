@@ -208,7 +208,7 @@ class TotalMahasiswaController extends Controller
             fputcsv($file, [
                 '2241801025',
                 'Budi Setiawan',
-                'budi@umpar.ac.id',
+                'budi@unida-aceh.ac.id',
                 'Profesi Pendidikan Profesi Guru',
                 '7371234567890123',
                 'L',

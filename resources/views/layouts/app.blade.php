@@ -9,10 +9,10 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     
     <!-- SEO Meta Tags -->
-    <meta name="description" content="SKPI UMPAR - Sistem Surat Keterangan Pendamping Ijazah Universitas Muhammadiyah Parepare">
-    <meta name="author" content="Universitas Muhammadiyah Parepare">
+    <meta name="description" content="SKPI UNIDA - Sistem Surat Keterangan Pendamping Ijazah Universitas Iskandar Muda">
+    <meta name="author" content="Universitas Iskandar Muda">
 
-    <title>{{ config('app.name', 'SKPI UMPAR') }}</title>
+    <title>{{ config('app.name', 'SKPI UNIDA') }}</title>
     <link rel="icon" type="image/png" href="{{ asset('images/skpi_logo.png') }}">
     <link rel="apple-touch-icon" href="{{ asset('images/skpi_logo.png') }}">
 

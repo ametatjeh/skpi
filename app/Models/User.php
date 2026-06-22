@@ -11,6 +11,7 @@ class User extends Authenticatable
 
     protected $fillable = [
         'prodi_id',
+        'fakultas_id',
         'name',
         'email',
         'password',
@@ -48,5 +49,11 @@ class User extends Authenticatable
     public function prodi()
     {
         return $this->belongsTo(Prodi::class, 'prodi_id');
+    }
+
+    // Relasi ke fakultas
+    public function fakultas()
+    {
+        return $this->belongsTo(Fakultas::class, 'fakultas_id');
     }
 }

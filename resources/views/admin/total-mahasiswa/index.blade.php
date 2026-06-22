@@ -1013,7 +1013,7 @@
 
                 <div class="form-group">
                     <label>Email <span style="color: #ef4444;">*</span></label>
-                    <input type="email" name="email" class="form-control" placeholder="email@umpar.ac.id"
+                    <input type="email" name="email" class="form-control" placeholder="email@unida-aceh.ac.id"
                         value="{{ old('email') }}" required>
                 </div>
 

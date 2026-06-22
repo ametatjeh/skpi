@@ -11,9 +11,17 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('approval_logs', function (Blueprint $table) {
+        Schema::create('approval_log', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
+            $table->foreignId('draft_skpi_id')->nullable()->constrained('draft_skpi')->onDelete('cascade');
+            $table->foreignId('verifikasi_skpi_id')->nullable()->constrained('verifikasi_skpi')->onDelete('cascade');
+            $table->foreignId('approver_id')->nullable()->constrained('users')->onDelete('set null');
+            $table->string('approver_role')->nullable();
+            $table->string('action')->nullable();
+            $table->string('status_from')->nullable();
+            $table->string('status_to')->nullable();
+            $table->text('catatan')->nullable();
+            $table->timestamp('created_at')->nullable();
         });
     }
 
@@ -22,6 +30,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('approval_logs');
+        Schema::dropIfExists('approval_log');
     }
 };

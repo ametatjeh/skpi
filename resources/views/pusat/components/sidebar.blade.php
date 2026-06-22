@@ -244,7 +244,7 @@
             <i class="fas fa-language"></i>
         </div>
         <div>
-            <div class="pusat-sidebar-title">SKPI UMPAR</div>
+            <div class="pusat-sidebar-title">SKPI UNIDA</div>
             <div class="pusat-sidebar-subtitle">Pusat Bahasa</div>
         </div>
     </div>

@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login Admin - SKPI UMPAR</title>
+    <title>Login Admin - SKPI UNIDA</title>
     <link rel="icon" type="image/png" href="{{ asset('images/skpi_logo.png') }}">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap"
         rel="stylesheet" />
@@ -375,7 +375,7 @@
                 <div class="form-group">
                     <label for="email">Email Admin</label>
                     <input type="email" id="email" name="email" value="{{ old('email') }}"
-                        placeholder="admin.skpi@umpar.ac.id" required autofocus>
+                        placeholder="admin.skpi@unida-aceh.ac.id" required autofocus>
                 </div>
 
                 <div class="form-group">
@@ -397,7 +397,7 @@
         <div class="image-side">
             <div class="image-content">
                 <i class="fa-solid fa-shield-halved"></i>
-                <h3>Panel Admin SKPI UMPAR</h3>
+                <h3>Panel Admin SKPI UNIDA</h3>
                 <p>Kelola data master, monitoring SKPI, dan pengaturan sistem secara terpusat.</p>
             </div>
         </div>

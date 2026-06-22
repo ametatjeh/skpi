@@ -10,7 +10,7 @@
            SKPI PREMIUM DESIGN - NAVY BLUE & GOLD THEME
            Elegant, Professional, Academic Excellence
            ============================================================ */
-        
+
         body {
             font-family: DejaVu Sans, Arial, sans-serif;
             font-size: 9pt;
@@ -27,7 +27,9 @@
             position: relative;
         }
 
-        .header-container::after {\n            display: none;\n        }
+        .header-container::after {
+            display: none;
+        }
 
         .header-table {
             width: 100%;
@@ -524,7 +526,9 @@
         }
 
         /* Prevent orphans */
-        .section, .activity-category, .cpl-content {
+        .section,
+        .activity-category,
+        .cpl-content {
             page-break-inside: avoid;
         }
     </style>
@@ -537,18 +541,18 @@
         <table class="header-table">
             <tr>
                 <td class="logo-cell">
-                    <img src="{{ public_path('images/logo_umpar-removebg-preview.png') }}" alt="Logo" class="logo-img">
+                    <img src="{{ public_path('images/logo_unida-removebg-preview.png') }}" alt="Logo" class="logo-img">
                 </td>
                 <td class="header-text">
-                    <div class="univ-name">Universitas Muhammadiyah Parepare</div>
+                    <div class="univ-name">Universitas Iskandar Muda</div>
                     <div class="univ-address">
-                        Jl. Jend. Ahmad Yani KM. 6 Parepare 91131, Sulawesi Selatan, Indonesia<br>
-                        Tel: (0421) 22757 • Fax: (0421) 22757 • www.umpar.ac.id
+                        Jn Kampus Unida, No.15, Desa Surien, Kec. Meuraxa, Kota Banda Aceh, 23234<br>
+                        Tel: (0651) 44413 • Fax: (0651) 44413 • www.unida-aceh.ac.id
                     </div>
                 </td>
                 <td class="skpi-number-box">
                     <div class="skpi-badge">
-                        {{ $draftSkpi->nomor_skpi ?? 'SKPI/UMPAR/2025/FT-00001' }}
+                        {{ $draftSkpi->nomor_skpi ?? 'SKPI/UNIDA/2025/FT-00001' }}
                     </div>
                 </td>
             </tr>
@@ -614,7 +618,7 @@
                     <div class="field-value">
                         {{ $draftSkpi->mahasiswa->gelar ?? '-' }}
                         @if(!empty($draftSkpi->mahasiswa->gelar_en))
-                            <br><span class="field-label-en">{{ $draftSkpi->mahasiswa->gelar_en }}</span>
+                        <br><span class="field-label-en">{{ $draftSkpi->mahasiswa->gelar_en }}</span>
                         @endif
                     </div>
                 </td>
@@ -635,14 +639,14 @@
                     <div class="field-value">{{ $templateSkpi->sk_pendirian ?? '-' }}</div>
                 </td>
                 <td>
-                    <div class="field-label">PERSYARATAN PENERIMAAN <span class="field-label-en">/ Entry Requirements</span></div>
+                    <div class="field-label">PERSYARATAN PENERIMAAN <span class="field-label-en">/ Requirements</span></div>
                     <div class="field-value">{{ $templateSkpi->persyaratan_penerimaan ?? '-' }}</div>
                 </td>
             </tr>
             <tr>
                 <td>
                     <div class="field-label">NAMA PERGURUAN TINGGI <span class="field-label-en">/ Name of Institution</span></div>
-                    <div class="field-value">{{ $templateSkpi->nama_pt ?? 'Universitas Muhammadiyah Parepare' }}</div>
+                    <div class="field-value">{{ $templateSkpi->nama_pt ?? 'Universitas Iskandar Muda' }}</div>
                 </td>
                 <td>
                     <div class="field-label">BAHASA PENGANTAR <span class="field-label-en">/ Language of Instruction</span></div>
@@ -661,7 +665,7 @@
             </tr>
             <tr>
                 <td>
-                    <div class="field-label">NO. SK AKREDITASI PT <span class="field-label-en">/ Accreditation Decree Number</span></div>
+                    <div class="field-label">NO. SK AKREDITASI PT <span class="field-label-en">/ Accreditation Number</span></div>
                     <div class="field-value">{{ $templateSkpi->nomor_sk_akreditasi ?? '-' }}</div>
                 </td>
                 <td>
@@ -675,7 +679,7 @@
                     <div class="field-value">
                         {{ $draftSkpi->mahasiswa->prodi->nama_prodi ?? '-' }}
                         @if(!empty($draftSkpi->mahasiswa->prodi->nama_prodi_en))
-                            <br><span class="field-label-en">{{ $draftSkpi->mahasiswa->prodi->nama_prodi_en }}</span>
+                        <br><span class="field-label-en">{{ $draftSkpi->mahasiswa->prodi->nama_prodi_en }}</span>
                         @endif
                     </div>
                 </td>
@@ -686,7 +690,7 @@
             </tr>
             <tr>
                 <td>
-                    <div class="field-label">STATUS AKREDITASI PRODI <span class="field-label-en">/ Program Accreditation</span></div>
+                    <div class="field-label">STATUS AKREDITASI PRODI <span class="field-label-en">/ Accreditation Status</span></div>
                     <div class="field-value">{{ $draftSkpi->mahasiswa->prodi->status_akreditasi ?? '-' }}</div>
                 </td>
                 <td>
@@ -759,11 +763,11 @@
                             <div class="activity-title">1. Sertifikasi Kompetensi</div>
                             <div class="activity-list">
                                 @if ($sertifikasi && $sertifikasi->count() > 0)
-                                    @foreach ($sertifikasi as $item)
-                                        <div class="activity-item">• {{ $item->nama_sertifikasi ?? '-' }}</div>
-                                    @endforeach
+                                @foreach ($sertifikasi as $item)
+                                <div class="activity-item">• {{ $item->nama_sertifikasi ?? '-' }}</div>
+                                @endforeach
                                 @else
-                                    <div class="activity-item">-</div>
+                                <div class="activity-item">-</div>
                                 @endif
                             </div>
                         </div>
@@ -772,11 +776,11 @@
                             <div class="activity-title">2. Pengembangan Sikap dan Tanggung Jawab</div>
                             <div class="activity-list">
                                 @if ($pkm && $pkm->count() > 0)
-                                    @foreach ($pkm as $item)
-                                        <div class="activity-item">• {{ $item->judul_pkm ?? '-' }}</div>
-                                    @endforeach
+                                @foreach ($pkm as $item)
+                                <div class="activity-item">• {{ $item->judul_pkm ?? '-' }}</div>
+                                @endforeach
                                 @else
-                                    <div class="activity-item">-</div>
+                                <div class="activity-item">-</div>
                                 @endif
                             </div>
                         </div>
@@ -785,16 +789,16 @@
                             <div class="activity-title">3. Prestasi dan Penghargaan</div>
                             <div class="activity-list">
                                 @php
-                                    $prestasiDanPenghargaan = collect();
-                                    if ($prestasi) $prestasiDanPenghargaan = $prestasiDanPenghargaan->merge($prestasi);
-                                    if (isset($penghargaan) && $penghargaan) $prestasiDanPenghargaan = $prestasiDanPenghargaan->merge($penghargaan);
+                                $prestasiDanPenghargaan = collect();
+                                if ($prestasi) $prestasiDanPenghargaan = $prestasiDanPenghargaan->merge($prestasi);
+                                if (isset($penghargaan) && $penghargaan) $prestasiDanPenghargaan = $prestasiDanPenghargaan->merge($penghargaan);
                                 @endphp
                                 @if ($prestasiDanPenghargaan->count() > 0)
-                                    @foreach ($prestasiDanPenghargaan as $item)
-                                        <div class="activity-item">• {{ $item->nama_kegiatan ?? ($item->nama_penghargaan ?? '-') }}</div>
-                                    @endforeach
+                                @foreach ($prestasiDanPenghargaan as $item)
+                                <div class="activity-item">• {{ $item->nama_kegiatan ?? ($item->nama_penghargaan ?? '-') }}</div>
+                                @endforeach
                                 @else
-                                    <div class="activity-item">-</div>
+                                <div class="activity-item">-</div>
                                 @endif
                             </div>
                         </div>
@@ -803,11 +807,11 @@
                             <div class="activity-title">4. Pengalaman Organisasi</div>
                             <div class="activity-list">
                                 @if ($organisasi && $organisasi->count() > 0)
-                                    @foreach ($organisasi as $item)
-                                        <div class="activity-item">• {{ $item->nama_organisasi ?? '-' }}</div>
-                                    @endforeach
+                                @foreach ($organisasi as $item)
+                                <div class="activity-item">• {{ $item->nama_organisasi ?? '-' }}</div>
+                                @endforeach
                                 @else
-                                    <div class="activity-item">-</div>
+                                <div class="activity-item">-</div>
                                 @endif
                             </div>
                         </div>
@@ -818,11 +822,11 @@
                             <div class="activity-title-en">1. Competency Certification</div>
                             <div class="activity-list" style="font-style: italic;">
                                 @if ($sertifikasi && $sertifikasi->count() > 0)
-                                    @foreach ($sertifikasi as $item)
-                                        <div class="activity-item">• {{ $item->nama_sertifikasi_en ?? ($item->nama_sertifikasi ?? '-') }}</div>
-                                    @endforeach
+                                @foreach ($sertifikasi as $item)
+                                <div class="activity-item">• {{ $item->nama_sertifikasi_en ?? ($item->nama_sertifikasi ?? '-') }}</div>
+                                @endforeach
                                 @else
-                                    <div class="activity-item">-</div>
+                                <div class="activity-item">-</div>
                                 @endif
                             </div>
                         </div>
@@ -831,11 +835,11 @@
                             <div class="activity-title-en">2. Attitude Development and Responsibility</div>
                             <div class="activity-list" style="font-style: italic;">
                                 @if ($pkm && $pkm->count() > 0)
-                                    @foreach ($pkm as $item)
-                                        <div class="activity-item">• {{ $item->judul_pkm_en ?? ($item->judul_pkm ?? '-') }}</div>
-                                    @endforeach
+                                @foreach ($pkm as $item)
+                                <div class="activity-item">• {{ $item->judul_pkm_en ?? ($item->judul_pkm ?? '-') }}</div>
+                                @endforeach
                                 @else
-                                    <div class="activity-item">-</div>
+                                <div class="activity-item">-</div>
                                 @endif
                             </div>
                         </div>
@@ -844,11 +848,11 @@
                             <div class="activity-title-en">3. Achievement and Accolades</div>
                             <div class="activity-list" style="font-style: italic;">
                                 @if ($prestasiDanPenghargaan->count() > 0)
-                                    @foreach ($prestasiDanPenghargaan as $item)
-                                        <div class="activity-item">• {{ $item->nama_kegiatan_en ?? ($item->nama_penghargaan_en ?? ($item->nama_kegiatan ?? ($item->nama_penghargaan ?? '-'))) }}</div>
-                                    @endforeach
+                                @foreach ($prestasiDanPenghargaan as $item)
+                                <div class="activity-item">• {{ $item->nama_kegiatan_en ?? ($item->nama_penghargaan_en ?? ($item->nama_kegiatan ?? ($item->nama_penghargaan ?? '-'))) }}</div>
+                                @endforeach
                                 @else
-                                    <div class="activity-item">-</div>
+                                <div class="activity-item">-</div>
                                 @endif
                             </div>
                         </div>
@@ -857,11 +861,11 @@
                             <div class="activity-title-en">4. Organizational Experience</div>
                             <div class="activity-list" style="font-style: italic;">
                                 @if ($organisasi && $organisasi->count() > 0)
-                                    @foreach ($organisasi as $item)
-                                        <div class="activity-item">• {{ $item->nama_organisasi_en ?? ($item->nama_organisasi ?? '-') }}</div>
-                                    @endforeach
+                                @foreach ($organisasi as $item)
+                                <div class="activity-item">• {{ $item->nama_organisasi_en ?? ($item->nama_organisasi ?? '-') }}</div>
+                                @endforeach
                                 @else
-                                    <div class="activity-item">-</div>
+                                <div class="activity-item">-</div>
                                 @endif
                             </div>
                         </div>
@@ -882,11 +886,11 @@
         </div>
         <div class="info-box">
             Informasi tentang sistem pendidikan tinggi dan Kerangka Kualifikasi Nasional Indonesia (KKNI) dapat
-            dilihat di http://umpar.ac.id/kkni/
+            dilihat di http://unida-aceh.ac.id/kkni/
         </div>
         <div class="info-box english">
             The information on the Higher Education System and the Indonesian National Qualification Framework can
-            be accessed at http://umpar.ac.id/kkni/
+            be accessed at http://unida-aceh.ac.id/kkni/
         </div>
     </div>
 
@@ -901,18 +905,30 @@
     <div class="signature-section">
         <table class="signature-table">
             <tr>
-                <td style="width: 55%;"></td>
-                <td class="signature-right">
+                <td style="width: 55%; vertical-align: bottom; text-align: left;">
+                    @php
+                    $verifyUrl = route('skpi.verify', $draftSkpi->nomor_skpi ?? 'invalid');
+                    @endphp
+                    <div style="margin-bottom: 5px;">
+                        <img src="data:image/svg+xml;base64, {!! base64_encode(SimpleSoftwareIO\QrCode\Facades\QrCode::format('svg')->size(85)->margin(0)->generate($verifyUrl)) !!}" alt="QR Code">
+                    </div>
+                    <div style="font-size: 7.5pt; color: #4a5568; font-style: italic;">
+                        Scan QR Code to verify<br>the authenticity of this document.
+                    </div>
+                </td>
+                <td class="signature-right" style="width: 45%;">
                     <div class="sig-location">
-                        Parepare, {{ $draftSkpi->tanggal_pengesahan ? \Carbon\Carbon::parse($draftSkpi->tanggal_pengesahan)->locale('id')->translatedFormat('d F Y') : now()->locale('id')->translatedFormat('d F Y') }}
+                        Banda Aceh, {{ $draftSkpi->tanggal_pengesahan ? \Carbon\Carbon::parse($draftSkpi->tanggal_pengesahan)->locale('id')->translatedFormat('d F Y') : now()->locale('id')->translatedFormat('d F Y') }}
                     </div>
                     <div class="sig-location-en">
-                        Parepare, {{ $draftSkpi->tanggal_pengesahan ? \Carbon\Carbon::parse($draftSkpi->tanggal_pengesahan)->format('F d, Y') : now()->format('F d, Y') }}
+                        Banda Aceh, {{ $draftSkpi->tanggal_pengesahan ? \Carbon\Carbon::parse($draftSkpi->tanggal_pengesahan)->format('F d, Y') : now()->format('F d, Y') }}
                     </div>
                     <br>
                     <div class="sig-title">DEKAN FAKULTAS</div>
                     <div class="sig-title-en">Dean of Faculty</div>
-                    <div class="sig-space"></div>
+                    <div class="sig-space" style="height: 70px;">
+                        <!-- Ruang kosong untuk tanda tangan fisik -->
+                    </div>
                     <div class="sig-name">{{ $draftSkpi->mahasiswa->prodi->fakultas->dekan ?? 'Dekan Fakultas' }}</div>
                 </td>
             </tr>
@@ -935,7 +951,7 @@
                     <br>
                     <div class="notes-title" style="font-style: italic;">Official Notes</div>
                     <div class="notes-list" style="font-style: italic;">
-                        • This Diploma Supplement is issued by UMPAR University.<br>
+                        • This Diploma Supplement is issued by UNIDA University.<br>
                         • Issued after the student is officially declared a graduate.<br>
                         • Written in both Bahasa Indonesia and English.<br>
                         • Original copy is on barcoded/hologram security paper.<br>
@@ -946,15 +962,15 @@
                     <div class="contact-box">
                         <div class="notes-title">ALAMAT <span style="font-weight: 400; font-style: italic;">/ Contact Details</span></div>
                         <br>
-                        <div class="contact-name">UNIVERSITAS MUHAMMADIYAH PAREPARE</div>
-                        <div class="contact-name-en">Muhammadiyah University of Parepare</div>
+                        <div class="contact-name">UNIVERSITAS ISKANDAR MUDA</div>
+                        <div class="contact-name-en">Iskandar Muda University</div>
                         <div class="notes-list">
-                            Jl. Jend. Ahmad Yani KM. 6<br>
-                            Parepare 91131<br>
-                            Sulawesi Selatan, Indonesia<br><br>
-                            Tel: (0421) 22757<br>
-                            Website: www.umpar.ac.id<br>
-                            Email: umpar@umpar.ac.id
+                            Jn Kampus Unida, No.15, Desa Surien<br>
+                            Kec. Meuraxa, Kota Banda Aceh<br>
+                            Aceh, Indonesia<br><br>
+                            Tel: (0651) 44413<br>
+                            Website: www.unida-aceh.ac.id<br>
+                            Email: info@unida-aceh.ac.id
                         </div>
                     </div>
                 </td>

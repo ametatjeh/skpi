@@ -11,9 +11,15 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('qr_codes', function (Blueprint $table) {
+        Schema::create('qr_code', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
+            $table->foreignId('skpi_id')->nullable()->constrained('draft_skpi')->onDelete('cascade');
+            $table->foreignId('mahasiswa_id')->nullable()->constrained('mahasiswa')->onDelete('cascade');
+            $table->text('qr_code_string')->nullable();
+            $table->string('qr_image_path')->nullable();
+            $table->boolean('is_active')->default(true);
+            $table->timestamp('expired_at')->nullable();
+            $table->timestamp('created_at')->nullable();
         });
     }
 
@@ -22,6 +28,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('qr_codes');
+        Schema::dropIfExists('qr_code');
     }
 };
