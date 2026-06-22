@@ -167,6 +167,38 @@
             border-top: 1px solid rgba(255, 255, 255, 0.18);
         }
 
+        .mobile-dropdown-btn {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            background: none;
+            border: none;
+            border-top: 1px solid rgba(255, 255, 255, 0.18);
+            padding: 12px 18px;
+            color: #fff;
+            font-size: 14px;
+            font-weight: 600;
+            text-align: left;
+            font-family: inherit;
+            cursor: pointer;
+        }
+
+        .mobile-dropdown-content {
+            display: none;
+            background: rgba(0, 0, 0, 0.1);
+        }
+
+        .mobile-dropdown-content.show {
+            display: block;
+        }
+
+        .mobile-dropdown-content a {
+            padding-left: 36px;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            font-weight: 400;
+        }
+
         .mobile-nav.open {
             transform: translateY(0);
         }
@@ -284,11 +316,16 @@
             <a href="{{ url('/') }}">Home</a>
             <a href="{{ url('skema') }}">Skema</a>
             <a href="http://127.0.0.1:8000/register-email">Registrasi</a>
-            <a href="{{ route('mahasiswa.login') }}">Login Mahasiswa</a>
-            <a href="{{ route('prodi.login') }}">Login Prodi</a>
-            <a href="{{ route('pusat.login') }}">Pusat Bahasa</a>
-            <a href="{{ route('fakultas.login') }}">Login Fakultas</a>
-            <a href="{{ route('admin.login') }}">Login Admin</a>
+            <button class="mobile-dropdown-btn" id="mobileLoginBtn">
+                Login <i class="fas fa-chevron-down"></i>
+            </button>
+            <div class="mobile-dropdown-content" id="mobileLoginContent">
+                <a href="{{ route('mahasiswa.login') }}">Mahasiswa</a>
+                <a href="{{ route('prodi.login') }}">Prodi</a>
+                <a href="{{ route('pusat.login') }}">Pusat Bahasa</a>
+                <a href="{{ route('fakultas.login') }}">Fakultas</a>
+                <a href="{{ route('admin.login') }}">Admin</a>
+            </div>
         </div>
     </div>
 
@@ -641,6 +678,23 @@
         if (navToggle) navToggle.addEventListener('click', openMobileNav);
         if (mobileClose) mobileClose.addEventListener('click', closeMobileNav);
         if (backdrop) backdrop.addEventListener('click', closeMobileNav);
+
+        const mobileLoginBtn = document.getElementById('mobileLoginBtn');
+        const mobileLoginContent = document.getElementById('mobileLoginContent');
+        if (mobileLoginBtn && mobileLoginContent) {
+            mobileLoginBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+                mobileLoginContent.classList.toggle('show');
+                const icon = this.querySelector('i');
+                if (mobileLoginContent.classList.contains('show')) {
+                    icon.classList.remove('fa-chevron-down');
+                    icon.classList.add('fa-chevron-up');
+                } else {
+                    icon.classList.remove('fa-chevron-up');
+                    icon.classList.add('fa-chevron-down');
+                }
+            });
+        }
     </script>
 
 </body>
