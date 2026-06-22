@@ -468,54 +468,6 @@
 
 <body>
 
-    <!-- TOP SOCIAL -->
-    <div class="top-social">
-        <div class="top-social-inner">
-            <a href="#"><i class="fab fa-facebook-f"></i></a>
-            <a href="#"><i class="fab fa-twitter"></i></a>
-            <a href="#"><i class="fab fa-instagram"></i></a>
-            <a href="#"><i class="fab fa-linkedin-in"></i></a>
-            <a href="#"><i class="fab fa-youtube"></i></a>
-        </div>
-    </div>
-
-    <!-- HEADER INFO -->
-    <div class="header-info">
-        <div class="header-info-inner">
-            <div class="logo-box">
-                <img src="{{ asset('images/skpi_logo.png') }}" alt="SKPI Logo" style="height: 45px;">
-                <div>
-                    <div class="logo-text-main">Education Web</div>
-                    <div class="logo-text-sub">SKPI UNIDA Digital Certificate System</div>
-                </div>
-            </div>
-
-            <div class="info-columns">
-                <div class="info-item">
-                    <i class="fas fa-phone"></i>
-                    <div>
-                        <strong>CALL US</strong>
-                        +62 123 456 789
-                    </div>
-                </div>
-                <div class="info-item">
-                    <i class="fas fa-envelope"></i>
-                    <div>
-                        <strong>EMAIL US</strong>
-                        skpi@unida-aceh.ac.id
-                    </div>
-                </div>
-                <div class="info-item">
-                    <i class="fas fa-location-dot"></i>
-                    <div>
-                        <strong>LOCATE US</strong>
-                        Kampus UNIDA, Indonesia
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
     <!-- NAVBAR BLUE -->
     <nav class="nav-bar">
         <div class="nav-inner">
@@ -526,8 +478,10 @@
 
             <!-- MENU DESKTOP -->
             <ul class="nav-menu">
-                <li><a href="#">Home</a></li>
+                <li><a href="{{ url('/') }}">Home</a></li>
+                <li><a href="{{ url('skema') }}">Skema</a></li>
                 <!-- <li><a href="#about">About us</a></li> -->
+                <li><a href="http://127.0.0.1:8000/register-email">Registrasi</a></li>
                 <li>
                     <span>
                         Login
@@ -561,6 +515,9 @@
             </button>
         </div>
         <div class="mobile-nav-links">
+            <a href="{{ url('/') }}">Home</a>
+            <a href="{{ url('skema') }}">Skema</a>
+            <a href="http://127.0.0.1:8000/register-email">Registrasi</a>
             <a href="{{ route('mahasiswa.login') }}">Login Mahasiswa</a>
             <a href="{{ route('prodi.login') }}">Login Prodi</a>
             <a href="{{ route('pusat.login') }}">Pusat Bahasa</a>
@@ -611,6 +568,43 @@
             </div> --}}
         </div>
     </section>
+
+    <!-- FOOTER INFO -->
+    <footer style="background: #0050a0; padding: 30px 0; border-top: none;">
+        <div style="max-width: 1200px; margin: 0 auto; padding: 0 20px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px;">
+            <div class="logo-box">
+                <img src="{{ asset('images/skpi_logo.png') }}" alt="SKPI Logo" style="height: 45px; filter: brightness(0) invert(1);">
+                <div>
+                    <div class="logo-text-main" style="color: #ffffff;">UNIDA Aceh</div>
+                    <div class="logo-text-sub" style="color: #e2e8f0;">SKPI UNIDA Digital Certificate System</div>
+                </div>
+            </div>
+
+            <div style="display: flex; flex-wrap: wrap; gap: 28px;">
+                <div class="info-item" style="color: #e2e8f0;">
+                    <i class="fas fa-phone" style="color: #ffffff;"></i>
+                    <div>
+                        <strong style="color: #ffffff;">CALL US</strong>
+                        +62 123 456 789
+                    </div>
+                </div>
+                <div class="info-item" style="color: #e2e8f0;">
+                    <i class="fas fa-envelope" style="color: #ffffff;"></i>
+                    <div>
+                        <strong style="color: #ffffff;">EMAIL US</strong>
+                        skpi@unida-aceh.ac.id
+                    </div>
+                </div>
+                <div class="info-item" style="color: #e2e8f0;">
+                    <i class="fas fa-location-dot" style="color: #ffffff;"></i>
+                    <div>
+                        <strong style="color: #ffffff;">LOCATE US</strong>
+                        Kampus UNIDA, Indonesia
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
 
     <script>
         const navToggle = document.getElementById('navToggle');

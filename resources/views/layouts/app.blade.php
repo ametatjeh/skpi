@@ -90,6 +90,43 @@
         <main class="py-4">
             @yield('content')
         </main>
+
+        <!-- FOOTER INFO -->
+        <footer style="background: #0050a0; padding: 30px 0; border-top: none; margin-top: auto;">
+            <div style="max-width: 1200px; margin: 0 auto; padding: 0 20px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px;">
+                <div style="display: flex; align-items: center; gap: 10px;">
+                    <img src="{{ asset('images/skpi_logo.png') }}" alt="SKPI Logo" style="height: 45px; filter: brightness(0) invert(1);">
+                    <div>
+                        <div style="font-weight: 800; font-size: 1.35rem; color: #ffffff; line-height: 1.1; font-family: 'Poppins', sans-serif;">UNIDA Aceh</div>
+                        <div style="font-size: 0.8rem; color: #e2e8f0; font-family: 'Poppins', sans-serif;">SKPI UNIDA Digital Certificate System</div>
+                    </div>
+                </div>
+
+                <div style="display: flex; flex-wrap: wrap; gap: 28px; font-family: 'Poppins', sans-serif;">
+                    <div style="display: flex; align-items: center; gap: 10px; font-size: 0.8rem; color: #e2e8f0;">
+                        <i class="fas fa-phone" style="font-size: 1.1rem; color: #ffffff;"></i>
+                        <div>
+                            <strong style="display: block; font-size: 0.8rem; color: #ffffff;">CALL US</strong>
+                            +62 123 456 789
+                        </div>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 10px; font-size: 0.8rem; color: #e2e8f0;">
+                        <i class="fas fa-envelope" style="font-size: 1.1rem; color: #ffffff;"></i>
+                        <div>
+                            <strong style="display: block; font-size: 0.8rem; color: #ffffff;">EMAIL US</strong>
+                            skpi@unida-aceh.ac.id
+                        </div>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 10px; font-size: 0.8rem; color: #e2e8f0;">
+                        <i class="fas fa-location-dot" style="font-size: 1.1rem; color: #ffffff;"></i>
+                        <div>
+                            <strong style="display: block; font-size: 0.8rem; color: #ffffff;">LOCATE US</strong>
+                            Kampus UNIDA, Indonesia
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
     </div>
 </body>
 
