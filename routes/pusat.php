@@ -34,5 +34,3 @@ Route::middleware(['auth:pusat_bahasa'])
         Route::post('/pengaturan/update', [PengaturanController::class, 'update'])->name('pengaturan.update');
     });
 
-// Logout, auth pusat bahasa
-Route::post('pusat/logout', [App\Http\Controllers\Auth\PusatBahasaLoginController::class, 'logout'])->name('pusat.logout');
