@@ -37,6 +37,11 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
+        // Paksakan HTTPS di production (mencegah mixed content blank page)
+        if (config('app.env') === 'production' || str_contains(config('app.url'), 'https://')) {
+            \Illuminate\Support\Facades\URL::forceScheme('https');
+        }
+
         // Register Achievement Observers (untuk auto-create verifikasi)
         SertifikasiKompetensi::observe(SertifikasiObserver::class);
         Prestasi::observe(PrestasiObserver::class);
