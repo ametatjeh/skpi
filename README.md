@@ -328,3 +328,4 @@ This project is open-sourced under the [MIT license](https://opensource.org/lice
 <p align="center">
   Made with ❤️ for Indonesian Higher Education
 </p>
+# skpi
