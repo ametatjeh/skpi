@@ -66,7 +66,7 @@ return [
         // Admin (tabel admin_users)
         'admin_users' => [
             'driver' => 'eloquent',
-            'model'  => App\Models\User::class,
+            'model'  => App\Models\AdminUser::class,
         ],
 
         // Operator Prodi (tabel prodi_users)
