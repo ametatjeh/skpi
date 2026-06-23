@@ -3,6 +3,22 @@
 /* ===== 1. TAILWINDCSS FIRST ===== */
 @import 'tailwindcss';
 
+/* ===== ALL IMPORTS MUST BE AT THE TOP ===== */
+/* ===== BASE ===== */
+@import './base/_reset.css';
+@import './base/_variabels.css';
+
+/* ===== COMPONENTS ===== */
+@import './components/_button.css';
+@import './components/_form.css';
+@import './components/_alerts.css';
+@import './components/_table.css';
+@import './components/_cards.css';
+
+/* ===== PAGES ===== */
+@import './pages/_sertifikasi.css';
+
+/* ===== TAILWIND THEME & SOURCE ===== */
 @source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
 @source '../../storage/framework/views/*.php';
 @source '../**/*.blade.php';
@@ -13,34 +29,8 @@
         'Segoe UI Symbol', 'Noto Color Emoji';
 }
 
-/* ===== 2. CUSTOM CSS SETELAH TAILWIND ===== */
-
-/* ===== BASE ===== */
-@import 'base/_reset.css';
-@import 'base/_variables.css';
-
-/* ===== COMPONENTS ===== */
-@import 'components/_buttons.css';
-@import 'components/_forms.css';
-@import 'components/_alerts.css';
-@import 'components/_tables.css';
-@import 'components/_cards.css';
-
-/* ===== PAGES ===== */
-@import 'pages/skpi/_sertifikasi.css';
-
 /* ===== UTILITIES ===== */
 /* Tambahan utility classes jika needed */
-
-/* ==================================== */
-/* 1. IMPOR FILE CSS SPESIFIK */
-/* ==================================== */
-
-/* Mengimpor file kustom untuk halaman Welcome */
-@import url('welcome.css');
-
-/* Mengimpor file kustom untuk semua halaman yang menggunakan layout utama */
-@import url('main.css');
 
 /* ==================================== */
 /* 2. GLOBAL STYLES / CSS RESET */
