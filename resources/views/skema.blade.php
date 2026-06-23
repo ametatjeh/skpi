@@ -395,6 +395,7 @@
                 border-radius: 16px;
                 padding: 12px 16px;
                 min-width: 160px;
+                margin-top: 10px;
                 transition: transform 0.3s ease, box-shadow 0.3s ease;
             }
 
@@ -437,13 +438,14 @@
 
             .arrow-down {
                 font-size: 24px;
-                margin: 12px 0;
+                margin: 12px 0 2px 0;
                 color: rgba(255, 255, 255, 0.5);
             }
 
             .status-box {
                 background: rgba(0, 0, 0, 0.2);
                 border: 1px dashed rgba(255, 255, 255, 0.3);
+                margin-top: 0;
             }
             
             .status-box ul {
@@ -581,15 +583,13 @@
         </div>
 
         <!-- Tabel Kategori -->
-        <div class="header-skema" style="margin-top: 60px; margin-bottom: 30px;">
-            PERAN DAN TANGGUNG JAWAB
-        </div>
-        <div class="table-container" style="margin-top: 0;">
+
+        <div class="table-container" style="margin-top: 45px;">
             <table>
                 <thead>
                     <tr>
                         <th>Peran</th>
-                        <th>Deskripsi Tugas</th>
+                        <th>Deskripsi Tugas dan Tanggung Jawab</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -608,6 +608,10 @@
                     <tr>
                         <td><strong>Pusat Bahasa</strong></td>
                         <td>Verifikasi ringkasan bilingual (ID/EN), terjemahan</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Akademik</strong></td>
+                        <td>Manajemen QR code, nomor surat, print blanko SKPI, serah terima berkas, arsip</td>
                     </tr>
                 </tbody>
             </table>
