@@ -28,15 +28,16 @@ class UserController extends Controller
         $mahasiswa = Mahasiswa::select(
             'mahasiswa.id',
             DB::raw("mahasiswa.nama COLLATE utf8mb4_unicode_ci as name"),
-            DB::raw("users.email COLLATE utf8mb4_unicode_ci as email"),
+            DB::raw("COALESCE(users.email, mahasiswa.email) COLLATE utf8mb4_unicode_ci as email"),
             'mahasiswa.nim as identifier',
             DB::raw("'mahasiswa' COLLATE utf8mb4_unicode_ci as user_type"),
-            DB::raw("users.role COLLATE utf8mb4_unicode_ci as role")
+            DB::raw("COALESCE(users.role, 'mahasiswa') COLLATE utf8mb4_unicode_ci as role")
         )
-            ->join('users', 'users.id', '=', 'mahasiswa.user_id')
+            ->leftJoin('users', 'users.id', '=', 'mahasiswa.user_id')
             ->when($search, function ($q) use ($search) {
                 $q->where('mahasiswa.nama', 'like', "%{$search}%")
                     ->orWhere('users.email', 'like', "%{$search}%")
+                    ->orWhere('mahasiswa.email', 'like', "%{$search}%")
                     ->orWhere('mahasiswa.nim', 'like', "%{$search}%");
             });
 
@@ -72,10 +73,10 @@ class UserController extends Controller
     {
         $users = Mahasiswa::select(
             'mahasiswa.*',
-            'users.email'
+            DB::raw('COALESCE(users.email, mahasiswa.email) as email')
         )
             ->with('prodi')
-            ->join('users', 'users.id', '=', 'mahasiswa.user_id')
+            ->leftJoin('users', 'users.id', '=', 'mahasiswa.user_id')
             ->orderBy('mahasiswa.created_at', 'desc')
             ->get();
 

@@ -167,7 +167,7 @@
         <div class="form-group">
             <label class="form-label">Nama Program Studi <span class="text-danger">*</span></label>
             <input type="text" name="nama_prodi" class="form-control @error('nama_prodi') is-invalid @enderror" 
-                   value="{{ old('nama_prodi') }}" required placeholder="Contoh: Teknik Informatika">
+                   value="{{ old('nama_prodi') }}" required placeholder="Contoh: Pembangunan Sosial">
             @error('nama_prodi')
                 <div class="invalid-feedback">{{ $message }}</div>
             @enderror

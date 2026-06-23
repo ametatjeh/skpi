@@ -822,6 +822,7 @@
                                 <th>NIM</th>
                                 <th>Nama</th>
                                 <th>Email</th>
+                                <th>Tempat/Tgl Lahir</th>
                                 <th>Program Studi</th>
                                 <th>Fakultas</th>
                                 <th style="width: 150px; text-align: center;">Aksi</th>
@@ -834,6 +835,7 @@
                                     <td><strong>{{ $mhs->nim }}</strong></td>
                                     <td>{{ $mhs->nama }}</td>
                                     <td>{{ $mhs->user->email ?? $mhs->email ?? '-' }}</td>
+                                    <td>{{ $mhs->tempat_tanggal_lahir ?? '-' }}</td>
                                     <td>
                                         <span class="badge badge-success">
                                             {{ $mhs->prodi->nama_prodi ?? '-' }}

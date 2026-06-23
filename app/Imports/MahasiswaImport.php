@@ -127,7 +127,13 @@ class MahasiswaImport implements ToCollection, SkipsOnFailure
             $status = $this->getValue($values, 'status');
             $jk = $this->getValue($values, 'jenis_kelamin');
             $tgl_masuk = $this->getValue($values, 'tanggal_masuk');
+            $tgl_lulus = $this->getValue($values, 'tanggal_lulus');
             $angkatan = $this->getValue($values, 'angkatan');
+            $agama = $this->getValue($values, 'agama');
+            $alamat = $this->getValue($values, 'alamat');
+            $tempatTanggalLahir = $this->getValue($values, 'tempat_tanggal_lahir');
+            $gelar = $this->getValue($values, 'gelar');
+            $noIjazah = $this->getValue($values, 'no_ijazah');
 
             // Generate email (hanya untuk data mahasiswa, tidak create user)
             $email = !empty($email) ? $email : $nim . '@unida-aceh.ac.id';
@@ -165,7 +171,19 @@ class MahasiswaImport implements ToCollection, SkipsOnFailure
                 } catch (\Exception $e) {}
             }
 
-            // INSERT INDIVIDU (Lebih aman handle duplikat)
+            // Tanggal Lulus Parsing
+            $tanggalLulus = null;
+            if (!empty($tgl_lulus)) {
+                try {
+                    if (is_numeric($tgl_lulus)) {
+                        $tanggalLulus = \PhpOffice\PhpSpreadsheet\Shared\Date::excelToDateTimeObject($tgl_lulus)->format('Y-m-d');
+                    } else {
+                         $ts = strtotime($tgl_lulus);
+                         if ($ts) $tanggalLulus = date('Y-m-d', $ts);
+                    }
+                } catch (\Exception $e) {}
+            }
+
             try {
                 Mahasiswa::create([
                     'user_id' => null,
@@ -175,16 +193,16 @@ class MahasiswaImport implements ToCollection, SkipsOnFailure
                     'email' => $email,
                     'nik' => substr($nikClean, 0, 16),
                     'jenis_kelamin' => $jenisKelamin,
-                    'agama' => 'Islam', // Default
-                    'alamat' => '',
+                    'agama' => !empty($agama) ? $agama : 'Islam', // Default
+                    'alamat' => $alamat ?? '',
                     'tahun_masuk' => $angkatan,
                     'angkatan' => $angkatan,
                     'tanggal_masuk' => $tanggalMasuk,
                     'status_mahasiswa' => $this->parseStatus($status),
-                    'tanggal_lulus' => null,
-                    'gelar' => '',
-                    'no_ijazah' => '',
-                    'tempat_tanggal_lahir' => '',
+                    'tanggal_lulus' => $tanggalLulus,
+                    'gelar' => $gelar ?? '',
+                    'no_ijazah' => $noIjazah ?? '',
+                    'tempat_tanggal_lahir' => $tempatTanggalLahir ?? '',
                 ]);
                 $this->importedCount++;
             } catch (\Illuminate\Database\QueryException $e) {
@@ -209,14 +227,21 @@ class MahasiswaImport implements ToCollection, SkipsOnFailure
 
     protected function mapHeaderColumns($rowValues) {
         foreach ($rowValues as $colIndex => $val) {
-            if (in_array($val, ['nim', 'npm', 'nrp', 'no_mhs'])) $this->columnIndexes['nim'] = $colIndex;
-            if (in_array($val, ['nik', 'no_ktp', 'ktp'])) $this->columnIndexes['nik'] = $colIndex;
-            if ($val === 'nama' || strpos($val, 'nama m') !== false) $this->columnIndexes['nama'] = $colIndex;
+            if (strpos($val, 'nim') !== false || strpos($val, 'npm') !== false || strpos($val, 'nrp') !== false || strpos($val, 'no_mhs') !== false) $this->columnIndexes['nim'] = $colIndex;
+            if (strpos($val, 'nik') !== false || strpos($val, 'no_ktp') !== false || strpos($val, 'ktp') !== false) $this->columnIndexes['nik'] = $colIndex;
+            if (strpos($val, 'nama') !== false) $this->columnIndexes['nama'] = $colIndex;
+            if (strpos($val, 'email') !== false || strpos($val, 'e-mail') !== false) $this->columnIndexes['email'] = $colIndex;
             if (strpos($val, 'prodi') !== false || strpos($val, 'program') !== false) $this->columnIndexes['prodi'] = $colIndex;
             if (strpos($val, 'tanggal') !== false && strpos($val, 'masuk') !== false) $this->columnIndexes['tanggal_masuk'] = $colIndex;
-            if ($val === 'status' || strpos($val, 'status m') !== false) $this->columnIndexes['status'] = $colIndex;
+            if (strpos($val, 'tanggal') !== false && strpos($val, 'lulus') !== false) $this->columnIndexes['tanggal_lulus'] = $colIndex;
+            if ($val === 'status' || strpos($val, 'status m') !== false || strpos($val, 'status_m') !== false) $this->columnIndexes['status'] = $colIndex;
             if (strpos($val, 'kelamin') !== false || $val === 'jk' || strpos($val, 'gender') !== false) $this->columnIndexes['jenis_kelamin'] = $colIndex;
             if ($val === 'angkatan' || strpos($val, 'thn_masuk') !== false) $this->columnIndexes['angkatan'] = $colIndex;
+            if (strpos($val, 'agama') !== false) $this->columnIndexes['agama'] = $colIndex;
+            if (strpos($val, 'alamat') !== false) $this->columnIndexes['alamat'] = $colIndex;
+            if (strpos($val, 'tempat') !== false && strpos($val, 'lahir') !== false) $this->columnIndexes['tempat_tanggal_lahir'] = $colIndex;
+            if (strpos($val, 'gelar') !== false) $this->columnIndexes['gelar'] = $colIndex;
+            if (strpos($val, 'ijazah') !== false) $this->columnIndexes['no_ijazah'] = $colIndex;
         }
     }
 
@@ -226,18 +251,18 @@ class MahasiswaImport implements ToCollection, SkipsOnFailure
 
     protected function parseStatus($status)
     {
-        if (empty($status)) return 'aktif';
+        if (empty($status)) return 'Aktif';
         
         $status = strtolower(trim((string) $status));
         
-        if (strpos($status, 'lulus') !== false) return 'lulus';
-        if (strpos($status, 'aktif') !== false) return 'aktif';
-        if (strpos($status, 'cuti') !== false) return 'cuti';
+        if (strpos($status, 'lulus') !== false) return 'Lulus';
+        if (strpos($status, 'aktif') !== false) return 'Aktif';
+        if (strpos($status, 'cuti') !== false) return 'Cuti';
         if (strpos($status, 'do') !== false || strpos($status, 'drop') !== false) return 'DO';
-        if (strpos($status, 'pindah') !== false) return 'pindah';
-        if (strpos($status, 'keluar') !== false || strpos($status, 'mengundurkan') !== false) return 'keluar';
+        if (strpos($status, 'pindah') !== false) return 'Mengundurkan Diri';
+        if (strpos($status, 'keluar') !== false || strpos($status, 'mengundurkan') !== false) return 'Mengundurkan Diri';
         
-        return 'aktif';
+        return 'Aktif';
     }
 
     public function getImportedCount() { return $this->importedCount; }

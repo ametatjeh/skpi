@@ -147,6 +147,7 @@ class MahasiswaController extends Controller
                 'no_ijazah' => $request->no_ijazah,
                 'tempat_tanggal_lahir' => $request->tempat_tanggal_lahir,
                 'prodi_id' => $request->prodi_id,
+                'email' => $request->email,
             ]);
 
             // Update user account
@@ -159,7 +160,16 @@ class MahasiswaController extends Controller
                 $userData['password'] = Hash::make($request->password);
             }
 
-            $mahasiswa->user->update($userData);
+            if ($mahasiswa->user) {
+                $mahasiswa->user->update($userData);
+            } else {
+                $userData['role'] = 'mahasiswa';
+                if (!isset($userData['password'])) {
+                    $userData['password'] = Hash::make($request->nim);
+                }
+                $newUser = User::create($userData);
+                $mahasiswa->update(['user_id' => $newUser->id]);
+            }
         });
 
         return redirect()->route('admin.mahasiswa.index')
@@ -173,7 +183,9 @@ class MahasiswaController extends Controller
     {
         DB::transaction(function () use ($id) {
             $mahasiswa = Mahasiswa::findOrFail($id);
-            $mahasiswa->user->delete();
+            if ($mahasiswa->user) {
+                $mahasiswa->user->delete();
+            }
             $mahasiswa->delete();
         });
 

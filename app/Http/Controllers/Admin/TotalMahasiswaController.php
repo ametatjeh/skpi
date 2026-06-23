@@ -179,58 +179,15 @@ class TotalMahasiswaController extends Controller
      */
     public function downloadTemplate()
     {
-        $headers = [
-            'nim',
-            'nama',
-            'email',
-            'prodi',
-            'nik',
-            'jenis_kelamin',
-            'agama',
-            'alamat',
-            'tahun_masuk',
-            'angkatan',
-            'tanggal_masuk',
-            'status_mahasiswa',
-            'tempat_tanggal_lahir',
-            'tanggal_lulus',
-            'gelar',
-            'no_ijazah',
-        ];
+        $file = base_path('dummy_mahasiswa_terbaru.xlsx');
+        $filename = 'template_import_mahasiswa_' . date('Y-m-d') . '.xlsx';
 
-        $callback = function() use ($headers) {
-            $file = fopen('php://output', 'w');
-            // BOM for UTF-8
-            fprintf($file, chr(0xEF).chr(0xBB).chr(0xBF));
-            // Header row
-            fputcsv($file, $headers);
-            // Example row
-            fputcsv($file, [
-                '2241801025',
-                'Budi Setiawan',
-                'budi@unida-aceh.ac.id',
-                'Profesi Pendidikan Profesi Guru',
-                '7371234567890123',
-                'L',
-                'Islam',
-                'Jl. Contoh Alamat No. 123',
-                '2022',
-                '2022',
-                '2022-09-01',
-                'aktif',
-                'Parepare, 15 Januari 1999',
-                '',
-                '',
-                '',
+        if (file_exists($file)) {
+            return response()->download($file, $filename, [
+                'Content-Type' => 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
             ]);
-            fclose($file);
-        };
+        }
 
-        $filename = 'template_import_mahasiswa_' . date('Y-m-d') . '.csv';
-
-        return response()->stream($callback, 200, [
-            'Content-Type' => 'text/csv; charset=UTF-8',
-            'Content-Disposition' => 'attachment; filename="' . $filename . '"',
-        ]);
+        return redirect()->back()->withErrors(['import' => 'File template tidak ditemukan.']);
     }
 }
