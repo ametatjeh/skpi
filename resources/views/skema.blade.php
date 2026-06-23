@@ -281,7 +281,7 @@
                 <li><a href="{{ url('/') }}">Home</a></li>
                 <li><a href="{{ url('skema') }}">Skema</a></li>
                 <li><a href="{{ url('capaian') }}">Achievement</a></li>
-                <li><a href="http://127.0.0.1:8000/register-email">Registrasi</a></li>
+                <li><a href="{{ url('/register-email') }}">Registrasi</a></li>
                 <li>
                     <span>
                         Login
@@ -317,7 +317,7 @@
             <a href="{{ url('/') }}">Home</a>
             <a href="{{ url('skema') }}">Skema</a>
             <a href="{{ url('capaian') }}">Achievement</a>
-            <a href="http://127.0.0.1:8000/register-email">Registrasi</a>
+            <a href="{{ url('/register-email') }}">Registrasi</a>
             <button class="mobile-dropdown-btn" id="mobileLoginBtn">
                 Login <i class="fas fa-chevron-down"></i>
             </button>
