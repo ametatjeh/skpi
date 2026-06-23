@@ -280,6 +280,7 @@
             <ul class="nav-menu">
                 <li><a href="{{ url('/') }}">Home</a></li>
                 <li><a href="{{ url('skema') }}">Skema</a></li>
+                <li><a href="{{ url('capaian') }}">Achievement</a></li>
                 <li><a href="http://127.0.0.1:8000/register-email">Registrasi</a></li>
                 <li>
                     <span>
@@ -315,6 +316,7 @@
         <div class="mobile-nav-links">
             <a href="{{ url('/') }}">Home</a>
             <a href="{{ url('skema') }}">Skema</a>
+            <a href="{{ url('capaian') }}">Achievement</a>
             <a href="http://127.0.0.1:8000/register-email">Registrasi</a>
             <button class="mobile-dropdown-btn" id="mobileLoginBtn">
                 Login <i class="fas fa-chevron-down"></i>
@@ -580,40 +582,32 @@
 
         <!-- Tabel Kategori -->
         <div class="header-skema" style="margin-top: 60px; margin-bottom: 30px;">
-            JENIS ACHIEVEMENT YANG DIVERIFIKASI
+            PERAN DAN TANGGUNG JAWAB
         </div>
         <div class="table-container" style="margin-top: 0;">
             <table>
                 <thead>
                     <tr>
-                        <th>Kategori</th>
-                        <th>Deskripsi</th>
+                        <th>Peran</th>
+                        <th>Deskripsi Tugas</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td><strong>Sertifikasi Kompetensi</strong></td>
-                        <td>Sertifikat keahlian/kompetensi terakreditasi</td>
+                        <td><strong>Mahasiswa</strong></td>
+                        <td>Input data kegiatan, upload dokumen pendukung, lihat status verifikasi</td>
                     </tr>
                     <tr>
-                        <td><strong>Prestasi</strong></td>
-                        <td>Lomba, kompetisi, achievement akademik</td>
+                        <td><strong>Prodi</strong></td>
+                        <td>Verifikasi kegiatan mahasiswa, buat draft SKPI, kelola CPL</td>
                     </tr>
                     <tr>
-                        <td><strong>Organisasi</strong></td>
-                        <td>Keanggotaan organisasi kemahasiswaan</td>
+                        <td><strong>Fakultas</strong></td>
+                        <td>Review draft SKPI dari prodi, verifikasi lanjutan, arsip</td>
                     </tr>
                     <tr>
-                        <td><strong>PKM</strong></td>
-                        <td>Pengabdian kepada masyarakat</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Karya Ilmiah</strong></td>
-                        <td>Jurnal, paper, publikasi ilmiah</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Penghargaan</strong></td>
-                        <td>Award & recognition</td>
+                        <td><strong>Pusat Bahasa</strong></td>
+                        <td>Verifikasi ringkasan bilingual (ID/EN), terjemahan</td>
                     </tr>
                 </tbody>
             </table>

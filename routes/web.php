@@ -24,6 +24,7 @@ Route::get('/sitemap.xml', [App\Http\Controllers\SitemapController::class, 'inde
 // ===============================================
 Route::get('/', fn() => view('welcome'))->name('home');
 Route::get('/skema', fn() => view('skema'))->name('skema');
+Route::get('/capaian', fn() => view('capaian'))->name('capaian');
 
 Route::get('/skpi/verify/{nomor_skpi}', [\App\Http\Controllers\VerificationController::class, 'verify'])
     ->where('nomor_skpi', '.*')
