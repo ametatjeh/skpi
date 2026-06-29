@@ -7,7 +7,7 @@ $app->make('Illuminate\Contracts\Console\Kernel')->bootstrap();
 use App\Models\AdminUser;
 use Illuminate\Support\Facades\Hash;
 
-$admin = AdminUser::where('email', 'admin@gmail.com')->first();
+$admin = AdminUser::where('email', 'rektor@unida-aceh.ac.id')->first();
 
 if ($admin) {
     // Update password dengan hash yang benar

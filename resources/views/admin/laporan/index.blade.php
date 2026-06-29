@@ -292,7 +292,7 @@
 
                     <select name="year" class="filter-select" onchange="this.form.submit()">
                         <option value="">Semua Tahun</option>
-                        @foreach(range(date('Y'), 2020) as $y)
+                        @foreach(range(date('Y'), 2023) as $y)
                             <option value="{{ $y }}" {{ $year == $y ? 'selected' : '' }}>
                                 {{ $y }}
                             </option>

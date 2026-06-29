@@ -5,7 +5,6 @@
                 <img src="{{ asset('images/logo_unida-removebg-preview.png') }}" alt="SKPI Logo" style="height: 40px;">
                 <div>
                     <div class="logo-text-main" style="color: #ffffff;">UNIDA ACEH</div>
-                    <div class="logo-text-sub" style="color: #e2e8f0;">SKPI UNIDA Digital Certificate System</div>
                 </div>
             </div>
 

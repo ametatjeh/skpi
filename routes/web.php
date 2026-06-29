@@ -12,6 +12,7 @@ use App\Http\Controllers\Auth\PusatBahasaLoginController;
 
 use App\Http\Controllers\Auth\EmailRegistrationController;
 use App\Http\Controllers\Auth\ActivationController;
+use App\Http\Controllers\StatistikController;
 use Illuminate\Support\Facades\Auth;
 
 // ===============================================
@@ -22,8 +23,11 @@ Route::get('/sitemap.xml', [App\Http\Controllers\SitemapController::class, 'inde
 // ===============================================
 // HALAMAN AWAL & VERIFIKASI SKPI
 // ===============================================
-Route::get('/', fn() => view('welcome'))->name('home');
+Route::get('/', [StatistikController::class, 'index'])->name('home');
 Route::get('/skema', fn() => view('skema'))->name('skema');
+Route::get('/statistik', fn() => redirect()->route('home'))->name('statistik');
+Route::get('/statistik/export-pdf', [StatistikController::class, 'exportPdf'])->name('statistik.export.pdf');
+Route::get('/statistik/export-excel', [StatistikController::class, 'exportExcel'])->name('statistik.export.excel');
 Route::get('/capaian', fn() => view('capaian'))->name('capaian');
 
 Route::get('/skpi/verify/{nomor_skpi}', [\App\Http\Controllers\VerificationController::class, 'verify'])

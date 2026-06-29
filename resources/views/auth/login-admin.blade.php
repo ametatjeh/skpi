@@ -375,8 +375,9 @@
                 opacity: 1;
             }
         }
+
         @include('partials.styles')
-</style>
+    </style>
 </head>
 
 <body>
@@ -384,213 +385,98 @@
     @include('partials.header')
 
     <main style="overflow: hidden; position: relative; flex: 1; min-height: calc(100vh - 200px); display: flex; align-items: center; justify-content: center; width: 100%; padding: clamp(10px, 3vh, 40px) 16px;">
-<!-- Particles container -->
-    <div id="particles-js" style="position: absolute; width: 100%; height: 100%; top: 0; left: 0; z-index: -2;"></div>
-    <!-- Decorative blobs for glassmorphism effect -->
-    <div style="position: absolute; top: -100px; left: -100px; width: 400px; height: 400px; background: #3b82f6; border-radius: 50%; filter: blur(120px); opacity: 0.4; z-index: -1;"></div>
-    <div style="position: absolute; bottom: -150px; right: -50px; width: 500px; height: 500px; background: #8b5cf6; border-radius: 50%; filter: blur(150px); opacity: 0.3; z-index: -1;"></div>
+        <!-- Particles container -->
+        <div id="particles-js" style="position: absolute; width: 100%; height: 100%; top: 0; left: 0; z-index: -2;"></div>
+        <!-- Decorative blobs for glassmorphism effect -->
+        <div style="position: absolute; top: -100px; left: -100px; width: 400px; height: 400px; background: #3b82f6; border-radius: 50%; filter: blur(120px); opacity: 0.4; z-index: -1;"></div>
+        <div style="position: absolute; bottom: -150px; right: -50px; width: 500px; height: 500px; background: #8b5cf6; border-radius: 50%; filter: blur(150px); opacity: 0.3; z-index: -1;"></div>
 
-        
+
         <div class="login-wrapper" style="position: relative; z-index: 10;">
-        <!-- Left Side: Login Form Admin -->
-        <div class="form-side">
-            <div class="login-header" style="text-align: center;">
-                <i class="fa-solid fa-computer" style="font-size: clamp(2.5rem, 8vh, 4rem); color: #ffffff; margin-bottom: clamp(5px, 2vh, 15px);"></i>
-                <h2 style="justify-content: center;">AKADEMIK UNIDA</h2>
-                <p>Masuk ke panel SKPI sebagai Akademik.</p>
-                <br>
-            </div>
-
-            @if ($errors->any())
-            <div class="alert-danger" role="alert">
-                <ul>
-                    @foreach ($errors->all() as $error)
-                    <li>{{ $error }}</li>
-                    @endforeach
-                </ul>
-            </div>
-            @endif
-
-            <form method="POST" action="{{ route('admin.login.submit') }}">
-                @csrf
-                <div class="form-group">
-                    <label for="email">Email</label>
-                    <input type="email" id="email" name="email" value="{{ old('email') }}"
-                        placeholder=". . . . .@unida-aceh.ac.id" required autofocus>
+            <!-- Left Side: Login Form Admin -->
+            <div class="form-side">
+                <div class="login-header" style="text-align: center;">
+                    <i class="fa-solid fa-computer" style="font-size: clamp(2.5rem, 8vh, 4rem); color: #ffffff; margin-bottom: clamp(5px, 2vh, 15px);"></i>
+                    <h2 style="justify-content: center;">AKADEMIK UNIDA</h2>
+                    <p>Masuk ke panel SKPI sebagai Akademik.</p>
+                    <br>
                 </div>
 
-                <div class="form-group">
-                    <label for="password">Password</label>
-                    <input type="password" id="password" name="password" placeholder="Masukkan password Anda" required>
+                @if ($errors->any())
+                <div class="alert-danger" role="alert">
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
                 </div>
+                @endif
 
-                <button type="submit" class="btn">
-                    <i class="fa-solid fa-right-to-bracket"></i> Masuk
-                </button>
-            </form>
+                <form method="POST" action="{{ route('admin.login.submit') }}">
+                    @csrf
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" value="{{ old('email') }}"
+                            placeholder="nama@unida-aceh.ac.id" required autofocus>
+                    </div>
 
-            <div class="form-footer">
-                <a href="{{ url('/') }}"><i class="fa-solid fa-arrow-left"></i> Kembali ke Beranda</a>
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" name="password" placeholder="Masukkan password Anda" required>
+                    </div>
+
+                    <button type="submit" class="btn">
+                        <i class="fa-solid fa-right-to-bracket"></i> Masuk
+                    </button>
+                </form>
+
+                <div class="form-footer">
+                    <a href="{{ url('/') }}"><i class="fa-solid fa-arrow-left"></i> Kembali ke Beranda</a>
+                </div>
             </div>
+
+
         </div>
 
+        <!-- LOADING OVERLAY (LOGO + DOTS) -->
+        <div class="loading-overlay" id="loadingOverlay">
+            <img src="{{ asset('images/skpi_loading.png') }}" class="loading-logo" alt="Loading...">
 
-    </div>
+            <!-- Three Bouncing Dots -->
+            <div class="loading-dots">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
 
-    <!-- LOADING OVERLAY (LOGO + DOTS) -->
-    <div class="loading-overlay" id="loadingOverlay">
-        <img src="{{ asset('images/skpi_loading.png') }}" class="loading-logo" alt="Loading...">
-
-        <!-- Three Bouncing Dots -->
-        <div class="loading-dots">
-            <span></span>
-            <span></span>
-            <span></span>
+            <div class="loading-text">MEMPROSES MASUK...</div>
         </div>
 
-        <div class="loading-text">MEMPROSES MASUK...</div>
-    </div>
+        <script>
+            document.querySelector('form').addEventListener('submit', function(e) {
+                e.preventDefault();
+                document.getElementById('loadingOverlay').classList.add('active');
 
-    <script>
-        document.querySelector('form').addEventListener('submit', function(e) {
-            e.preventDefault();
-            document.getElementById('loadingOverlay').classList.add('active');
+                // Disable button
+                const btn = this.querySelector('button[type="submit"]');
+                btn.style.opacity = '0.7';
+                btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Loading...';
 
-            // Disable button
-            const btn = this.querySelector('button[type="submit"]');
-            btn.style.opacity = '0.7';
-            btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Loading...';
+                setTimeout(() => {
+                    this.submit();
+                }, 1500);
+            });
+        </script>
 
-            setTimeout(() => {
-                this.submit();
-            }, 1500);
-        });
-    </script>
 
-        
 
-    
 
-        </main>
+
+    </main>
 
     @include('partials.footer')
 
-    <!-- Particles JS -->
-    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
-    <script>
-        if (document.getElementById('particles-js')) {
-            particlesJS("particles-js", {
-                "particles": {
-                    "number": {
-                        "value": 80,
-                        "density": {
-                            "enable": true,
-                            "value_area": 800
-                        }
-                    },
-                    "color": {
-                        "value": "#ffffff"
-                    },
-                    "shape": {
-                        "type": "circle",
-                        "stroke": {
-                            "width": 0,
-                            "color": "#000000"
-                        },
-                        "polygon": {
-                            "nb_sides": 5
-                        },
-                        "image": {
-                            "src": "img/github.svg",
-                            "width": 100,
-                            "height": 100
-                        }
-                    },
-                    "opacity": {
-                        "value": 0.5,
-                        "random": false,
-                        "anim": {
-                            "enable": false,
-                            "speed": 1,
-                            "opacity_min": 0.1,
-                            "sync": false
-                        }
-                    },
-                    "size": {
-                        "value": 3,
-                        "random": true,
-                        "anim": {
-                            "enable": false,
-                            "speed": 40,
-                            "size_min": 0.1,
-                            "sync": false
-                        }
-                    },
-                    "line_linked": {
-                        "enable": true,
-                        "distance": 150,
-                        "color": "#ffffff",
-                        "opacity": 0.4,
-                        "width": 1
-                    },
-                    "move": {
-                        "enable": true,
-                        "speed": 1,
-                        "direction": "none",
-                        "random": false,
-                        "straight": false,
-                        "out_mode": "out",
-                        "bounce": false,
-                        "attract": {
-                            "enable": true,
-                            "rotateX": 600,
-                            "rotateY": 1200
-                        }
-                    }
-                },
-                "interactivity": {
-                    "detect_on": "canvas",
-                    "events": {
-                        "onhover": {
-                            "enable": true,
-                            "mode": "repulse"
-                        },
-                        "onclick": {
-                            "enable": true,
-                            "mode": "push"
-                        },
-                        "resize": true
-                    },
-                    "modes": {
-                        "grab": {
-                            "distance": 400,
-                            "line_linked": {
-                                "opacity": 1
-                            }
-                        },
-                        "bubble": {
-                            "distance": 400,
-                            "size": 40,
-                            "duration": 2,
-                            "opacity": 8,
-                            "speed": 3
-                        },
-                        "repulse": {
-                            "distance": 200,
-                            "duration": 0.4
-                        },
-                        "push": {
-                            "particles_nb": 4
-                        },
-                        "remove": {
-                            "particles_nb": 2
-                        }
-                    }
-                },
-                "retina_detect": true
-            });
-        }
-    </script>
+    @include('partials.particles')
 </body>
 
 </html>

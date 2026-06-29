@@ -1,29 +1,32 @@
 <!-- NAVBAR BLUE -->
     <nav class="nav-bar">
         <div class="nav-inner">
-            <div class="nav-brand">
-                <i class="fas fa-graduation-cap" style="font-size: 28px; color: #fff;"></i>
-                <span>SKPI UNIDA</span>
-            </div>
+            <a href="{{ route('home') }}" class="nav-brand" style="text-decoration: none; color: #fff; display: flex; align-items: center; gap: 12px;">
+                <img src="{{ asset('images/logo_unida-removebg-preview.png') }}" alt="Logo UNIDA" style="height: 32px;">
+                <div style="display: flex; flex-direction: column; justify-content: center; line-height: 1.2;">
+                    <span style="font-size: 18px; font-weight: 800; letter-spacing: 1px;">SKPI UNIDA</span>
+                    <span style="font-size: 11px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; color: #e2e8f0;">DIGITAL CERTIFICATE SYSTEM</span>
+                </div>
+            </a>
 
             <!-- MENU DESKTOP -->
             <ul class="nav-menu">
-                <li><a href="{{ url('/') }}">Home</a></li>
-                <li><a href="{{ url('skema') }}">Skema</a></li>
-                <li><a href="{{ url('capaian') }}">Achievement</a></li>
-                <!-- <li><a href="#about">About us</a></li> -->
-                <li><a href="{{ url('/register-email') }}">DAFTAR</a></li>
+                <li><a href="{{ url('/') }}" class="{{ request()->is('/') ? 'active' : '' }}">Home</a></li>
+                <li><a href="{{ url('skema') }}" class="{{ request()->is('skema*') ? 'active' : '' }}">Skema</a></li>
+                <li><a href="{{ url('capaian') }}" class="{{ request()->is('capaian*') ? 'active' : '' }}">Achievement</a></li>
+                <li><a href="{{ url('/register-email') }}" class="{{ request()->is('register-email*') ? 'active' : '' }}">DAFTAR</a></li>
+
                 <li>
-                    <span>
+                    <span class="{{ request()->routeIs('*.login') ? 'active' : '' }}">
                         Login
                         <i class="fa-solid fa-chevron-down" style="font-size:10px;margin-left:4px;"></i>
                     </span>
                     <div class="dropdown">
-                        <a href="{{ route('mahasiswa.login') }}">Mahasiswa</a>
-                        <a href="{{ route('prodi.login') }}">Prodi</a>
-                        <a href="{{ route('pusat.login') }}">Pusat Bahasa</a>
-                        <a href="{{ route('fakultas.login') }}">Fakultas</a>
-                        <a href="{{ route('admin.login') }}">Akademik</a>
+                        <a href="{{ route('mahasiswa.login') }}" class="{{ request()->routeIs('mahasiswa.login') ? 'active' : '' }}">Mahasiswa</a>
+                        <a href="{{ route('prodi.login') }}" class="{{ request()->routeIs('prodi.login') ? 'active' : '' }}">Prodi</a>
+                        <a href="{{ route('pusat.login') }}" class="{{ request()->routeIs('pusat.login') ? 'active' : '' }}">Pusat Bahasa</a>
+                        <a href="{{ route('fakultas.login') }}" class="{{ request()->routeIs('fakultas.login') ? 'active' : '' }}">Fakultas</a>
+                        <a href="{{ route('admin.login') }}" class="{{ request()->routeIs('admin.login') ? 'active' : '' }}">Akademik</a>
                     </div>
                 </li>
                 <!-- <li><a href="#contact">Contact us</a></li> -->
@@ -46,19 +49,19 @@
             </button>
         </div>
         <div class="mobile-nav-links">
-            <a href="{{ url('/') }}">Home</a>
-            <a href="{{ url('skema') }}">Skema</a>
-            <a href="{{ url('capaian') }}">Achievement</a>
-            <a href="{{ url('/register-email') }}">DAFTAR</a>
-            <button class="mobile-dropdown-btn" id="mobileLoginBtn">
+            <a href="{{ url('/') }}" class="{{ request()->is('/') ? 'active' : '' }}">Home</a>
+            <a href="{{ url('skema') }}" class="{{ request()->is('skema*') ? 'active' : '' }}">Skema</a>
+            <a href="{{ url('capaian') }}" class="{{ request()->is('capaian*') ? 'active' : '' }}">Achievement</a>
+            <a href="{{ url('/register-email') }}" class="{{ request()->is('register-email*') ? 'active' : '' }}">DAFTAR</a>
+            <button class="mobile-dropdown-btn {{ request()->routeIs('*.login') ? 'active' : '' }}" id="mobileLoginBtn">
                 Login <i class="fas fa-chevron-down"></i>
             </button>
             <div class="mobile-dropdown-content" id="mobileLoginContent">
-                <a href="{{ route('mahasiswa.login') }}">Mahasiswa</a>
-                <a href="{{ route('prodi.login') }}">Prodi</a>
-                <a href="{{ route('pusat.login') }}">Pusat Bahasa</a>
-                <a href="{{ route('fakultas.login') }}">Fakultas</a>
-                <a href="{{ route('admin.login') }}">Akademik</a>
+                <a href="{{ route('mahasiswa.login') }}" class="{{ request()->routeIs('mahasiswa.login') ? 'active' : '' }}">Mahasiswa</a>
+                <a href="{{ route('prodi.login') }}" class="{{ request()->routeIs('prodi.login') ? 'active' : '' }}">Prodi</a>
+                <a href="{{ route('pusat.login') }}" class="{{ request()->routeIs('pusat.login') ? 'active' : '' }}">Pusat Bahasa</a>
+                <a href="{{ route('fakultas.login') }}" class="{{ request()->routeIs('fakultas.login') ? 'active' : '' }}">Fakultas</a>
+                <a href="{{ route('admin.login') }}" class="{{ request()->routeIs('admin.login') ? 'active' : '' }}">Akademik</a>
             </div>
         </div>
     </div>

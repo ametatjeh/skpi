@@ -89,6 +89,10 @@
         }
 
         /* ======= NAVBAR BLUE ======= */
+        .nav-bar a, .nav-menu a, .dropdown a, .mobile-nav a {
+            text-decoration: none !important;
+        }
+
         .nav-bar {
             background: #0050a0;
             position: sticky;
@@ -113,6 +117,7 @@
             display: flex;
             gap: 10px;
             align-items: center;
+            text-decoration: none !important;
         }
 
         .nav-brand img {
@@ -138,10 +143,28 @@
             font-weight: 600;
             text-transform: uppercase;
             letter-spacing: .4px;
+            text-decoration: none !important;
         }
 
         .nav-menu>li:hover {
             background: #003f7a;
+        }
+
+        .nav-menu>li>a.active,
+        .nav-menu>li>span.active {
+            position: relative;
+            color: #fff;
+        }
+
+        .nav-menu>li>a.active::after,
+        .nav-menu>li>span.active::after {
+            content: '';
+            position: absolute;
+            bottom: 8px;
+            left: 10px;
+            right: 10px;
+            height: 1px;
+            background: #a855f7;
         }
 
         .nav-menu li .dropdown {
@@ -170,6 +193,13 @@
         .dropdown a:hover {
             background: #f5f5f5;
             color: #0d47a1;
+        }
+
+        .dropdown a.active {
+            color: #a855f7;
+            font-weight: 700;
+            background: #f3e8ff;
+            border-left: 3px solid #a855f7;
         }
 
         /* ========= HAMBURGER & MOBILE NAV ========= */
@@ -231,6 +261,23 @@
             text-align: left;
             font-family: inherit;
             cursor: pointer;
+        }
+
+        .mobile-nav-links a.active,
+        .mobile-dropdown-btn.active {
+            position: relative;
+            color: #fff;
+        }
+
+        .mobile-nav-links a.active::after,
+        .mobile-dropdown-btn.active::after {
+            content: '';
+            position: absolute;
+            bottom: 6px;
+            left: 10px;
+            width: 65px;
+            height: 1px;
+            background: #a855f7;
         }
 
         .mobile-dropdown-content {

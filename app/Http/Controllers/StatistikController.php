@@ -1,18 +1,17 @@
 <?php
 
-namespace App\Http\Controllers\Admin;
+namespace App\Http\Controllers;
 
-use App\Http\Controllers\Controller;
-use App\Models\DraftSkpi; // Switch to correct model
-use App\Exports\SkpiExport; // Might need update if it relies on Skpi
+use App\Models\DraftSkpi;
+use App\Exports\SkpiExport;
 use Illuminate\Http\Request;
 use Barryvdh\DomPDF\Facade\Pdf;
 use Maatwebsite\Excel\Facades\Excel;
 
-class LaporanAdminController extends Controller
+class StatistikController extends Controller
 {
     /**
-     * Halaman index laporan
+     * Halaman index statistik publik
      */
     public function index(Request $request)
     {
@@ -20,7 +19,6 @@ class LaporanAdminController extends Controller
         $year = $request->year; // Default null (Semua Tahun)
 
         // 1. Build Query for Table (Pagination)
-        // Use DraftSkpi which allows us to see 'final_issued', 'draft', etc.
         $query = DraftSkpi::with(['mahasiswa.prodi.fakultas', 'prodi'])->whereYear('created_at', '>=', 2023);
 
         if ($year) {
@@ -30,7 +28,7 @@ class LaporanAdminController extends Controller
             $query->whereMonth('created_at', $month);
         }
 
-        $skpi = $query->latest()->paginate(30);
+        $skpi = $query->latest()->paginate(30)->withQueryString();
 
         // 2. Build Collection for Stats (Get ALL matching records)
         $statsQuery = DraftSkpi::with(['mahasiswa.prodi', 'prodi'])->whereYear('created_at', '>=', 2023);
@@ -42,16 +40,14 @@ class LaporanAdminController extends Controller
         }
         $allData = $statsQuery->get();
 
-        // --- STATS AGGREGATION (Collection Math) ---
+        // --- STATS AGGREGATION ---
 
         // Summary Cards
         $summaryTotal = $allData->count();
-        // 'final_issued' is the correct DB status for Final
-        $summaryApproved = $allData->whereIn('status', ['approved', 'final_issued', 'final'])->count(); 
+        $summaryApproved = $allData->whereIn('status', ['approved', 'final_issued', 'final'])->count();
         $summaryPending = $allData->whereIn('status', ['pending', 'submitted', 'draft', 'diverifikasi_prodi'])->count();
 
         // Chart 1: Top 5 Prodi
-        // Priority: Use direct prodi relation if available, fallback to mahasiswa.prodi
         $chartProdiData = $allData->groupBy(function($item) {
                 return $item->prodi->nama_prodi ?? $item->mahasiswa->prodi->nama_prodi ?? 'Tanpa Prodi';
             })
@@ -63,7 +59,6 @@ class LaporanAdminController extends Controller
         $chartProdiValues = array_values($chartProdiData->values()->toArray());
 
         // Chart 2: Status
-        // Map raw DB statuses to cleaner labels
         $chartStatusData = $allData->groupBy('status')->map->count();
         $chartStatusKeys = array_values($chartStatusData->keys()->map(function($s) {
             return match($s) {
@@ -77,15 +72,11 @@ class LaporanAdminController extends Controller
 
         // Chart 3: Trend
         if ($year) {
-            // Monthly Trend for selected year
             $trendLabel = "Tren Bulanan ($year)";
-            
-            // Ensure sorting Jan-Dec
             $months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
-            $chartTrendKeys = $months; // Use English Short for keys or indonesian if preferred
+            $chartTrendKeys = $months;
             $chartTrendValues = [];
-            
-            // Helper to get month index from date
+
             foreach (range(1, 12) as $mIdx) {
                 $count = $allData->filter(function($item) use ($mIdx) {
                     return $item->created_at->month == $mIdx;
@@ -93,7 +84,6 @@ class LaporanAdminController extends Controller
                 $chartTrendValues[] = $count;
             }
         } else {
-            // Yearly Trend
             $trendLabel = "Tren Tahunan";
             $chartTrendKeys = [];
             $chartTrendValues = [];
@@ -103,8 +93,8 @@ class LaporanAdminController extends Controller
             }
         }
 
-        return view('admin.laporan.index', compact(
-            'skpi', 
+        return view('welcome', compact(
+            'skpi',
             'chartProdiKeys', 'chartProdiValues',
             'chartStatusKeys', 'chartStatusValues',
             'chartTrendKeys', 'chartTrendValues',
@@ -119,7 +109,6 @@ class LaporanAdminController extends Controller
      */
     public function exportPdf()
     {
-        // Use DraftSkpi
         $skpi = DraftSkpi::with(['mahasiswa.prodi.fakultas'])
             ->latest()
             ->get();
@@ -135,7 +124,6 @@ class LaporanAdminController extends Controller
      */
     public function exportExcel()
     {
-        // Need to update SkpiExport to use DraftSkpi if it doesn't already
         return Excel::download(new SkpiExport, 'laporan-skpi-' . now()->format('Y-m-d') . '.xlsx');
     }
 }
