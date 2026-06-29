@@ -1,4 +1,4 @@
-{{-- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="id">
 
 <head>
@@ -35,11 +35,12 @@
         /* MEMASTIKAN TIDAK ADA SCROLL */
         html,
         body {
-            height: 100%;
+            min-height: 100vh;
             font-family: 'Outfit', sans-serif;
             background: var(--gradient-bg);
-            /* Memastikan tidak ada scroll */
-            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            overflow-x: hidden;
         }
 
         /* ========================================
@@ -406,10 +407,11 @@
 
 <body>
 
-    <nav class="navbar">
-        <div class="navbar-inner">
-            <a href="#" class="logo-group">
-                <img src="https://via.placeholder.com/40x40.png?text=Logo" class="logo-img" alt="Logo UNIDA">
+    <main style="flex: 1; display: flex; flex-direction: column;">
+        <nav class="navbar">
+            <div class="navbar-inner">
+                <a href="#" class="logo-group">
+                    <img src="{{ asset('images/logo_unida-removebg-preview.png') }}" class="logo-img" alt="Logo UNIDA">
                 <span class="logo-title">SKPI UNIDA</span>
             </a>
 
@@ -476,10 +478,11 @@
             Registrasi Email SKPI
         </a>
         <div class="hero-hint">
-            Sudah terdaftar? Gunakan menu **Login** di kanan atas untuk masuk sesuai peran Anda.
+            Sudah terdaftar? Gunakan menu <strong>Login</strong> di kanan atas untuk masuk sesuai peran Anda.
         </div>
 
-    </section>
+        </section>
+    </main>
 
     <script>
         const hamburgerBtn = document.getElementById("hamburgerBtn");
@@ -512,6 +515,9 @@
         // Karena tidak ada scroll, event scroll dihilangkan
     </script>
 
+    @include('partials.footer')
+
+    @include('partials.particles')
 </body>
 
-</html> --}}
+</html>
