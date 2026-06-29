@@ -165,7 +165,7 @@
             left: 10px;
             right: 10px;
             height: 1px;
-            background: #a855f7;
+            background: #f59e0b;
         }
 
         .nav-menu li .dropdown {
@@ -197,10 +197,10 @@
         }
 
         .dropdown a.active {
-            color: #a855f7;
+            color: #f59e0b;
             font-weight: 700;
-            background: #f3e8ff;
-            border-left: 3px solid #a855f7;
+            background: #fffbeb;
+            border-left: 3px solid #f59e0b;
         }
 
         /* ========= HAMBURGER & MOBILE NAV ========= */
@@ -278,7 +278,7 @@
             left: 10px;
             width: 65px;
             height: 1px;
-            background: #a855f7;
+            background: #f59e0b;
         }
 
         .mobile-dropdown-content {
