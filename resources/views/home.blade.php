@@ -37,7 +37,7 @@
             content: '';
             position: fixed;
             inset: 0;
-            background-image: url('{{ asset('images/logo_unida.jpg') }}');
+            background-image: var(--bg-logo);
             background-size: 200px auto;
             background-repeat: space;
             background-position: center;
@@ -350,7 +350,7 @@
         }
     </style>
 
-    <div class="dashboard-container">
+    <div class="dashboard-container" style="--bg-logo: url('{{ asset('images/logo_unida.jpg') }}');">
 
         <!-- Message Alerts -->
         @if (session('success'))

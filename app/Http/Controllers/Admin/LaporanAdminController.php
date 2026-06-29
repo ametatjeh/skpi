@@ -42,16 +42,21 @@ class LaporanAdminController extends Controller
         }
         $allData = $statsQuery->get();
 
-        // --- STATS AGGREGATION (Collection Math) ---
+        // Query khusus untuk Trend (agar filter bulan tidak merusak tren 12 bulan di tahun tersebut)
+        $trendQuery = DraftSkpi::whereYear('created_at', '>=', 2023);
+        if ($year) {
+            $trendQuery->whereYear('created_at', $year);
+        }
+        $trendData = $trendQuery->get();
 
-        // Summary Cards
-        $summaryTotal = $allData->count();
-        // 'final_issued' is the correct DB status for Final
-        $summaryApproved = $allData->whereIn('status', ['approved', 'final_issued', 'final'])->count(); 
-        $summaryPending = $allData->whereIn('status', ['pending', 'submitted', 'draft', 'diverifikasi_prodi'])->count();
+        // --- STATS AGGREGATION ---
+
+        // Summary Cards — sama persis dengan StatistikController
+        $summaryTotal    = $allData->count();
+        $summaryApproved = $allData->whereIn('status', ['approved', 'final_issued', 'final', 'valid_fakultas'])->count();
+        $summaryPending  = $allData->whereNotIn('status', ['approved', 'final_issued', 'final', 'valid_fakultas', 'rejected', 'revisi_prodi', 'revisi_fakultas'])->count();
 
         // Chart 1: Top 5 Prodi
-        // Priority: Use direct prodi relation if available, fallback to mahasiswa.prodi
         $chartProdiData = $allData->groupBy(function($item) {
                 return $item->prodi->nama_prodi ?? $item->mahasiswa->prodi->nama_prodi ?? 'Tanpa Prodi';
             })
@@ -59,47 +64,45 @@ class LaporanAdminController extends Controller
             ->sortDesc()
             ->take(5);
 
-        $chartProdiKeys = array_values($chartProdiData->keys()->toArray());
+        $chartProdiKeys   = array_values($chartProdiData->keys()->toArray());
         $chartProdiValues = array_values($chartProdiData->values()->toArray());
 
-        // Chart 2: Status
-        // Map raw DB statuses to cleaner labels
-        $chartStatusData = $allData->groupBy('status')->map->count();
-        $chartStatusKeys = array_values($chartStatusData->keys()->map(function($s) {
+        // Chart 2: Status — sama persis dengan StatistikController
+        $chartStatusData   = $allData->groupBy('status')->map->count();
+        $chartStatusKeys   = array_values($chartStatusData->keys()->map(function($s) {
             return match($s) {
-                'final_issued' => 'Final',
-                'diverifikasi_prodi' => 'Verif Prodi',
-                'submitted' => 'Diajukan',
-                default => ucfirst($s)
+                'final_issued', 'final', 'approved' => 'Final / Disetujui',
+                'diverifikasi_prodi', 'valid_prodi'  => 'Verif Prodi',
+                'di_pusat_bahasa', 'valid_pusat_bahasa' => 'Pusat Bahasa',
+                'valid_fakultas'                     => 'Fakultas',
+                'revisi_prodi', 'revisi_fakultas'    => 'Revisi',
+                'submitted', 'pending'               => 'Diajukan',
+                'draft'                              => 'Draft',
+                default                              => ucfirst(str_replace('_', ' ', $s))
             };
         })->toArray());
         $chartStatusValues = array_values($chartStatusData->values()->toArray());
 
-        // Chart 3: Trend
+        // Chart 3: Trend — gunakan $trendData (query tanpa filter bulan)
         if ($year) {
-            // Monthly Trend for selected year
-            $trendLabel = "Tren Bulanan ($year)";
-            
-            // Ensure sorting Jan-Dec
-            $months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
-            $chartTrendKeys = $months; // Use English Short for keys or indonesian if preferred
+            $trendLabel       = "Tren Bulanan ($year)";
+            $months           = ['Jan', 'Feb', 'Mar', 'Apr', 'Mei', 'Jun', 'Jul', 'Agt', 'Sep', 'Okt', 'Nov', 'Des'];
+            $chartTrendKeys   = $months;
             $chartTrendValues = [];
-            
-            // Helper to get month index from date
+
             foreach (range(1, 12) as $mIdx) {
-                $count = $allData->filter(function($item) use ($mIdx) {
+                $count = $trendData->filter(function($item) use ($mIdx) {
                     return $item->created_at->month == $mIdx;
                 })->count();
                 $chartTrendValues[] = $count;
             }
         } else {
-            // Yearly Trend
-            $trendLabel = "Tren Tahunan";
-            $chartTrendKeys = [];
+            $trendLabel       = "Tren Tahunan";
+            $chartTrendKeys   = [];
             $chartTrendValues = [];
             foreach (range(2023, max(2023, (int) date('Y'))) as $y) {
-                $chartTrendKeys[] = (string) $y;
-                $chartTrendValues[] = $allData->filter(fn($item) => $item->created_at->year == $y)->count();
+                $chartTrendKeys[]   = (string) $y;
+                $chartTrendValues[] = $trendData->filter(fn($item) => $item->created_at->year == $y)->count();
             }
         }
 
