@@ -23,9 +23,7 @@
             font-family: 'Poppins', sans-serif;
             min-height: 100vh;
             display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 16px;
+            flex-direction: column;
             background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%);
             color: #fff;
             position: relative;
@@ -74,7 +72,7 @@
         .wrapper {
             width: 100%;
             max-width: 480px;
-            min-height: 520px;
+            min-height: clamp(380px, 60vh, 520px);
             background: rgba(15, 23, 42, 0.4);
             backdrop-filter: blur(12px);
             -webkit-backdrop-filter: blur(12px);
@@ -86,7 +84,7 @@
 
         /* Form Side */
         .form-side {
-            padding: 40px 46px;
+            padding: clamp(20px, 4vh, 40px) clamp(20px, 4vw, 46px);
             background: transparent;
             color: #f8fafc;
             display: flex;
@@ -463,17 +461,23 @@
                 padding: 30px 25px;
             }
         }
-    </style>
+        @include('partials.styles')
+</style>
 </head>
 
 <body>
-    <!-- Particles container -->
+
+    @include('partials.header')
+
+    <main style="overflow: hidden; position: relative; flex: 1; min-height: calc(100vh - 200px); display: flex; align-items: center; justify-content: center; width: 100%; padding: clamp(10px, 3vh, 40px) 16px;">
+<!-- Particles container -->
     <div id="particles-js" style="position: absolute; width: 100%; height: 100%; top: 0; left: 0; z-index: -2;"></div>
     <!-- Decorative blobs for glassmorphism effect -->
     <div style="position: absolute; top: -100px; left: -100px; width: 400px; height: 400px; background: #3b82f6; border-radius: 50%; filter: blur(120px); opacity: 0.4; z-index: -1;"></div>
     <div style="position: absolute; bottom: -150px; right: -50px; width: 500px; height: 500px; background: #8b5cf6; border-radius: 50%; filter: blur(150px); opacity: 0.3; z-index: -1;"></div>
 
-    <div class="main-container">
+        
+        <div class="main-container">
         <!-- Hero Text Kiri -->
         <div class="hero-text">
             <div class="hero-sub">Belum Registrasi Email Untuk Login?</div>
@@ -484,8 +488,8 @@
         <div class="wrapper">
             <div class="form-side">
                 <div style="text-align: center;">
-                    <i class="fa-solid fa-envelope-circle-check" style="font-size: 4rem; color: #ffffff; margin-bottom: 15px;"></i>
-                    <h2 style="justify-content: center;">PORTAL PENDAFTARAN</h2>
+                    <i class="fa-solid fa-envelope-circle-check" style="font-size: clamp(2.5rem, 8vh, 4rem); color: #ffffff; margin-bottom: clamp(5px, 2vh, 15px);"></i>
+                    <h2 style="justify-content: center; font-size: clamp(1.3rem, 4vh, 1.8rem); margin-bottom: clamp(5px, 2vh, 15px);">PORTAL PENDAFTARAN</h2>
                 </div>
 
                 <div class="info">
@@ -530,6 +534,10 @@
             </div>
         </div>
     </div>
+
+        </main>
+
+    @include('partials.footer')
 
     <!-- SUCCESS MODAL -->
     <div class="modal-overlay" id="successModal">

@@ -19,19 +19,12 @@
             padding: 0;
         }
 
-        html,
-        body {
-            height: 100%;
-        }
-
         body {
             font-family: 'Poppins', sans-serif;
             min-height: 100vh;
             display: flex;
-            align-items: center;
-            justify-content: center;
+            flex-direction: column;
             background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%);
-            padding: 16px;
             color: #fff;
             position: relative;
             overflow-x: hidden;
@@ -40,7 +33,7 @@
         .login-wrapper {
             width: 100%;
             max-width: 480px;
-            min-height: 520px;
+            min-height: clamp(380px, 60vh, 520px);
             background: rgba(15, 23, 42, 0.4);
             backdrop-filter: blur(12px);
             -webkit-backdrop-filter: blur(12px);
@@ -52,7 +45,7 @@
 
         /* LEFT: FORM */
         .form-side {
-            padding: 40px 46px;
+            padding: clamp(20px, 4vh, 40px) clamp(20px, 4vw, 46px);
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -66,9 +59,9 @@
 
         .login-header h2 {
             font-weight: 800;
-            font-size: 1.6rem;
+            font-size: clamp(1.2rem, 4vh, 1.6rem);
             color: #60a5fa;
-            margin-bottom: 4px;
+            margin-bottom: clamp(2px, 1vh, 4px);
             display: flex;
             align-items: center;
             gap: 8px;
@@ -126,7 +119,7 @@
 
         .alert-warning-title {
             font-weight: 700;
-            margin-bottom: 4px;
+            margin-bottom: clamp(2px, 1vh, 4px);
             color: #78350f;
         }
 
@@ -525,7 +518,7 @@
         .loading-dots {
             display: flex;
             gap: 10px;
-            margin-bottom: 15px;
+            margin-bottom: clamp(5px, 2vh, 15px);
         }
 
         .loading-dots span {
@@ -598,20 +591,26 @@
                 opacity: 1;
             }
         }
-    </style>
+        @include('partials.styles')
+</style>
 </head>
 
 <body>
-    <!-- Particles container -->
+
+    @include('partials.header')
+
+    <main style="overflow: hidden; position: relative; flex: 1; min-height: calc(100vh - 200px); display: flex; align-items: center; justify-content: center; width: 100%; padding: clamp(10px, 3vh, 40px) 16px;">
+<!-- Particles container -->
     <div id="particles-js" style="position: absolute; width: 100%; height: 100%; top: 0; left: 0; z-index: -2;"></div>
     <!-- Decorative blobs for glassmorphism effect -->
     <div style="position: absolute; top: -100px; left: -100px; width: 400px; height: 400px; background: #3b82f6; border-radius: 50%; filter: blur(120px); opacity: 0.4; z-index: -1;"></div>
     <div style="position: absolute; bottom: -150px; right: -50px; width: 500px; height: 500px; background: #8b5cf6; border-radius: 50%; filter: blur(150px); opacity: 0.3; z-index: -1;"></div>
 
-    <div class="login-wrapper" role="main" style="position: relative; z-index: 10;">
+        
+        <div class="login-wrapper" role="main" style="position: relative; z-index: 10;">
         <div class="form-side">
             <div class="login-header" style="text-align: center;">
-                <i class="fa-solid fa-user-graduate" style="font-size: 4rem; color: #60a5fa; margin-bottom: 15px;"></i>
+                <i class="fa-solid fa-user-graduate" style="font-size: clamp(2.5rem, 8vh, 4rem); color: #60a5fa; margin-bottom: clamp(5px, 2vh, 15px);"></i>
                 <h2 style="justify-content: center;">Portal Mahasiswa</h2>
                 <p>Login menggunakan NIM/e-mail Mahasiswa</p>
                 <br>
@@ -763,6 +762,14 @@
             }, 1500);
         });
     </script>
+
+        
+
+    
+
+        </main>
+
+    @include('partials.footer')
 
     <!-- Particles JS -->
     <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
