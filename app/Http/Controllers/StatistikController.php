@@ -40,12 +40,19 @@ class StatistikController extends Controller
         }
         $allData = $statsQuery->get();
 
+        // Query khusus untuk Trend (agar filter bulan tidak merusak tren 12 bulan di tahun tersebut)
+        $trendQuery = DraftSkpi::whereYear('created_at', '>=', 2023);
+        if ($year) {
+            $trendQuery->whereYear('created_at', $year);
+        }
+        $trendData = $trendQuery->get();
+
         // --- STATS AGGREGATION ---
 
         // Summary Cards
         $summaryTotal = $allData->count();
-        $summaryApproved = $allData->whereIn('status', ['approved', 'final_issued', 'final'])->count();
-        $summaryPending = $allData->whereIn('status', ['pending', 'submitted', 'draft', 'diverifikasi_prodi'])->count();
+        $summaryApproved = $allData->whereIn('status', ['approved', 'final_issued', 'final', 'valid_fakultas'])->count();
+        $summaryPending = $allData->whereNotIn('status', ['approved', 'final_issued', 'final', 'valid_fakultas', 'rejected', 'revisi_prodi', 'revisi_fakultas'])->count();
 
         // Chart 1: Top 5 Prodi
         $chartProdiData = $allData->groupBy(function($item) {
@@ -62,10 +69,14 @@ class StatistikController extends Controller
         $chartStatusData = $allData->groupBy('status')->map->count();
         $chartStatusKeys = array_values($chartStatusData->keys()->map(function($s) {
             return match($s) {
-                'final_issued' => 'Final',
-                'diverifikasi_prodi' => 'Verif Prodi',
-                'submitted' => 'Diajukan',
-                default => ucfirst($s)
+                'final_issued', 'final', 'approved' => 'Final / Disetujui',
+                'diverifikasi_prodi', 'valid_prodi' => 'Verif Prodi',
+                'di_pusat_bahasa', 'valid_pusat_bahasa' => 'Pusat Bahasa',
+                'valid_fakultas' => 'Fakultas',
+                'revisi_prodi', 'revisi_fakultas' => 'Revisi',
+                'submitted', 'pending' => 'Diajukan',
+                'draft' => 'Draft',
+                default => ucfirst(str_replace('_', ' ', $s))
             };
         })->toArray());
         $chartStatusValues = array_values($chartStatusData->values()->toArray());
@@ -73,12 +84,12 @@ class StatistikController extends Controller
         // Chart 3: Trend
         if ($year) {
             $trendLabel = "Tren Bulanan ($year)";
-            $months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+            $months = ['Jan', 'Feb', 'Mar', 'Apr', 'Mei', 'Jun', 'Jul', 'Agt', 'Sep', 'Okt', 'Nov', 'Des'];
             $chartTrendKeys = $months;
             $chartTrendValues = [];
 
             foreach (range(1, 12) as $mIdx) {
-                $count = $allData->filter(function($item) use ($mIdx) {
+                $count = $trendData->filter(function($item) use ($mIdx) {
                     return $item->created_at->month == $mIdx;
                 })->count();
                 $chartTrendValues[] = $count;
@@ -89,7 +100,7 @@ class StatistikController extends Controller
             $chartTrendValues = [];
             foreach (range(2023, max(2023, (int) date('Y'))) as $y) {
                 $chartTrendKeys[] = (string) $y;
-                $chartTrendValues[] = $allData->filter(fn($item) => $item->created_at->year == $y)->count();
+                $chartTrendValues[] = $trendData->filter(fn($item) => $item->created_at->year == $y)->count();
             }
         }
 

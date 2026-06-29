@@ -465,10 +465,12 @@
             <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
             <script>
                 // 1. Chart Prodi
+                var prodiVals = {!! json_encode(!empty($chartProdiValues) ? $chartProdiValues : [0]) !!};
+                var prodiKeys = {!! json_encode(!empty($chartProdiKeys) ? $chartProdiKeys : ['Belum ada data']) !!};
                 var optionsProdi = {
                     series: [{
                         name: 'Total SKPI',
-                        data: {!! json_encode($chartProdiValues ?? []) !!}
+                        data: prodiVals
                     }],
                     chart: {
                         type: 'bar',
@@ -486,15 +488,19 @@
                     },
                     dataLabels: { enabled: false },
                     xaxis: {
-                        categories: {!! json_encode($chartProdiKeys ?? []) !!},
+                        categories: prodiKeys,
                     },
                     colors: ['#3b82f6']
                 };
-                new ApexCharts(document.querySelector("#chartProdi"), optionsProdi).render();
+                if (document.querySelector("#chartProdi")) {
+                    new ApexCharts(document.querySelector("#chartProdi"), optionsProdi).render();
+                }
 
                 // 2. Chart Status
+                var statusVals = {!! json_encode(!empty($chartStatusValues) ? $chartStatusValues : [1]) !!};
+                var statusKeys = {!! json_encode(!empty($chartStatusKeys) ? $chartStatusKeys : ['Belum ada data']) !!};
                 var optionsStatus = {
-                    series: {!! json_encode($chartStatusValues ?? []) !!},
+                    series: statusVals,
                     chart: {
                         type: 'donut',
                         height: 320,
@@ -502,17 +508,21 @@
                     },
                     theme: { mode: 'dark' },
                     stroke: { colors: ['rgba(255, 255, 255, 0.05)'] },
-                    labels: {!! json_encode($chartStatusKeys ?? []) !!},
-                    colors: ['#f59e0b', '#10b981', '#ef4444', '#3b82f6'], 
+                    labels: statusKeys,
+                    colors: ['#f59e0b', '#10b981', '#ef4444', '#3b82f6', '#8b5cf6', '#ec4899'], 
                     legend: { position: 'bottom' }
                 };
-                new ApexCharts(document.querySelector("#chartStatus"), optionsStatus).render();
+                if (document.querySelector("#chartStatus")) {
+                    new ApexCharts(document.querySelector("#chartStatus"), optionsStatus).render();
+                }
 
                 // 3. Chart: Trend
+                var trendVals = {!! json_encode(!empty($chartTrendValues) ? $chartTrendValues : [0]) !!};
+                var trendKeys = {!! json_encode(!empty($chartTrendKeys) ? $chartTrendKeys : ['-']) !!};
                 var optionsTrend = {
                     series: [{
                         name: 'Pengajuan',
-                        data: {!! json_encode($chartTrendValues ?? []) !!}
+                        data: trendVals
                     }],
                     chart: {
                         height: 300,
@@ -526,7 +536,7 @@
                     stroke: { curve: 'smooth', width: 2 },
                     markers: { size: 5, hover: { size: 7 } },
                     xaxis: {
-                        categories: {!! json_encode($chartTrendKeys ?? []) !!}
+                        categories: trendKeys
                     },
                     colors: ['#8b5cf6'],
                     fill: {
@@ -538,7 +548,9 @@
                         }
                     }
                 };
-                new ApexCharts(document.querySelector("#chartTrend"), optionsTrend).render();
+                if (document.querySelector("#chartTrend")) {
+                    new ApexCharts(document.querySelector("#chartTrend"), optionsTrend).render();
+                }
             </script>
         </div>
     </section>
