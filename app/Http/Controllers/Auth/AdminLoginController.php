@@ -28,7 +28,7 @@ class AdminLoginController extends Controller
             $request->session()->regenerate();
 
             // Redirect setelah login sukses ke dashboard admin
-            return redirect()->intended(route('admin.dashboard'));
+            return redirect()->route('admin.dashboard');
         }
 
         // Gagal login, kembali ke form dengan pesan error
