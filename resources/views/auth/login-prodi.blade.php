@@ -379,8 +379,8 @@
                 opacity: 1;
             }
         }
-        @include('partials.styles')
-</style>
+    </style>
+    @include('partials.styles')
 </head>
 
 <body>

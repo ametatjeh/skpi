@@ -877,6 +877,12 @@
 @endsection
 
 @push('scripts')
+<!-- Session Flash Data -->
+<div id="sessionFlashData"
+    data-success="{{ session('success') }}"
+    data-error="{{ session('error') }}"
+    style="display: none;"></div>
+
 <script>
     function openApproveModal() {
         document.getElementById('approveModal').classList.add('active');
@@ -917,13 +923,18 @@
     
     // Check for session flash messages on page load
     document.addEventListener('DOMContentLoaded', function() {
-        @if(session('success'))
-            showSuccessModal('{{ session("success") }}');
-        @endif
-        
-        @if(session('error'))
-            showErrorModal('{{ session("error") }}');
-        @endif
+        const flashData = document.getElementById('sessionFlashData');
+        if (!flashData) return;
+
+        const success = flashData.getAttribute('data-success');
+        const error = flashData.getAttribute('data-error');
+
+        if (success) {
+            showSuccessModal(success);
+        }
+        if (error) {
+            showErrorModal(error);
+        }
     });
     
     // Close modal on overlay click

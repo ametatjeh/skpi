@@ -1074,6 +1074,12 @@
         </div>
     </div>
 
+    <!-- Session Flash Data -->
+    <div id="sessionFlashData"
+        data-success="{{ session('success') }}"
+        data-error="{{ $errors->has('import') ? $errors->first('import') : '' }}"
+        style="display: none;"></div>
+
     {{-- JAVASCRIPT --}}
     <script>
         function changePerPage(value) {
@@ -1111,13 +1117,18 @@
 
         // Auto show modals on page load
         document.addEventListener('DOMContentLoaded', function() {
-            @if(session('success'))
-                showSuccessModal("{{ session('success') }}");
-            @endif
+            const flashData = document.getElementById('sessionFlashData');
+            if (!flashData) return;
 
-            @if($errors->has('import'))
-                showErrorModal("{{ $errors->first('import') }}");
-            @endif
+            const success = flashData.getAttribute('data-success');
+            const error = flashData.getAttribute('data-error');
+
+            if (success) {
+                showSuccessModal(success);
+            }
+            if (error) {
+                showErrorModal(error);
+            }
         });
 
         // Close modal on outside click

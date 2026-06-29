@@ -43,8 +43,8 @@
             text-decoration: none;
         }
 
-        @include('partials.styles')
         </style>
+        @include('partials.styles')
 </head>
 
 <body>

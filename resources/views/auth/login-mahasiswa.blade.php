@@ -689,8 +689,8 @@
                 margin-bottom: 20px;
             }
         }
-        @include('partials.styles')
-</style>
+    </style>
+    @include('partials.styles')
 </head>
 
 <body>
@@ -809,6 +809,14 @@
         </div>
     </div>
 
+    <!-- Session Flash Data -->
+    <div id="sessionFlashData"
+        data-activation-success="{{ session('activation_success') }}"
+        data-success="{{ session('success') }}"
+        data-status="{{ session('status') }}"
+        data-error="{{ session('error') }}"
+        style="display: none;"></div>
+
     <script>
         function showSuccessModal(message) {
             if (message) {
@@ -833,21 +841,25 @@
         }
 
         document.addEventListener('DOMContentLoaded', function() {
-            @if(session('activation_success'))
-            showSuccessModal("{{ session('activation_success') }}");
-            @endif
+            const flashData = document.getElementById('sessionFlashData');
+            if (!flashData) return;
 
-            @if(session('success'))
-            showSuccessModal("{{ session('success') }}");
-            @endif
+            const activationSuccess = flashData.getAttribute('data-activation-success');
+            const success = flashData.getAttribute('data-success');
+            const status = flashData.getAttribute('data-status');
+            const error = flashData.getAttribute('data-error');
 
-            @if(session('status'))
-            showSuccessModal("{{ session('status') }}");
-            @endif
+            if (activationSuccess) {
+                showSuccessModal(activationSuccess);
+            } else if (success) {
+                showSuccessModal(success);
+            } else if (status) {
+                showSuccessModal(status);
+            }
 
-            @if(session('error'))
-            showErrorModal("{{ session('error') }}");
-            @endif
+            if (error) {
+                showErrorModal(error);
+            }
         });
     </script>
     <!-- LOADING OVERLAY (LOGO + DOTS) -->

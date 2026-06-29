@@ -1,4 +1,4 @@
-{{-- @extends('layouts.app')
+@extends('mahasiswa.layouts.app')
 
 @section('content')
     <style>
@@ -41,9 +41,7 @@
             background-size: 200px auto;
             background-repeat: space;
             background-position: center;
-            /* padding: 120px; */
             background-origin: content-box;
-            /* filter: blur(4px) grayscale(60%); */
             opacity: 0.08;
             z-index: 0;
             pointer-events: none;
@@ -239,29 +237,12 @@
             }
         }
 
-        .category-card:nth-child(1) {
-            animation-delay: .1s;
-        }
-
-        .category-card:nth-child(2) {
-            animation-delay: .2s;
-        }
-
-        .category-card:nth-child(3) {
-            animation-delay: .3s;
-        }
-
-        .category-card:nth-child(4) {
-            animation-delay: .4s;
-        }
-
-        .category-card:nth-child(5) {
-            animation-delay: .5s;
-        }
-
-        .category-card:nth-child(6) {
-            animation-delay: .6s;
-        }
+        .category-card:nth-child(1) { animation-delay: .1s; }
+        .category-card:nth-child(2) { animation-delay: .2s; }
+        .category-card:nth-child(3) { animation-delay: .3s; }
+        .category-card:nth-child(4) { animation-delay: .4s; }
+        .category-card:nth-child(5) { animation-delay: .5s; }
+        .category-card:nth-child(6) { animation-delay: .6s; }
 
         .category-card::before {
             content: '';
@@ -291,29 +272,12 @@
             display: block;
         }
 
-        .icon-blue {
-            color: #3b82f6;
-        }
-
-        .icon-yellow {
-            color: #f59e0b;
-        }
-
-        .icon-green {
-            color: #10b981;
-        }
-
-        .icon-red {
-            color: #ef4444;
-        }
-
-        .icon-purple {
-            color: #8b5cf6;
-        }
-
-        .icon-orange {
-            color: #f97316;
-        }
+        .icon-blue   { color: #3b82f6; }
+        .icon-yellow { color: #f59e0b; }
+        .icon-green  { color: #10b981; }
+        .icon-red    { color: #ef4444; }
+        .icon-purple { color: #8b5cf6; }
+        .icon-orange { color: #f97316; }
 
         .card-title {
             font-size: 1.15rem;
@@ -350,23 +314,9 @@
             text-align: left;
         }
 
-        .alert-blue {
-            background: #eff6ff;
-            border: 1px solid #bfdbfe;
-            color: #1e40af;
-        }
-
-        .alert-green {
-            background: #f0fdf4;
-            border: 1px solid #bbf7d0;
-            color: #15803d;
-        }
-
-        .alert-red {
-            background: #fef2f2;
-            border: 1px solid #fecaca;
-            color: #b91c1c;
-        }
+        .alert-blue  { background: #eff6ff; border: 1px solid #bfdbfe; color: #1e40af; }
+        .alert-green { background: #f0fdf4; border: 1px solid #bbf7d0; color: #15803d; }
+        .alert-red   { background: #fef2f2; border: 1px solid #fecaca; color: #b91c1c; }
 
         .submit-button {
             padding: 16px 32px;
@@ -391,32 +341,12 @@
 
         /* Responsive */
         @media (max-width: 768px) {
-            .dashboard-container {
-                padding: 20px 16px;
-            }
-
-            .dashboard-header {
-                padding: 24px 20px;
-            }
-
-            .header-top {
-                flex-direction: column;
-                align-items: flex-start;
-            }
-
-            .category-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .status-card {
-                flex-direction: column;
-                align-items: flex-start;
-            }
-
-            .dashboard-container::before {
-                padding: 80px;
-                background-size: 150px auto;
-            }
+            .dashboard-container { padding: 20px 16px; }
+            .dashboard-header { padding: 24px 20px; }
+            .header-top { flex-direction: column; align-items: flex-start; }
+            .category-grid { grid-template-columns: 1fr; }
+            .status-card { flex-direction: column; align-items: flex-start; }
+            .dashboard-container::before { padding: 80px; background-size: 150px auto; }
         }
     </style>
 
@@ -484,7 +414,7 @@
 
             <a href="{{ url('/skpi/prestasi') }}" class="category-card">
                 <i class="fas fa-trophy card-icon icon-yellow"></i>
-                <h3 class="card-title">2. Prestasi Akademik & Non-Akademik</h3>
+                <h3 class="card-title">2. Prestasi Akademik &amp; Non-Akademik</h3>
                 <p class="card-description">Input data lomba, penghargaan, atau pencapaian tingkat regional/nasional.</p>
             </a>
 
@@ -546,4 +476,5 @@
             @endif
         </div>
     </div>
-@endsection --}}
+@endsection
+

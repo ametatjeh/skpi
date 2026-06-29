@@ -451,6 +451,11 @@
         </div>
     </div>
 
+    <!-- Session Flash Data -->
+    <div id="sessionFlashData"
+        data-success="{{ session('success') }}"
+        style="display: none;"></div>
+
     <script>
         const loginUrl = "{{ route('mahasiswa.login') }}";
         let countdownInterval;
@@ -484,9 +489,13 @@
         }
 
         document.addEventListener('DOMContentLoaded', function() {
-            @if(session('success'))
-                showSuccessModal("{{ session('success') }}");
-            @endif
+            const flashData = document.getElementById('sessionFlashData');
+            if (!flashData) return;
+
+            const success = flashData.getAttribute('data-success');
+            if (success) {
+                showSuccessModal(success);
+            }
         });
     </script>
 </body>

@@ -461,8 +461,8 @@
                 padding: 30px 25px;
             }
         }
-        @include('partials.styles')
-</style>
+    </style>
+    @include('partials.styles')
 </head>
 
 <body>
@@ -573,7 +573,11 @@
                 <i class="fa-solid fa-redo"></i> Coba Lagi
             </button>
         </div>
-    </div>
+    <!-- Session Flash Data -->
+    <div id="sessionFlashData"
+        data-success="{{ session('success') }}"
+        data-error="{{ count($errors) > 0 ? $errors->first() : '' }}"
+        style="display: none;"></div>
 
     <script>
         const loginUrl = "{{ route('mahasiswa.login') }}";
@@ -625,13 +629,18 @@
 
         // Check for Laravel session messages
         document.addEventListener('DOMContentLoaded', function() {
-            @if(session('success'))
-            showSuccessModal("{{ session('success') }}");
-            @endif
+            const flashData = document.getElementById('sessionFlashData');
+            if (!flashData) return;
 
-            @if(count($errors) > 0)
-            showErrorModal("{{ $errors->first() }}");
-            @endif
+            const success = flashData.getAttribute('data-success');
+            const error = flashData.getAttribute('data-error');
+
+            if (success) {
+                showSuccessModal(success);
+            }
+            if (error) {
+                showErrorModal(error);
+            }
         });
     </script>
 

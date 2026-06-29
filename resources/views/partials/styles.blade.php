@@ -1,3 +1,4 @@
+<style>
 /* ======= TOP SOCIAL BAR ======= */
         .top-social {
             background: #0d47a1;
@@ -345,4 +346,5 @@
                 max-width: 100%;
             }
         }
+</style>
     
