@@ -63,5 +63,7 @@ class Kernel extends HttpKernel
 
         // Custom Middleware untuk Role-based Access Control
         'role' => \App\Http\Middleware\RoleMiddleware::class,
+        'fakultas' => \App\Http\Middleware\CheckFakultasRole::class,
+        'pusat_bahasa' => \App\Http\Middleware\CheckPusatBahasaRole::class,
     ];
 }

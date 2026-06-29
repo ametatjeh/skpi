@@ -1,0 +1,63 @@
+/* ============================================================
+   CSS RESET - SKPI System
+   Normalize browser defaults
+   ============================================================ */
+
+/* Box sizing */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* Remove default margins */
+body,
+h1, h2, h3, h4, h5, h6,
+p, ul, ol, figure, blockquote {
+    margin: 0;
+    padding: 0;
+}
+
+/* Set core body defaults */
+body {
+    min-height: 100vh;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Remove list styles */
+ul, ol {
+    list-style: none;
+}
+
+/* Anchor defaults */
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Media defaults */
+img, picture, video, canvas, svg {
+    display: block;
+    max-width: 100%;
+}
+
+/* Form element defaults */
+input, button, textarea, select {
+    font: inherit;
+    color: inherit;
+}
+
+/* Remove button styles */
+button {
+    cursor: pointer;
+    border: none;
+    background: none;
+}
+
+/* Table border collapse */
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
