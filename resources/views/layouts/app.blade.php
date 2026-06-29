@@ -13,8 +13,9 @@
     <meta name="author" content="Universitas Iskandar Muda">
 
     <title>{{ config('app.name', 'SKPI UNIDA') }}</title>
-    <link rel="icon" type="image/png" href="{{ asset('images/skpi_logo.png') }}">
-    <link rel="apple-touch-icon" href="{{ asset('images/skpi_logo.png') }}">
+    <link rel="shortcut icon" type="image/x-icon" href="{{ asset('favicon.ico') }}?v=2">
+    <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}?v=2">
+    <link rel="apple-touch-icon" href="{{ asset('favicon.ico') }}?v=2">
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.bunny.net">
@@ -37,7 +38,7 @@
 
 </head>
 
-<body style="position: relative; min-height: 100vh; background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%); font-family: 'Poppins', sans-serif; overflow-x: hidden;">
+<body style="position: relative; min-height: 100vh; display: flex; flex-direction: column; background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%); font-family: 'Poppins', sans-serif; overflow-x: hidden;">
     <!-- Particles container -->
     <div id="particles-js" style="position: absolute; width: 100%; height: 100%; top: 0; left: 0; z-index: -2;"></div>
     <!-- Decorative blobs for glassmorphism effect -->
@@ -93,17 +94,17 @@
         </nav>
         -->
 
-        <main class="py-4">
+        <main class="py-4" style="flex: 1;">
             @yield('content')
         </main>
 
         <!-- FOOTER INFO -->
-        <footer style="background: #0050a0; padding: 30px 0; border-top: none; margin-top: auto;">
+        <footer style="background: #0050a0; padding: 15px 0; border-top: none; margin-top: auto;">
             <div style="max-width: 1200px; margin: 0 auto; padding: 0 20px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px;">
                 <div style="display: flex; align-items: center; gap: 10px;">
-                    <img src="{{ asset('images/skpi_logo.png') }}" alt="SKPI Logo" style="height: 45px; filter: brightness(0) invert(1);">
+                    <img src="{{ asset('images/logo_unida-removebg-preview.png') }}" alt="SKPI Logo" style="height: 40px;">
                     <div>
-                        <div style="font-weight: 800; font-size: 1.35rem; color: #ffffff; line-height: 1.1; font-family: 'Poppins', sans-serif;">UNIDA Aceh</div>
+                        <div style="font-weight: 800; font-size: 1.35rem; color: #ffffff; line-height: 1.1; font-family: 'Poppins', sans-serif;">UNIDA ACEH</div>
                         <div style="font-size: 0.8rem; color: #e2e8f0; font-family: 'Poppins', sans-serif;">SKPI UNIDA Digital Certificate System</div>
                     </div>
                 </div>

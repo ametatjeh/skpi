@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    
+
     {{-- SEO Meta Tags --}}
     <title>SKPI UNIDA - Sistem Surat Keterangan Pendamping Ijazah | Universitas Iskandar Muda</title>
     <meta name="description" content="Sistem Informasi SKPI (Surat Keterangan Pendamping Ijazah) Universitas Iskandar Muda. Kelola prestasi, sertifikasi, dan dokumen akademik mahasiswa secara digital.">
@@ -14,50 +14,51 @@
     <meta name="language" content="Indonesian">
     <meta name="revisit-after" content="7 days">
     <link rel="canonical" href="{{ url('/') }}">
-    
+
     {{-- Open Graph / Facebook --}}
     <meta property="og:type" content="website">
     <meta property="og:url" content="{{ url('/') }}">
     <meta property="og:title" content="SKPI UNIDA - Sistem Surat Keterangan Pendamping Ijazah">
     <meta property="og:description" content="Sistem Informasi SKPI Universitas Iskandar Muda. Kelola prestasi, sertifikasi, dan dokumen akademik mahasiswa secara digital.">
-    <meta property="og:image" content="{{ asset('images/skpi_logo.png') }}">
+    <meta property="og:image" content="{{ asset('favicon.ico') }}">
     <meta property="og:site_name" content="SKPI UNIDA">
     <meta property="og:locale" content="id_ID">
-    
+
     {{-- Twitter Card --}}
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:url" content="{{ url('/') }}">
     <meta name="twitter:title" content="SKPI UNIDA - Sistem Surat Keterangan Pendamping Ijazah">
     <meta name="twitter:description" content="Sistem Informasi SKPI Universitas Iskandar Muda. Kelola prestasi, sertifikasi, dan dokumen akademik mahasiswa.">
-    <meta name="twitter:image" content="{{ asset('images/skpi_logo.png') }}">
-    
+    <meta name="twitter:image" content="{{ asset('favicon.ico') }}">
+
     {{-- Favicon --}}
-    <link rel="icon" type="image/png" href="{{ asset('images/skpi_logo.png') }}">
-    <link rel="apple-touch-icon" href="{{ asset('images/skpi_logo.png') }}">
+    <link rel="shortcut icon" type="image/x-icon" href="{{ asset('favicon.ico') }}?v=2">
+    <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}?v=2">
+    <link rel="apple-touch-icon" href="{{ asset('favicon.ico') }}?v=2">
 
     {{-- Structured Data / JSON-LD --}}
     @verbatim
     <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "EducationalOrganization",
-        "name": "Universitas Iskandar Muda",
-        "alternateName": "UNIDA",
-        "url": "https://skpi.unida-aceh.ac.id",
-        "logo": "/images/skpi_logo.png",
-        "description": "Sistem Informasi SKPI (Surat Keterangan Pendamping Ijazah) untuk mengelola prestasi dan sertifikasi mahasiswa.",
-        "address": {
-            "@type": "PostalAddress",
-            "addressLocality": "Parepare",
-            "addressRegion": "Sulawesi Selatan",
-            "addressCountry": "ID"
-        },
-        "contactPoint": {
-            "@type": "ContactPoint",
-            "contactType": "customer service",
-            "availableLanguage": "Indonesian"
+        {
+            "@context": "https://schema.org",
+            "@type": "EducationalOrganization",
+            "name": "Universitas Iskandar Muda",
+            "alternateName": "UNIDA",
+            "url": "https://skpi.unida-aceh.ac.id",
+            "logo": "/images/skpi_logo.png",
+            "description": "Sistem Informasi SKPI (Surat Keterangan Pendamping Ijazah) untuk mengelola prestasi dan sertifikasi mahasiswa.",
+            "address": {
+                "@type": "PostalAddress",
+                "addressLocality": "Parepare",
+                "addressRegion": "Sulawesi Selatan",
+                "addressCountry": "ID"
+            },
+            "contactPoint": {
+                "@type": "ContactPoint",
+                "contactType": "customer service",
+                "availableLanguage": "Indonesian"
+            }
         }
-    }
     </script>
     @endverbatim
 
@@ -77,6 +78,9 @@
             overflow-x: hidden;
             background: #f5f5f5;
             color: #111827;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
         }
 
         a {
@@ -343,6 +347,7 @@
         /* ======= HERO ======= */
         .hero {
             position: relative;
+            flex: 1;
             min-height: calc(100vh - 56px);
             background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%);
             display: flex;
@@ -513,7 +518,7 @@
                 <li><a href="{{ url('skema') }}">Skema</a></li>
                 <li><a href="{{ url('capaian') }}">Achievement</a></li>
                 <!-- <li><a href="#about">About us</a></li> -->
-                <li><a href="{{ url('/register-email') }}">Registrasi</a></li>
+                <li><a href="{{ url('/register-email') }}">DAFTAR</a></li>
                 <li>
                     <span>
                         Login
@@ -524,7 +529,7 @@
                         <a href="{{ route('prodi.login') }}">Prodi</a>
                         <a href="{{ route('pusat.login') }}">Pusat Bahasa</a>
                         <a href="{{ route('fakultas.login') }}">Fakultas</a>
-                        <a href="{{ route('admin.login') }}">Admin</a>
+                        <a href="{{ route('admin.login') }}">Akademik</a>
                     </div>
                 </li>
                 <!-- <li><a href="#contact">Contact us</a></li> -->
@@ -550,7 +555,7 @@
             <a href="{{ url('/') }}">Home</a>
             <a href="{{ url('skema') }}">Skema</a>
             <a href="{{ url('capaian') }}">Achievement</a>
-            <a href="{{ url('/register-email') }}">Registrasi</a>
+            <a href="{{ url('/register-email') }}">DAFTAR</a>
             <button class="mobile-dropdown-btn" id="mobileLoginBtn">
                 Login <i class="fas fa-chevron-down"></i>
             </button>
@@ -559,7 +564,7 @@
                 <a href="{{ route('prodi.login') }}">Prodi</a>
                 <a href="{{ route('pusat.login') }}">Pusat Bahasa</a>
                 <a href="{{ route('fakultas.login') }}">Fakultas</a>
-                <a href="{{ route('admin.login') }}">Admin</a>
+                <a href="{{ route('admin.login') }}">Akademik</a>
             </div>
         </div>
     </div>
@@ -571,16 +576,10 @@
         <!-- Decorative blobs for glassmorphism effect -->
         <div style="position: absolute; top: -100px; left: -100px; width: 400px; height: 400px; background: #3b82f6; border-radius: 50%; filter: blur(120px); opacity: 0.4; z-index: 0;"></div>
         <div style="position: absolute; bottom: -150px; right: -50px; width: 500px; height: 500px; background: #8b5cf6; border-radius: 50%; filter: blur(150px); opacity: 0.3; z-index: 0;"></div>
-        
+
         <div class="hero-inner" style="position: relative; z-index: 10;">
-            <div class="hero-text">
-                <div class="hero-sub">Belum Registrasi Email Untuk Login?</div>
-                <h1 class="hero-title">Aktivasi Email Untuk Login<br>SKPI Unida</h1>
-                <a href="{{ route('email.registration.form') }}" class="hero-btn">
-                    Registrasi Email
-                </a>
-            </div>
-            {{-- 
+            <!-- Hero text dipindahkan ke register-email -->
+            {{--
             <div class="hero-cards-col">
                 <div class="cards">
                     <div class="card">
@@ -613,12 +612,12 @@
     </section>
 
     <!-- FOOTER INFO -->
-    <footer style="background: #0050a0; padding: 30px 0; border-top: none;">
+    <footer style="background: #0050a0; padding: 15px 0; border-top: none;">
         <div style="max-width: 1200px; margin: 0 auto; padding: 0 20px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px;">
             <div class="logo-box">
-                <img src="{{ asset('images/skpi_logo.png') }}" alt="SKPI Logo" style="height: 45px; filter: brightness(0) invert(1);">
+                <img src="{{ asset('images/logo_unida-removebg-preview.png') }}" alt="SKPI Logo" style="height: 40px;">
                 <div>
-                    <div class="logo-text-main" style="color: #ffffff;">UNIDA Aceh</div>
+                    <div class="logo-text-main" style="color: #ffffff;">UNIDA ACEH</div>
                     <div class="logo-text-sub" style="color: #e2e8f0;">SKPI UNIDA Digital Certificate System</div>
                 </div>
             </div>
@@ -692,30 +691,113 @@
     <!-- Particles JS -->
     <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
     <script>
-        if(document.getElementById('particles-js')) {
+        if (document.getElementById('particles-js')) {
             particlesJS("particles-js", {
                 "particles": {
-                    "number": {"value": 80,"density": {"enable": true,"value_area": 800}},
-                    "color": {"value": "#ffffff"},
-                    "shape": {"type": "circle","stroke": {"width": 0,"color": "#000000"},"polygon": {"nb_sides": 5},"image": {"src": "img/github.svg","width": 100,"height": 100}},
-                    "opacity": {"value": 0.5,"random": false,"anim": {"enable": false,"speed": 1,"opacity_min": 0.1,"sync": false}},
-                    "size": {"value": 3,"random": true,"anim": {"enable": false,"speed": 40,"size_min": 0.1,"sync": false}},
-                    "line_linked": {"enable": true,"distance": 150,"color": "#ffffff","opacity": 0.4,"width": 1},
-                    "move": {"enable": true,"speed": 1,"direction": "none","random": false,"straight": false,"out_mode": "out","bounce": false,"attract": {"enable": true,"rotateX": 600,"rotateY": 1200}}
+                    "number": {
+                        "value": 60,
+                        "density": {
+                            "enable": true,
+                            "value_area": 800
+                        }
+                    },
+                    "color": {
+                        "value": "#ffffff"
+                    },
+                    "shape": {
+                        "type": "circle",
+                        "stroke": {
+                            "width": 0,
+                            "color": "#000000"
+                        },
+                        "polygon": {
+                            "nb_sides": 5
+                        },
+                        "image": {
+                            "src": "img/github.svg",
+                            "width": 100,
+                            "height": 100
+                        }
+                    },
+                    "opacity": {
+                        "value": 0.5,
+                        "random": false,
+                        "anim": {
+                            "enable": false,
+                            "speed": 1,
+                            "opacity_min": 0.1,
+                            "sync": false
+                        }
+                    },
+                    "size": {
+                        "value": 3,
+                        "random": true,
+                        "anim": {
+                            "enable": false,
+                            "speed": 40,
+                            "size_min": 0.1,
+                            "sync": false
+                        }
+                    },
+                    "line_linked": {
+                        "enable": true,
+                        "distance": 150,
+                        "color": "#ffffff",
+                        "opacity": 0.4,
+                        "width": 1
+                    },
+                    "move": {
+                        "enable": true,
+                        "speed": 1,
+                        "direction": "none",
+                        "random": false,
+                        "straight": false,
+                        "out_mode": "out",
+                        "bounce": false,
+                        "attract": {
+                            "enable": true,
+                            "rotateX": 600,
+                            "rotateY": 1200
+                        }
+                    }
                 },
                 "interactivity": {
                     "detect_on": "canvas",
                     "events": {
-                        "onhover": {"enable": true,"mode": "repulse"},
-                        "onclick": {"enable": true,"mode": "push"},
+                        "onhover": {
+                            "enable": true,
+                            "mode": "repulse"
+                        },
+                        "onclick": {
+                            "enable": true,
+                            "mode": "push"
+                        },
                         "resize": true
                     },
                     "modes": {
-                        "grab": {"distance": 400,"line_linked": {"opacity": 1}},
-                        "bubble": {"distance": 400,"size": 40,"duration": 2,"opacity": 8,"speed": 3},
-                        "repulse": {"distance": 200,"duration": 0.4},
-                        "push": {"particles_nb": 4},
-                        "remove": {"particles_nb": 2}
+                        "grab": {
+                            "distance": 400,
+                            "line_linked": {
+                                "opacity": 1
+                            }
+                        },
+                        "bubble": {
+                            "distance": 400,
+                            "size": 40,
+                            "duration": 2,
+                            "opacity": 8,
+                            "speed": 3
+                        },
+                        "repulse": {
+                            "distance": 200,
+                            "duration": 0.4
+                        },
+                        "push": {
+                            "particles_nb": 4
+                        },
+                        "remove": {
+                            "particles_nb": 2
+                        }
                     }
                 },
                 "retina_detect": true

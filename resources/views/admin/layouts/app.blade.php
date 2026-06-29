@@ -8,8 +8,9 @@
     <meta name="description" content="Admin Panel SKPI - Sistem Surat Keterangan Pendamping Ijazah Universitas Iskandar Muda">
 
     <title>@yield('title', 'Admin SKPI') | UNIDA</title>
-    <link rel="icon" type="image/png" href="{{ asset('images/skpi_logo.png') }}">
-    <link rel="apple-touch-icon" href="{{ asset('images/skpi_logo.png') }}">
+    <link rel="shortcut icon" type="image/x-icon" href="{{ asset('favicon.ico') }}?v=2">
+    <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}?v=2">
+    <link rel="apple-touch-icon" href="{{ asset('favicon.ico') }}?v=2">
 
     <!-- Google Font: Inter & Poppins -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">

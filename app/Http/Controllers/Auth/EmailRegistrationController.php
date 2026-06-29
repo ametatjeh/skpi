@@ -45,7 +45,7 @@ class EmailRegistrationController extends Controller
 
         $mahasiswa = Mahasiswa::where('nim', $request->nim)->first();
         if (!$mahasiswa) {
-            return back()->withErrors(['nim' => 'NIM tidak ditemukan dalam database mahasiswa']);
+            return back()->withErrors(['nim' => 'NIM tidak ditemukan dalam database']);
         }
         if ($mahasiswa->user_id) {
             $existingUser = User::find($mahasiswa->user_id);

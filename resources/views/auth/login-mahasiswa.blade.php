@@ -5,7 +5,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Login Mahasiswa - SKPI UNIDA</title>
-    <link rel="icon" type="image/png" href="{{ asset('images/skpi_logo.png') }}">
+    <link rel="shortcut icon" type="image/x-icon" href="{{ asset('favicon.ico') }}?v=2">
+    <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}?v=2">
 
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap"
         rel="stylesheet" />
@@ -38,12 +39,13 @@
 
         .login-wrapper {
             width: 100%;
-            max-width: 980px;
+            max-width: 480px;
             min-height: 520px;
-            display: grid;
-            grid-template-columns: 1.1fr 0.9fr;
-            background: #ffffff;
-            border-radius: 10px;
+            background: rgba(15, 23, 42, 0.4);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 16px;
             box-shadow: 0 18px 55px rgba(0, 0, 0, 0.45);
             overflow: hidden;
         }
@@ -54,8 +56,8 @@
             display: flex;
             flex-direction: column;
             justify-content: center;
-            background: #ffffff;
-            color: #111827;
+            background: transparent;
+            color: #f8fafc;
         }
 
         .login-header {
@@ -65,7 +67,7 @@
         .login-header h2 {
             font-weight: 800;
             font-size: 1.6rem;
-            color: #0d47a1;
+            color: #60a5fa;
             margin-bottom: 4px;
             display: flex;
             align-items: center;
@@ -75,11 +77,11 @@
         }
 
         .login-header h2 i {
-            color: #0d47a1;
+            color: #60a5fa;
         }
 
         .login-header p {
-            color: #6b7280;
+            color: #cbd5e1;
             font-size: .95rem;
         }
 
@@ -137,6 +139,7 @@
                 opacity: 0;
                 transform: translateY(-10px);
             }
+
             to {
                 opacity: 1;
                 transform: translateY(0);
@@ -153,52 +156,51 @@
             font-size: .9rem;
             font-weight: 600;
             margin-bottom: 6px;
-            color: #111827;
+            color: #e2e8f0;
         }
 
-        .form-group input[type="text"],
-        .form-group input[type="email"],
-        .form-group input[type="password"] {
+        .form-group input {
             width: 100%;
             padding: 10px 12px;
-            border: 1px solid #cbd5f5;
+            border: 1px solid rgba(255, 255, 255, 0.2);
             border-radius: 6px;
             font-size: .95rem;
-            color: #111827;
-            background: #f9fafb;
-            outline: none;
-            transition: border-color .18s, box-shadow .18s;
+            font-family: 'Poppins', sans-serif;
+            color: #ffffff;
+            background: rgba(255, 255, 255, 0.05);
+            transition: border-color .18s, box-shadow .18s, background .18s;
         }
 
         .form-group input:focus {
-            border-color: #0d47a1;
-            box-shadow: 0 0 0 2px rgba(13, 71, 161, .25);
+            outline: none;
+            border-color: #60a5fa;
+            background: rgba(255, 255, 255, 0.1);
+            box-shadow: 0 0 0 2px rgba(96, 165, 250, 0.25);
         }
 
         .btn {
             width: 100%;
             padding: 11px 0;
+            background: #2563eb;
+            color: #fff;
+            border: none;
             border-radius: 6px;
             font-size: .95rem;
             font-weight: 700;
-            background: #0050a0;
-            color: #fff;
-            border: none;
             cursor: pointer;
             display: flex;
-            justify-content: center;
             align-items: center;
+            justify-content: center;
             gap: 8px;
-            text-transform: uppercase;
-            letter-spacing: .8px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, .35);
-            transition: background .18s, transform .12s, box-shadow .12s;
+            margin-top: 6px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, .2);
+            transition: .2s;
         }
 
         .btn:hover {
-            background: #0d47a1;
-            transform: translateY(-1px);
-            box-shadow: 0 6px 20px rgba(0, 0, 0, .45);
+            background: #1d4ed8;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, .3);
         }
 
         .form-footer {
@@ -208,7 +210,7 @@
         }
 
         .form-footer a {
-            color: #0d47a1;
+            color: #ffffff;
             text-decoration: none;
             font-weight: 600;
         }
@@ -332,9 +334,17 @@
         }
 
         @keyframes bounceIn {
-            0% { transform: scale(0); }
-            50% { transform: scale(1.2); }
-            100% { transform: scale(1); }
+            0% {
+                transform: scale(0);
+            }
+
+            50% {
+                transform: scale(1.2);
+            }
+
+            100% {
+                transform: scale(1);
+            }
         }
 
         .checkmark {
@@ -359,7 +369,9 @@
         }
 
         @keyframes stroke {
-            100% { stroke-dashoffset: 0; }
+            100% {
+                stroke-dashoffset: 0;
+            }
         }
 
         .modal-title {
@@ -371,7 +383,7 @@
 
         .modal-message {
             font-size: 0.95rem;
-            color: #6b7280;
+            color: #cbd5e1;
             line-height: 1.6;
             margin-bottom: 25px;
         }
@@ -433,6 +445,7 @@
                 font-size: 1.3rem;
             }
         }
+
         /* LOADING OVERLAY */
         .loading-overlay {
             position: fixed;
@@ -466,9 +479,15 @@
         }
 
         @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
         }
+
         /* LOADING OVERLAY NEW (LOGO THEMED + DOTS) */
         .loading-overlay {
             position: fixed;
@@ -476,7 +495,8 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0, 0, 0, 0.9); /* Sedikit lebih gelap */
+            background: rgba(0, 0, 0, 0.9);
+            /* Sedikit lebih gelap */
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -498,7 +518,7 @@
             height: auto;
             margin-bottom: 20px;
             animation: pulse-logo 2s infinite ease-in-out;
-            filter: drop-shadow(0 0 15px rgba(255,255,255,0.2));
+            filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.2));
         }
 
         /* DOTS ANIMATION */
@@ -517,11 +537,16 @@
             animation: bounce 1.4s infinite ease-in-out both;
         }
 
-        .loading-dots span:nth-child(1) { animation-delay: -0.32s; }
-        .loading-dots span:nth-child(2) { animation-delay: -0.16s; }
+        .loading-dots span:nth-child(1) {
+            animation-delay: -0.32s;
+        }
+
+        .loading-dots span:nth-child(2) {
+            animation-delay: -0.16s;
+        }
 
         .loading-text {
-            color: rgba(255,255,255,0.9);
+            color: rgba(255, 255, 255, 0.9);
             font-weight: 500;
             font-size: 0.95rem;
             letter-spacing: 3px;
@@ -531,19 +556,47 @@
         }
 
         @keyframes pulse-logo {
-            0% { transform: scale(0.95); opacity: 0.9; }
-            50% { transform: scale(1.05); opacity: 1; }
-            100% { transform: scale(0.95); opacity: 0.9; }
+            0% {
+                transform: scale(0.95);
+                opacity: 0.9;
+            }
+
+            50% {
+                transform: scale(1.05);
+                opacity: 1;
+            }
+
+            100% {
+                transform: scale(0.95);
+                opacity: 0.9;
+            }
         }
 
         @keyframes fadeText {
-            0%, 100% { opacity: 0.6; }
-            50% { opacity: 1; }
+
+            0%,
+            100% {
+                opacity: 0.6;
+            }
+
+            50% {
+                opacity: 1;
+            }
         }
 
         @keyframes bounce {
-            0%, 80%, 100% { transform: scale(0); opacity: 0.5; }
-            40% { transform: scale(1); opacity: 1; }
+
+            0%,
+            80%,
+            100% {
+                transform: scale(0);
+                opacity: 0.5;
+            }
+
+            40% {
+                transform: scale(1);
+                opacity: 1;
+            }
         }
     </style>
 </head>
@@ -557,33 +610,35 @@
 
     <div class="login-wrapper" role="main" style="position: relative; z-index: 10;">
         <div class="form-side">
-            <div class="login-header">
-                <h2><i class="fa-solid fa-graduation-cap"></i> Login Mahasiswa</h2>
-                <p>Silakan login menggunakan akun SKPI Mahasiswa UNIDA.</p>
+            <div class="login-header" style="text-align: center;">
+                <i class="fa-solid fa-user-graduate" style="font-size: 4rem; color: #60a5fa; margin-bottom: 15px;"></i>
+                <h2 style="justify-content: center;">Portal Mahasiswa</h2>
+                <p>Login menggunakan NIM/e-mail Mahasiswa</p>
+                <br>
             </div>
 
             {{-- Warning: Cek Email setelah registrasi --}}
             @if(request()->has('from_registration'))
-                <div class="alert-warning">
-                    <i class="fa-solid fa-envelope-open-text"></i>
-                    <div class="alert-warning-content">
-                        <div class="alert-warning-title">Cek Email Anda!</div>
-                        <div class="alert-warning-text">
-                            Link aktivasi telah dikirim ke email Anda. Silakan cek <strong>inbox</strong> atau <strong>folder spam</strong>. 
-                            Refresh halaman jika email belum masuk.
-                        </div>
+            <div class="alert-warning">
+                <i class="fa-solid fa-envelope-open-text"></i>
+                <div class="alert-warning-content">
+                    <div class="alert-warning-title">Cek Email Anda!</div>
+                    <div class="alert-warning-text">
+                        Link aktivasi telah dikirim ke email Anda. Silakan cek <strong>inbox</strong> atau <strong>folder spam</strong>.
+                        Refresh halaman jika email belum masuk.
                     </div>
                 </div>
+            </div>
             @endif
 
             @if ($errors->any())
-                <div class="alert-danger" role="alert">
-                    <ul>
-                        @foreach ($errors->all() as $error)
-                            <li>{{ $error }}</li>
-                        @endforeach
-                    </ul>
-                </div>
+            <div class="alert-danger" role="alert">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
             @endif
 
             <form method="POST" action="{{ route('mahasiswa.login') }}">
@@ -598,21 +653,13 @@
                     <input type="password" id="password" name="password" placeholder="Masukkan password" required />
                 </div>
                 <button type="submit" class="btn">
-                    <i class="fa-solid fa-right-to-bracket"></i> Login Mahasiswa
+                    <i class="fa-solid fa-right-to-bracket"></i> MASUK
                 </button>
             </form>
 
             <div class="form-footer" style="display: flex; justify-content: space-between; align-items: center;">
                 <a href="{{ route('home') }}">← Kembali</a>
                 <a href="{{ route('password.request') }}" style="color: #64748b; font-size: 0.9rem;">Lupa Password?</a>
-            </div>
-        </div>
-
-        <div class="image-side">
-            <div class="image-content">
-                <i class="fa-solid fa-user-graduate"></i>
-                <h3>Portal SKPI Mahasiswa</h3>
-                <p>Kelola SKPI, prestasi, dan sertifikasi Anda secara digital, kapan saja dan di mana saja.</p>
             </div>
         </div>
     </div>
@@ -622,8 +669,8 @@
         <div class="modal-box">
             <div class="modal-icon">
                 <svg class="checkmark" viewBox="0 0 52 52">
-                    <circle class="checkmark__circle" cx="26" cy="26" r="25" fill="none"/>
-                    <path class="checkmark__check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8"/>
+                    <circle class="checkmark__circle" cx="26" cy="26" r="25" fill="none" />
+                    <path class="checkmark__check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8" />
                 </svg>
             </div>
             <h3 class="modal-title">Berhasil!</h3>
@@ -673,26 +720,26 @@
 
         document.addEventListener('DOMContentLoaded', function() {
             @if(session('activation_success'))
-                showSuccessModal("{{ session('activation_success') }}");
+            showSuccessModal("{{ session('activation_success') }}");
             @endif
 
             @if(session('success'))
-                showSuccessModal("{{ session('success') }}");
+            showSuccessModal("{{ session('success') }}");
             @endif
 
             @if(session('status'))
-                showSuccessModal("{{ session('status') }}");
+            showSuccessModal("{{ session('status') }}");
             @endif
 
             @if(session('error'))
-                showErrorModal("{{ session('error') }}");
+            showErrorModal("{{ session('error') }}");
             @endif
         });
     </script>
     <!-- LOADING OVERLAY (LOGO + DOTS) -->
     <div class="loading-overlay" id="loadingOverlay">
         <img src="{{ asset('images/skpi_loading.png') }}" class="loading-logo" alt="Loading...">
-        
+
         <!-- Three Bouncing Dots -->
         <div class="loading-dots">
             <span></span>
@@ -720,30 +767,113 @@
     <!-- Particles JS -->
     <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
     <script>
-        if(document.getElementById('particles-js')) {
+        if (document.getElementById('particles-js')) {
             particlesJS("particles-js", {
                 "particles": {
-                    "number": {"value": 80,"density": {"enable": true,"value_area": 800}},
-                    "color": {"value": "#ffffff"},
-                    "shape": {"type": "circle","stroke": {"width": 0,"color": "#000000"},"polygon": {"nb_sides": 5},"image": {"src": "img/github.svg","width": 100,"height": 100}},
-                    "opacity": {"value": 0.5,"random": false,"anim": {"enable": false,"speed": 1,"opacity_min": 0.1,"sync": false}},
-                    "size": {"value": 3,"random": true,"anim": {"enable": false,"speed": 40,"size_min": 0.1,"sync": false}},
-                    "line_linked": {"enable": true,"distance": 150,"color": "#ffffff","opacity": 0.4,"width": 1},
-                    "move": {"enable": true,"speed": 1,"direction": "none","random": false,"straight": false,"out_mode": "out","bounce": false,"attract": {"enable": true,"rotateX": 600,"rotateY": 1200}}
+                    "number": {
+                        "value": 80,
+                        "density": {
+                            "enable": true,
+                            "value_area": 800
+                        }
+                    },
+                    "color": {
+                        "value": "#ffffff"
+                    },
+                    "shape": {
+                        "type": "circle",
+                        "stroke": {
+                            "width": 0,
+                            "color": "#000000"
+                        },
+                        "polygon": {
+                            "nb_sides": 5
+                        },
+                        "image": {
+                            "src": "img/github.svg",
+                            "width": 100,
+                            "height": 100
+                        }
+                    },
+                    "opacity": {
+                        "value": 0.5,
+                        "random": false,
+                        "anim": {
+                            "enable": false,
+                            "speed": 1,
+                            "opacity_min": 0.1,
+                            "sync": false
+                        }
+                    },
+                    "size": {
+                        "value": 3,
+                        "random": true,
+                        "anim": {
+                            "enable": false,
+                            "speed": 40,
+                            "size_min": 0.1,
+                            "sync": false
+                        }
+                    },
+                    "line_linked": {
+                        "enable": true,
+                        "distance": 150,
+                        "color": "#ffffff",
+                        "opacity": 0.4,
+                        "width": 1
+                    },
+                    "move": {
+                        "enable": true,
+                        "speed": 1,
+                        "direction": "none",
+                        "random": false,
+                        "straight": false,
+                        "out_mode": "out",
+                        "bounce": false,
+                        "attract": {
+                            "enable": true,
+                            "rotateX": 600,
+                            "rotateY": 1200
+                        }
+                    }
                 },
                 "interactivity": {
                     "detect_on": "canvas",
                     "events": {
-                        "onhover": {"enable": true,"mode": "repulse"},
-                        "onclick": {"enable": true,"mode": "push"},
+                        "onhover": {
+                            "enable": true,
+                            "mode": "repulse"
+                        },
+                        "onclick": {
+                            "enable": true,
+                            "mode": "push"
+                        },
                         "resize": true
                     },
                     "modes": {
-                        "grab": {"distance": 400,"line_linked": {"opacity": 1}},
-                        "bubble": {"distance": 400,"size": 40,"duration": 2,"opacity": 8,"speed": 3},
-                        "repulse": {"distance": 200,"duration": 0.4},
-                        "push": {"particles_nb": 4},
-                        "remove": {"particles_nb": 2}
+                        "grab": {
+                            "distance": 400,
+                            "line_linked": {
+                                "opacity": 1
+                            }
+                        },
+                        "bubble": {
+                            "distance": 400,
+                            "size": 40,
+                            "duration": 2,
+                            "opacity": 8,
+                            "speed": 3
+                        },
+                        "repulse": {
+                            "distance": 200,
+                            "duration": 0.4
+                        },
+                        "push": {
+                            "particles_nb": 4
+                        },
+                        "remove": {
+                            "particles_nb": 2
+                        }
                     }
                 },
                 "retina_detect": true

@@ -5,7 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registrasi Email - SKPI</title>
-    <link rel="icon" type="image/png" href="{{ asset('images/skpi_logo.png') }}">
+    <link rel="shortcut icon" type="image/x-icon" href="{{ asset('favicon.ico') }}?v=2">
+    <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}?v=2">
 
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap"
         rel="stylesheet" />
@@ -31,14 +32,54 @@
             overflow-x: hidden;
         }
 
+        .main-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            max-width: 1100px;
+            gap: 40px;
+            position: relative;
+            z-index: 10;
+        }
+
+        .hero-text {
+            flex: 1;
+            max-width: 500px;
+        }
+
+        .hero-sub {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            padding: 6px 16px;
+            border-radius: 30px;
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            margin-bottom: 20px;
+            color: #60a5fa;
+            backdrop-filter: blur(10px);
+        }
+
+        .hero-title {
+            font-size: 48px;
+            font-weight: 800;
+            line-height: 1.15;
+            margin-bottom: 24px;
+            color: #fff;
+            text-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+        }
+
         .wrapper {
             width: 100%;
-            max-width: 980px;
+            max-width: 480px;
             min-height: 520px;
-            display: grid;
-            grid-template-columns: 1.1fr 0.9fr;
-            background: #ffffff;
-            border-radius: 10px;
+            background: rgba(15, 23, 42, 0.4);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 16px;
             box-shadow: 0 18px 55px rgba(0, 0, 0, .45);
             overflow: hidden;
         }
@@ -46,8 +87,8 @@
         /* Form Side */
         .form-side {
             padding: 40px 46px;
-            background: #fff;
-            color: #111827;
+            background: transparent;
+            color: #f8fafc;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -56,7 +97,7 @@
         h2 {
             font-size: 1.6rem;
             font-weight: 800;
-            color: #0d47a1;
+            color: #ffffff;
             margin-bottom: 18px;
             text-transform: uppercase;
             letter-spacing: .8px;
@@ -66,12 +107,12 @@
         }
 
         .info {
-            background: #e3f2fd;
-            color: #0d47a1;
+            background: rgba(255, 255, 255, 0.1);
+            color: #e2e8f0;
             border-radius: 8px;
             padding: 14px 16px;
             margin-bottom: 20px;
-            border-left: 4px solid #0d47a1;
+            border-left: 4px solid #60a5fa;
             font-size: .9rem;
             line-height: 1.5;
         }
@@ -84,32 +125,32 @@
             display: block;
             font-weight: 600;
             margin-bottom: 6px;
-            color: #111827;
+            color: #e2e8f0;
             font-size: .9rem;
         }
 
         .form-group input {
             width: 100%;
-            padding: 12px 14px;
-            border: 1px solid #cbd5f5;
+            padding: 10px 12px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
             border-radius: 6px;
             font-size: .95rem;
-            background: #f9fafb;
-            color: #111827;
-            transition: .18s;
+            color: #ffffff;
+            background: rgba(255, 255, 255, 0.05);
+            transition: border-color .18s, box-shadow .18s, background .18s;
         }
 
         .form-group input:focus {
-            border-color: #0d47a1;
-            background: #fff;
             outline: none;
-            box-shadow: 0 0 0 2px rgba(13, 71, 161, .25);
+            border-color: #60a5fa;
+            background: rgba(255, 255, 255, 0.1);
+            box-shadow: 0 0 0 2px rgba(96, 165, 250, 0.25);
         }
 
         button {
             width: 100%;
             padding: 12px 0;
-            background: #0050a0;
+            background: #2563eb;
             color: white;
             font-weight: 700;
             border-radius: 6px;
@@ -122,25 +163,25 @@
             justify-content: center;
             align-items: center;
             gap: 8px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, .35);
+            box-shadow: 0 4px 15px rgba(37, 99, 235, 0.35);
             transition: .18s;
         }
 
         button:hover {
-            background: #0d47a1;
+            background: #1d4ed8;
             transform: translateY(-1px);
-            box-shadow: 0 6px 20px rgba(0, 0, 0, .45);
+            box-shadow: 0 6px 20px rgba(37, 99, 235, 0.45);
         }
 
         .login-link {
             margin-top: 18px;
             font-size: .9rem;
-            color: #0d47a1;
+            color: #e2e8f0;
             font-weight: 600;
         }
 
         .login-link a {
-            color: #0050a0;
+            color: #60a5fa;
             text-decoration: none;
             font-weight: 700;
         }
@@ -272,15 +313,35 @@
         }
 
         @keyframes bounceIn {
-            0% { transform: scale(0); }
-            50% { transform: scale(1.2); }
-            100% { transform: scale(1); }
+            0% {
+                transform: scale(0);
+            }
+
+            50% {
+                transform: scale(1.2);
+            }
+
+            100% {
+                transform: scale(1);
+            }
         }
 
         @keyframes shake {
-            0%, 100% { transform: translateX(0); }
-            20%, 60% { transform: translateX(-8px); }
-            40%, 80% { transform: translateX(8px); }
+
+            0%,
+            100% {
+                transform: translateX(0);
+            }
+
+            20%,
+            60% {
+                transform: translateX(-8px);
+            }
+
+            40%,
+            80% {
+                transform: translateX(8px);
+            }
         }
 
         /* Checkmark Animation */
@@ -306,7 +367,9 @@
         }
 
         @keyframes stroke {
-            100% { stroke-dashoffset: 0; }
+            100% {
+                stroke-dashoffset: 0;
+            }
         }
 
         .modal-title {
@@ -316,8 +379,13 @@
             color: #111827;
         }
 
-        .modal-title.success { color: #059669; }
-        .modal-title.error { color: #dc2626; }
+        .modal-title.success {
+            color: #059669;
+        }
+
+        .modal-title.error {
+            color: #dc2626;
+        }
 
         .modal-message {
             font-size: 0.95rem;
@@ -368,6 +436,16 @@
 
         /* Responsive */
         @media(max-width:968px) {
+            .main-container {
+                flex-direction: column;
+                text-align: center;
+                gap: 20px;
+            }
+
+            .hero-text {
+                display: none;
+            }
+
             .wrapper {
                 grid-template-columns: 1fr;
                 max-width: 480px;
@@ -395,55 +473,62 @@
     <div style="position: absolute; top: -100px; left: -100px; width: 400px; height: 400px; background: #3b82f6; border-radius: 50%; filter: blur(120px); opacity: 0.4; z-index: -1;"></div>
     <div style="position: absolute; bottom: -150px; right: -50px; width: 500px; height: 500px; background: #8b5cf6; border-radius: 50%; filter: blur(150px); opacity: 0.3; z-index: -1;"></div>
 
-    <div class="wrapper" style="position: relative; z-index: 10;">
-
-        <div class="form-side">
-            <h2><i class="fa-solid fa-envelope-circle-check"></i> Registrasi Email</h2>
-
-            <div class="info">
-                <b>Petunjuk Registrasi:</b><br>
-                1. Isi NIM<br>
-                2. Masukkan Email Aktif<br>
-                3. Cek Email Aktivasi<br>
-                4. Buat Password & Login
-            </div>
-
-            <form method="POST" action="{{ route('email.registration.submit') }}">
-                @csrf
-
-                <input type="hidden" name="role" value="mahasiswa" />
-
-                <div class="form-group">
-                    <label>NIM</label>
-                    <input type="text" name="nim" placeholder="1220110001" value="{{ old('nim') }}" required>
-                </div>
-
-                <div class="form-group">
-                    <label>Email Aktif</label>
-                    <input type="email" name="email" placeholder="nama@email.com" value="{{ old('email') }}" required>
-                </div>
-
-                <button type="submit">
-                    <i class="fa-solid fa-paper-plane"></i> Daftar Email
-                </button>
-            </form>
-
-            <div class="login-link">
-                Sudah punya akun?
-                <a href="{{ route('mahasiswa.login') }}">
-                    <i class="fa-solid fa-arrow-right-to-bracket"></i> Login
-                </a>
-            </div>
+    <div class="main-container">
+        <!-- Hero Text Kiri -->
+        <div class="hero-text">
+            <div class="hero-sub">Belum Registrasi Email Untuk Login?</div>
+            <h1 class="hero-title">Aktivasi Email Untuk Login<br>SKPI Unida</h1>
         </div>
 
-        <div class="image-side">
-            <div class="image-content">
-                <i class="fa-solid fa-graduation-cap"></i>
-                <h3>Sistem Informasi SKPI</h3>
-                <p>Platform manajemen pencapaian mahasiswa terintegrasi.</p>
+        <!-- Box Form Kanan -->
+        <div class="wrapper">
+            <div class="form-side">
+                <div style="text-align: center;">
+                    <i class="fa-solid fa-envelope-circle-check" style="font-size: 4rem; color: #ffffff; margin-bottom: 15px;"></i>
+                    <h2 style="justify-content: center;">PORTAL PENDAFTARAN</h2>
+                </div>
+
+                <div class="info">
+                    <b>Petunjuk Registrasi:</b><br>
+                    1. Isi NIM<br>
+                    2. Masukkan Email Mahasiswa UNIDA<br>
+                    3. Cek Email Aktivasi<br>
+                    4. Buat Password & Login
+                </div>
+
+                <form method="POST" action="{{ route('email.registration.submit') }}">
+                    @csrf
+
+                    <input type="hidden" name="role" value="mahasiswa" />
+
+                    <div class="form-group">
+                        <label>NIM</label>
+                        <input type="text" name="nim" placeholder="2025150031" value="{{ old('nim') }}" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Email UNIDA</label>
+                        <input type="email" name="email" placeholder="nama@unida-aceh.ac.id" value="{{ old('email') }}" required>
+                    </div>
+
+                    <button type="submit">
+                        <i class="fa-solid fa-paper-plane"></i> DAFTAR
+                    </button>
+                </form>
+
+                <div class="login-link" style="display: flex; justify-content: space-between; align-items: center;">
+                    <a href="{{ route('home') }}" style="color: #ffffff; font-weight: 600; text-decoration: none;">
+                        <i class="fa-solid fa-arrow-left"></i> Kembali
+                    </a>
+                    <div>
+                        Sudah punya akun?
+                        <a href="{{ route('mahasiswa.login') }}">
+                            <i class="fa-solid fa-arrow-right-to-bracket"></i> Login
+                        </a>
+                    </div>
+                </div>
             </div>
         </div>
-
     </div>
 
     <!-- SUCCESS MODAL -->
@@ -451,13 +536,13 @@
         <div class="modal-box">
             <div class="modal-icon success">
                 <svg class="checkmark" viewBox="0 0 52 52">
-                    <circle class="checkmark__circle" cx="26" cy="26" r="25" fill="none"/>
-                    <path class="checkmark__check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8"/>
+                    <circle class="checkmark__circle" cx="26" cy="26" r="25" fill="none" />
+                    <path class="checkmark__check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8" />
                 </svg>
             </div>
-            <h3 class="modal-title success">Registrasi Berhasil!</h3>
+            <h3 class="modal-title success">Pendaftaran Berhasil!</h3>
             <p class="modal-message" id="successMessage">
-                Link aktivasi telah dikirim ke email Anda. Silakan cek inbox atau folder spam.
+                Link aktivasi telah dikirim ke email Anda, cek inbox atau folder spam.
             </p>
             <button class="modal-btn success" onclick="redirectToLogin()">
                 <i class="fa-solid fa-arrow-right"></i> Ke Halaman Login
@@ -472,7 +557,7 @@
             <div class="modal-icon error">
                 <i class="fa-solid fa-times"></i>
             </div>
-            <h3 class="modal-title error">Registrasi Gagal!</h3>
+            <h3 class="modal-title error">Pendaftaran Gagal!</h3>
             <p class="modal-message" id="errorMessage">
                 Terjadi kesalahan saat registrasi.
             </p>
@@ -518,11 +603,11 @@
         function startCountdown() {
             let seconds = 5;
             const countdownEl = document.getElementById('countdown');
-            
+
             countdownInterval = setInterval(() => {
                 seconds--;
                 countdownEl.textContent = seconds;
-                
+
                 if (seconds <= 0) {
                     clearInterval(countdownInterval);
                     redirectToLogin();
@@ -533,11 +618,11 @@
         // Check for Laravel session messages
         document.addEventListener('DOMContentLoaded', function() {
             @if(session('success'))
-                showSuccessModal("{{ session('success') }}");
+            showSuccessModal("{{ session('success') }}");
             @endif
 
-            @if($errors->any())
-                showErrorModal("{{ $errors->first() }}");
+            @if(count($errors) > 0)
+            showErrorModal("{{ $errors->first() }}");
             @endif
         });
     </script>
@@ -545,30 +630,113 @@
     <!-- Particles JS -->
     <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
     <script>
-        if(document.getElementById('particles-js')) {
+        if (document.getElementById('particles-js')) {
             particlesJS("particles-js", {
                 "particles": {
-                    "number": {"value": 80,"density": {"enable": true,"value_area": 800}},
-                    "color": {"value": "#ffffff"},
-                    "shape": {"type": "circle","stroke": {"width": 0,"color": "#000000"},"polygon": {"nb_sides": 5},"image": {"src": "img/github.svg","width": 100,"height": 100}},
-                    "opacity": {"value": 0.5,"random": false,"anim": {"enable": false,"speed": 1,"opacity_min": 0.1,"sync": false}},
-                    "size": {"value": 3,"random": true,"anim": {"enable": false,"speed": 40,"size_min": 0.1,"sync": false}},
-                    "line_linked": {"enable": true,"distance": 150,"color": "#ffffff","opacity": 0.4,"width": 1},
-                    "move": {"enable": true,"speed": 1,"direction": "none","random": false,"straight": false,"out_mode": "out","bounce": false,"attract": {"enable": true,"rotateX": 600,"rotateY": 1200}}
+                    "number": {
+                        "value": 60,
+                        "density": {
+                            "enable": true,
+                            "value_area": 800
+                        }
+                    },
+                    "color": {
+                        "value": "#ffffff"
+                    },
+                    "shape": {
+                        "type": "circle",
+                        "stroke": {
+                            "width": 0,
+                            "color": "#000000"
+                        },
+                        "polygon": {
+                            "nb_sides": 5
+                        },
+                        "image": {
+                            "src": "img/github.svg",
+                            "width": 100,
+                            "height": 100
+                        }
+                    },
+                    "opacity": {
+                        "value": 0.5,
+                        "random": false,
+                        "anim": {
+                            "enable": false,
+                            "speed": 1,
+                            "opacity_min": 0.1,
+                            "sync": false
+                        }
+                    },
+                    "size": {
+                        "value": 3,
+                        "random": true,
+                        "anim": {
+                            "enable": false,
+                            "speed": 30,
+                            "size_min": 0.1,
+                            "sync": false
+                        }
+                    },
+                    "line_linked": {
+                        "enable": true,
+                        "distance": 150,
+                        "color": "#ffffff",
+                        "opacity": 0.4,
+                        "width": 1
+                    },
+                    "move": {
+                        "enable": true,
+                        "speed": 1,
+                        "direction": "none",
+                        "random": false,
+                        "straight": false,
+                        "out_mode": "out",
+                        "bounce": false,
+                        "attract": {
+                            "enable": true,
+                            "rotateX": 600,
+                            "rotateY": 1200
+                        }
+                    }
                 },
                 "interactivity": {
                     "detect_on": "canvas",
                     "events": {
-                        "onhover": {"enable": true,"mode": "repulse"},
-                        "onclick": {"enable": true,"mode": "push"},
+                        "onhover": {
+                            "enable": true,
+                            "mode": "repulse"
+                        },
+                        "onclick": {
+                            "enable": true,
+                            "mode": "push"
+                        },
                         "resize": true
                     },
                     "modes": {
-                        "grab": {"distance": 400,"line_linked": {"opacity": 1}},
-                        "bubble": {"distance": 400,"size": 40,"duration": 2,"opacity": 8,"speed": 3},
-                        "repulse": {"distance": 200,"duration": 0.4},
-                        "push": {"particles_nb": 4},
-                        "remove": {"particles_nb": 2}
+                        "grab": {
+                            "distance": 400,
+                            "line_linked": {
+                                "opacity": 1
+                            }
+                        },
+                        "bubble": {
+                            "distance": 400,
+                            "size": 40,
+                            "duration": 2,
+                            "opacity": 8,
+                            "speed": 3
+                        },
+                        "repulse": {
+                            "distance": 200,
+                            "duration": 0.4
+                        },
+                        "push": {
+                            "particles_nb": 4
+                        },
+                        "remove": {
+                            "particles_nb": 2
+                        }
                     }
                 },
                 "retina_detect": true

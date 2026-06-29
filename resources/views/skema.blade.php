@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    
+
     {{-- SEO Meta Tags --}}
     <title>SKEMA - SKPI UNIDA | Universitas Iskandar Muda</title>
     <meta name="description" content="Skema Sertifikasi SKPI (Surat Keterangan Pendamping Ijazah) Universitas Iskandar Muda.">
@@ -13,10 +13,11 @@
     <meta name="robots" content="index, follow">
     <meta name="language" content="Indonesian">
     <link rel="canonical" href="{{ url('skema') }}">
-    
+
     {{-- Favicon --}}
-    <link rel="icon" type="image/png" href="{{ asset('images/skpi_logo.png') }}">
-    <link rel="apple-touch-icon" href="{{ asset('images/skpi_logo.png') }}">
+    <link rel="shortcut icon" type="image/x-icon" href="{{ asset('favicon.ico') }}?v=2">
+    <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}?v=2">
+    <link rel="apple-touch-icon" href="{{ asset('favicon.ico') }}?v=2">
 
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap"
         rel="stylesheet" />
@@ -34,6 +35,9 @@
             overflow-x: hidden;
             background: #f5f5f5;
             color: #111827;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
         }
 
         a {
@@ -332,7 +336,7 @@
     </div>
 
     <!-- CONTENT SECTION -->
-    <section style="position: relative; min-height: calc(100vh - 200px); display: flex; flex-direction: column; align-items: center; justify-content: center; background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%); padding: 40px 20px; font-family: 'Poppins', sans-serif; color: #ffffff; overflow: hidden;">
+    <section style="position: relative; flex: 1; min-height: calc(100vh - 200px); display: flex; flex-direction: column; align-items: center; justify-content: center; background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%); padding: 40px 20px; font-family: 'Poppins', sans-serif; color: #ffffff; overflow: hidden;">
         <!-- Decorative blobs for glassmorphism effect -->
         <div style="position: absolute; top: -100px; left: -100px; width: 400px; height: 400px; background: #3b82f6; border-radius: 50%; filter: blur(120px); opacity: 0.4; z-index: 0;"></div>
         <div style="position: absolute; bottom: -150px; right: -50px; width: 500px; height: 500px; background: #8b5cf6; border-radius: 50%; filter: blur(150px); opacity: 0.3; z-index: 0;"></div>
@@ -371,10 +375,12 @@
             .flow-container::-webkit-scrollbar {
                 height: 8px;
             }
+
             .flow-container::-webkit-scrollbar-track {
                 background: rgba(255, 255, 255, 0.05);
                 border-radius: 10px;
             }
+
             .flow-container::-webkit-scrollbar-thumb {
                 background: rgba(255, 255, 255, 0.2);
                 border-radius: 10px;
@@ -433,7 +439,7 @@
                 font-size: 28px;
                 margin: 55px -10px 0 -10px;
                 color: rgba(255, 255, 255, 0.5);
-                text-shadow: 0 0 10px rgba(255,255,255,0.2);
+                text-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
             }
 
             .arrow-down {
@@ -447,7 +453,7 @@
                 border: 1px dashed rgba(255, 255, 255, 0.3);
                 margin-top: 0;
             }
-            
+
             .status-box ul {
                 list-style-type: "- ";
                 padding-left: 10px;
@@ -508,7 +514,7 @@
         </div>
 
         <div class="flow-container">
-            
+
             <div class="step-wrapper">
                 <div class="box">
                     <div class="box-title">Mahasiswa</div>
@@ -619,12 +625,12 @@
     </section>
 
     <!-- FOOTER INFO -->
-    <footer style="background: #0050a0; padding: 30px 0; border-top: none;">
+    <footer style="background: #0050a0; padding: 15px 0; border-top: none;">
         <div style="max-width: 1200px; margin: 0 auto; padding: 0 20px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px;">
             <div class="logo-box">
-                <img src="{{ asset('images/skpi_logo.png') }}" alt="SKPI Logo" style="height: 45px; filter: brightness(0) invert(1);">
+                <img src="{{ asset('images/logo_unida-removebg-preview.png') }}" alt="SKPI Logo" style="height: 40px;">
                 <div>
-                    <div class="logo-text-main" style="color: #ffffff;">UNIDA Aceh</div>
+                    <div class="logo-text-main" style="color: #ffffff;">UNIDA ACEH</div>
                     <div class="logo-text-sub" style="color: #e2e8f0;">SKPI UNIDA Digital Certificate System</div>
                 </div>
             </div>
