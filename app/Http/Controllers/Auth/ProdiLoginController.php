@@ -20,7 +20,7 @@ class ProdiLoginController extends Controller
         $credentials['role'] = 'prodi';
 
         if (Auth::guard('prodi')->attempt($credentials, $request->filled('remember'))) {
-            return redirect()->intended(route('prodi.dashboard'));
+            return redirect()->route('prodi.dashboard');
         }
 
         return back()->withErrors(['email' => 'Email atau password prodi salah, atau Anda bukan Prodi.']);

@@ -21,7 +21,7 @@ class PusatBahasaLoginController extends Controller
 
         // Guard harus sama dengan yang didefinisikan di config/auth.php
         if (Auth::guard('pusat_bahasa')->attempt($credentials, $request->filled('remember'))) {
-            return redirect()->intended(route('pusat.dashboard'));
+            return redirect()->route('pusat.dashboard');
         }
 
         return back()->withErrors(['email' => 'Email atau password pusat bahasa salah, atau Anda bukan Pusat Bahasa.']);

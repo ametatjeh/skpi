@@ -27,7 +27,7 @@ class FakultasLoginController extends Controller
         ];
 
         if (Auth::guard('fakultas')->attempt($credentials, $request->remember)) {
-            return redirect()->intended(route('fakultas.dashboard'));
+            return redirect()->route('fakultas.dashboard');
         }
 
         return back()->withErrors([
