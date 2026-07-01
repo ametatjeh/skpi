@@ -241,7 +241,7 @@
             <i class="fas fa-graduation-cap"></i>
         </div>
         <div>
-            <div class="prodi-sidebar-title">SKPI UMPAR</div>
+            <div class="prodi-sidebar-title">SKPI UNIDA</div>
             <div class="prodi-sidebar-subtitle">Dashboard Prodi</div>
         </div>
     </div>

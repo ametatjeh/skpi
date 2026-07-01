@@ -437,7 +437,7 @@
                             <i class="fa-solid fa-university"></i> Fakultas
                         </a>
                         <a href="{{ route('admin.login') }}" class="dropdown-link">
-                            <i class="fa-solid fa-shield-halved"></i> Admin
+                            <i class="fa-solid fa-shield-halved"></i> Akademik
                         </a>
                     </div>
                 </div>
@@ -453,7 +453,7 @@
             <a href="{{ route('prodi.login') }}"><i class="fa-solid fa-layer-group"></i> Prodi</a>
             <a href="{{ route('pusat.login') }}"><i class="fa-solid fa-language"></i> Pusat Bahasa</a>
             <a href="{{ route('fakultas.login') }}"><i class="fa-solid fa-university"></i> Fakultas</a>
-            <a href="{{ route('admin.login') }}"><i class="fa-solid fa-shield-halved"></i> Admin</a>
+            <a href="{{ route('admin.login') }}"><i class="fa-solid fa-shield-halved"></i> Akademik</a>
         </div>
     </nav>
 

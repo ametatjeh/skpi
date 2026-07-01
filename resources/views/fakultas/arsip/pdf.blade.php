@@ -133,9 +133,9 @@
         <img src="{{ public_path('images/logo_unida-removebg-preview.png') }}" class="kop-logo">
 
         <div>
-            <div class="kop-title">UNIVERSITAS MUHAMMADIYAH PAREPARE</div>
+            <div class="kop-title">UNIVERSITAS ISKANDAR MUDA</div>
             <div class="kop-address">
-                Jl. Jend. Ahmad Yani KM. 6 Parepare 91131 Sulawesi Selatan, Indonesia<br>
+                Jl. Kampus Unida, No.15, Desa Surien, Kec. Meuraxa, Kota Banda Aceh, 23234<br>
                 Tel: (0651) 44413 - Website: www.unida-aceh.ac.id
             </div>
         </div>

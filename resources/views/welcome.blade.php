@@ -49,8 +49,8 @@
             "description": "Sistem Informasi SKPI (Surat Keterangan Pendamping Ijazah) untuk mengelola prestasi dan sertifikasi mahasiswa.",
             "address": {
                 "@type": "PostalAddress",
-                "addressLocality": "Parepare",
-                "addressRegion": "Sulawesi Selatan",
+                "addressLocality": "Banda Aceh",
+                "addressRegion": "Aceh",
                 "addressCountry": "ID"
             },
             "contactPoint": {

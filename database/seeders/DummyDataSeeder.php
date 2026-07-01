@@ -59,7 +59,7 @@ class DummyDataSeeder extends Seeder
                 'prodi_id' => $data['prodi_id'],
                 'nim' => $data['nim'],
                 'nama' => $data['name'],
-                'tempat_lahir' => 'Parepare',
+                'tempat_lahir' => 'Banda Aceh',
                 'tanggal_lahir' => '2001-06-15',
                 'tahun_masuk' => '2019',
                 'created_at' => now(),

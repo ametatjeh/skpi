@@ -170,14 +170,18 @@
 
         .nav-menu li .dropdown {
             position: absolute;
-            left: 0;
-            top: 100%;
+            right: 0;
+            left: auto;
+            top: 110%;
             background: #fff;
             color: #333;
-            min-width: 200px;
-            box-shadow: 0 8px 20px rgba(0, 0, 0, .18);
+            min-width: 230px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
             display: none;
             z-index: 60;
+            border-radius: 12px;
+            padding: 8px;
+            border: 1px solid rgba(0, 0, 0, 0.05);
         }
 
         .nav-menu li:hover .dropdown {
@@ -185,22 +189,73 @@
         }
 
         .dropdown a {
-            display: block;
-            padding: 10px 16px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 11px 16px;
             font-size: 13px;
             color: #333;
+            font-weight: 600;
+            border-radius: 8px;
+            transition: all 0.15s ease;
+        }
+
+        .dropdown a i {
+            width: 20px;
+            text-align: center;
+            color: #f59e0b;
+            font-size: 14px;
         }
 
         .dropdown a:hover {
-            background: #f5f5f5;
-            color: #0d47a1;
+            background: #f59e0b;
+            color: #fff !important;
+        }
+
+        .dropdown a:hover i {
+            color: #fff;
         }
 
         .dropdown a.active {
             color: #f59e0b;
             font-weight: 700;
             background: #fffbeb;
-            border-left: 3px solid #f59e0b;
+        }
+
+        /* Nav Login Button Styling */
+        .nav-menu>li.nav-login-li {
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-menu>li.nav-login-li:hover {
+            background: none !important;
+        }
+
+        .nav-login-btn {
+            background: #fff;
+            color: #0050a0 !important;
+            padding: 8px 20px !important;
+            border-radius: 999px;
+            font-weight: 700 !important;
+            cursor: pointer;
+            display: inline-flex !important;
+            align-items: center;
+            gap: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            transition: all 0.2s ease;
+            margin: 4px 0 4px 12px;
+            text-transform: uppercase;
+        }
+
+        .nav-login-btn:hover {
+            background: #f59e0b;
+            color: #fff !important;
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
+        }
+
+        .nav-menu>li.nav-login-li>span.active::after {
+            display: none !important;
         }
 
         /* ========= HAMBURGER & MOBILE NAV ========= */
@@ -291,9 +346,17 @@
         }
 
         .mobile-dropdown-content a {
-            padding-left: 36px;
+            display: flex !important;
+            align-items: center;
+            gap: 10px;
+            padding-left: 36px !important;
             border-top: 1px solid rgba(255, 255, 255, 0.05);
-            font-weight: 400;
+            font-weight: 600;
+        }
+
+        .mobile-dropdown-content a i {
+            width: 20px;
+            text-align: center;
         }
 
         .mobile-nav.open {

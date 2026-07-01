@@ -16,17 +16,28 @@
                 <li><a href="{{ url('capaian') }}" class="{{ request()->is('capaian*') ? 'active' : '' }}">Achievement</a></li>
                 <li><a href="{{ url('/register-email') }}" class="{{ request()->is('register-email*') ? 'active' : '' }}">DAFTAR</a></li>
 
-                <li>
-                    <span class="{{ request()->routeIs('*.login') ? 'active' : '' }}">
+                <li class="nav-login-li">
+                    <span class="nav-login-btn {{ request()->routeIs('*.login') ? 'active' : '' }}">
+                        <i class="fa-solid fa-right-to-bracket"></i>
                         Login
-                        <i class="fa-solid fa-chevron-down" style="font-size:10px;margin-left:4px;"></i>
+                        <i class="fa-solid fa-chevron-down" style="font-size:10px;"></i>
                     </span>
                     <div class="dropdown">
-                        <a href="{{ route('mahasiswa.login') }}" class="{{ request()->routeIs('mahasiswa.login') ? 'active' : '' }}">Mahasiswa</a>
-                        <a href="{{ route('prodi.login') }}" class="{{ request()->routeIs('prodi.login') ? 'active' : '' }}">Prodi</a>
-                        <a href="{{ route('pusat.login') }}" class="{{ request()->routeIs('pusat.login') ? 'active' : '' }}">Pusat Bahasa</a>
-                        <a href="{{ route('fakultas.login') }}" class="{{ request()->routeIs('fakultas.login') ? 'active' : '' }}">Fakultas</a>
-                        <a href="{{ route('admin.login') }}" class="{{ request()->routeIs('admin.login') ? 'active' : '' }}">Akademik</a>
+                        <a href="{{ route('mahasiswa.login') }}" class="{{ request()->routeIs('mahasiswa.login') ? 'active' : '' }}">
+                            <i class="fa-solid fa-user-graduate"></i> Mahasiswa
+                        </a>
+                        <a href="{{ route('prodi.login') }}" class="{{ request()->routeIs('prodi.login') ? 'active' : '' }}">
+                            <i class="fa-solid fa-layer-group"></i> Prodi
+                        </a>
+                        <a href="{{ route('pusat.login') }}" class="{{ request()->routeIs('pusat.login') ? 'active' : '' }}">
+                            <i class="fa-solid fa-language"></i> Pusat Bahasa
+                        </a>
+                        <a href="{{ route('fakultas.login') }}" class="{{ request()->routeIs('fakultas.login') ? 'active' : '' }}">
+                            <i class="fa-solid fa-university"></i> Fakultas
+                        </a>
+                        <a href="{{ route('admin.login') }}" class="{{ request()->routeIs('admin.login') ? 'active' : '' }}">
+                            <i class="fa-solid fa-shield-halved"></i> Akademik
+                        </a>
                     </div>
                 </li>
                 <!-- <li><a href="#contact">Contact us</a></li> -->
@@ -53,15 +64,25 @@
             <a href="{{ url('skema') }}" class="{{ request()->is('skema*') ? 'active' : '' }}">Skema</a>
             <a href="{{ url('capaian') }}" class="{{ request()->is('capaian*') ? 'active' : '' }}">Achievement</a>
             <a href="{{ url('/register-email') }}" class="{{ request()->is('register-email*') ? 'active' : '' }}">DAFTAR</a>
-            <button class="mobile-dropdown-btn {{ request()->routeIs('*.login') ? 'active' : '' }}" id="mobileLoginBtn">
-                Login <i class="fas fa-chevron-down"></i>
+            <button class="mobile-dropdown-btn {{ request()->routeIs('*.login') ? 'active' : '' }}" id="mobileLoginBtn" style="display: flex; align-items: center; gap: 8px;">
+                <i class="fa-solid fa-right-to-bracket"></i> Login <i class="fas fa-chevron-down" style="margin-left: auto;"></i>
             </button>
             <div class="mobile-dropdown-content" id="mobileLoginContent">
-                <a href="{{ route('mahasiswa.login') }}" class="{{ request()->routeIs('mahasiswa.login') ? 'active' : '' }}">Mahasiswa</a>
-                <a href="{{ route('prodi.login') }}" class="{{ request()->routeIs('prodi.login') ? 'active' : '' }}">Prodi</a>
-                <a href="{{ route('pusat.login') }}" class="{{ request()->routeIs('pusat.login') ? 'active' : '' }}">Pusat Bahasa</a>
-                <a href="{{ route('fakultas.login') }}" class="{{ request()->routeIs('fakultas.login') ? 'active' : '' }}">Fakultas</a>
-                <a href="{{ route('admin.login') }}" class="{{ request()->routeIs('admin.login') ? 'active' : '' }}">Akademik</a>
+                <a href="{{ route('mahasiswa.login') }}" class="{{ request()->routeIs('mahasiswa.login') ? 'active' : '' }}">
+                    <i class="fa-solid fa-user-graduate"></i> Mahasiswa
+                </a>
+                <a href="{{ route('prodi.login') }}" class="{{ request()->routeIs('prodi.login') ? 'active' : '' }}">
+                    <i class="fa-solid fa-layer-group"></i> Prodi
+                </a>
+                <a href="{{ route('pusat.login') }}" class="{{ request()->routeIs('pusat.login') ? 'active' : '' }}">
+                    <i class="fa-solid fa-language"></i> Pusat Bahasa
+                </a>
+                <a href="{{ route('fakultas.login') }}" class="{{ request()->routeIs('fakultas.login') ? 'active' : '' }}">
+                    <i class="fa-solid fa-university"></i> Fakultas
+                </a>
+                <a href="{{ route('admin.login') }}" class="{{ request()->routeIs('admin.login') ? 'active' : '' }}">
+                    <i class="fa-solid fa-shield-halved"></i> Akademik
+                </a>
             </div>
         </div>
     </div>

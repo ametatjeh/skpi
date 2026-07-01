@@ -665,7 +665,7 @@
                     <div class="form-group full-width">
                         <label>Tempat, Tanggal Lahir <span class="required">*</span></label>
                         <input type="text" name="tempat_tanggal_lahir" class="form-control"
-                            placeholder="Contoh: PAREPARE, 31 December 1987" required>
+                            placeholder="Contoh: BANDA ACEH, 31 Desember 1987" required>
                     </div>
 
                     <div class="form-group full-width">

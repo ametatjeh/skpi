@@ -133,9 +133,9 @@
         <img src="{{ public_path('images/logo_unida-removebg-preview.png') }}" class="kop-logo">
 
         <div>
-            <div class="kop-title">{{ $templateSkpi->nama_pt ?? 'UNIVERSITAS MUHAMMADIYAH PAREPARE' }}</div>
+            <div class="kop-title">{{ $templateSkpi->nama_pt ?? 'UNIVERSITAS ISKANDAR MUDA' }}</div>
             <div class="kop-address">
-                {{ $templateSkpi->alamat_pt ?? 'Jl. Jend. Ahmad Yani KM. 6 Parepare 91131 Sulawesi Selatan, Indonesia' }}<br>
+                {{ $templateSkpi->alamat_pt ?? 'Jl. Kampus Unida, No.15, Desa Surien, Kec. Meuraxa, Kota Banda Aceh, 23234' }}<br>
                 Tel: (0651) 44413 - Website: www.unida-aceh.ac.id
             </div>
         </div>
