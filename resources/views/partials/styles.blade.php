@@ -172,7 +172,7 @@
             position: absolute;
             right: 0;
             left: auto;
-            top: 110%;
+            top: 100%;
             background: #fff;
             color: #333;
             min-width: 230px;
@@ -182,6 +182,17 @@
             border-radius: 12px;
             padding: 8px;
             border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        /* Hover bridge to prevent losing hover when cursor moves down */
+        .nav-menu li .dropdown::before {
+            content: '';
+            position: absolute;
+            top: -25px;
+            left: 0;
+            right: 0;
+            height: 25px;
+            background: transparent;
         }
 
         .nav-menu li:hover .dropdown {
@@ -208,12 +219,12 @@
         }
 
         .dropdown a:hover {
-            background: #f59e0b;
-            color: #fff !important;
+            background: #fffbeb;
+            color: #f59e0b !important;
         }
 
         .dropdown a:hover i {
-            color: #fff;
+            color: #f59e0b;
         }
 
         .dropdown a.active {
@@ -224,6 +235,7 @@
 
         /* Nav Login Button Styling */
         .nav-menu>li.nav-login-li {
+            position: relative;
             display: flex;
             align-items: center;
         }
