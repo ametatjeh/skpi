@@ -32,7 +32,7 @@
             box-sizing: border-box;
         }
 
-        /* MEMASTIKAN TIDAK ADA SCROLL */
+        /* MEMASTIKAN TIDAK ADA SCROLL PADA DESKTOP */
         html,
         body {
             min-height: 100vh;
@@ -258,18 +258,30 @@
 
         .hero {
             /* Memastikan Hero mengambil sisa tinggi layar */
-            height: 100vh;
-            margin-top: 0;
+            flex: 1;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             text-align: center;
             color: var(--white);
-            padding: 0 20px;
+            padding: 40px 20px;
             position: relative;
-            /* Memberikan ruang di atas agar tidak tertutup navbar */
-            padding-top: 80px;
+            min-height: calc(100vh - 160px);
+        }
+
+        /* Desktop Fit to Screen */
+        @media (min-width: 900px) {
+            html,
+            body {
+                height: 100vh;
+                overflow: hidden;
+            }
+            .hero {
+                min-height: 0;
+                height: 100%;
+                padding: 0 20px;
+            }
         }
 
         .hero-badge {
