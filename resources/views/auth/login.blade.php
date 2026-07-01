@@ -403,59 +403,14 @@
             }
         }
     </style>
+    @include('partials.styles')
 </head>
 
 <body>
 
+    @include('partials.header')
+
     <main style="flex: 1; display: flex; flex-direction: column;">
-        <nav class="navbar">
-            <div class="navbar-inner">
-                <a href="#" class="logo-group">
-                    <img src="{{ asset('images/logo_unida-removebg-preview.png') }}" class="logo-img" alt="Logo UNIDA">
-                <span class="logo-title">SKPI UNIDA</span>
-            </a>
-
-            <div class="menu">
-                <div class="menu-dropdown">
-                    <button class="dropdown-toggle" id="dropdownLoginBtn">
-                        <i class="fa-solid fa-right-to-bracket"></i>
-                        Login
-                        <i class="fa-solid fa-chevron-down"></i>
-                    </button>
-
-                    <div class="dropdown-menu" id="dropdownMenu">
-                        <a href="{{ route('mahasiswa.login') }}" class="dropdown-link">
-                            <i class="fa-solid fa-user-graduate"></i> Mahasiswa
-                        </a>
-                        <a href="{{ route('prodi.login') }}" class="dropdown-link">
-                            <i class="fa-solid fa-layer-group"></i> Prodi
-                        </a>
-                        <a href="{{ route('pusat.login') }}" class="dropdown-link">
-                            <i class="fa-solid fa-language"></i> Pusat Bahasa
-                        </a>
-                        <a href="{{ route('fakultas.login') }}" class="dropdown-link">
-                            <i class="fa-solid fa-university"></i> Fakultas
-                        </a>
-                        <a href="{{ route('admin.login') }}" class="dropdown-link">
-                            <i class="fa-solid fa-shield-halved"></i> Akademik
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="hamburger" id="hamburgerBtn">
-                <i class="fa-solid fa-bars"></i>
-            </div>
-        </div>
-
-        <div class="mobile-menu" id="mobileMenu">
-            <a href="{{ route('mahasiswa.login') }}"><i class="fa-solid fa-user-graduate"></i> Mahasiswa</a>
-            <a href="{{ route('prodi.login') }}"><i class="fa-solid fa-layer-group"></i> Prodi</a>
-            <a href="{{ route('pusat.login') }}"><i class="fa-solid fa-language"></i> Pusat Bahasa</a>
-            <a href="{{ route('fakultas.login') }}"><i class="fa-solid fa-university"></i> Fakultas</a>
-            <a href="{{ route('admin.login') }}"><i class="fa-solid fa-shield-halved"></i> Akademik</a>
-        </div>
-    </nav>
 
     <section class="hero">
         <div class="hero-badge">
@@ -483,37 +438,6 @@
 
         </section>
     </main>
-
-    <script>
-        const hamburgerBtn = document.getElementById("hamburgerBtn");
-        const mobileMenu = document.getElementById("mobileMenu");
-        const dropdownBtn = document.getElementById("dropdownLoginBtn");
-        const dropdownMenu = document.getElementById("dropdownMenu");
-        const navbar = document.querySelector(".navbar");
-
-        // Toggle mobile menu
-        hamburgerBtn.addEventListener("click", () => {
-            mobileMenu.classList.toggle("show");
-            dropdownMenu.style.display = 'none'; // Pastikan dropdown tertutup saat mobile menu dibuka
-        });
-
-        // Toggle desktop dropdown menu
-        dropdownBtn.addEventListener("click", e => {
-            e.stopPropagation();
-            // Tutup mobile menu saat dropdown dibuka
-            mobileMenu.classList.remove("show");
-            dropdownMenu.style.display = dropdownMenu.style.display === 'block' ? 'none' : 'block';
-        });
-
-        // Close dropdown when clicking outside
-        document.body.addEventListener("click", (e) => {
-            if (!e.target.closest('.menu-dropdown')) {
-                dropdownMenu.style.display = 'none';
-            }
-        });
-
-        // Karena tidak ada scroll, event scroll dihilangkan
-    </script>
 
     @include('partials.footer')
 
