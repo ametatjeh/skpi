@@ -43,9 +43,8 @@
         a {
             text-decoration: none;
         }
-
-        </style>
-        @include('partials.styles')
+    </style>
+    @include('partials.styles')
 </head>
 
 <body>
@@ -293,10 +292,10 @@
 
             <div class="step-wrapper">
                 <div class="box">
-                    <div class="box-title">Final</div>
+                    <div class="box-title">Akademik</div>
                     <ul>
                         <li>QR Code</li>
-                        <li>PDF</li>
+                        <li>Print</li>
                         <li>Arsip</li>
                     </ul>
                 </div>
@@ -341,6 +340,6 @@
     </section>
 
     @include('partials.footer')
-    </body>
+</body>
 
 </html>
