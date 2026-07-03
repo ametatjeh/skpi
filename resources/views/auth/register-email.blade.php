@@ -110,7 +110,7 @@
             border-radius: 8px;
             padding: 14px 16px;
             margin-bottom: 20px;
-            border-left: 4px solid #60a5fa;
+            border-left: 4px solid #ef4444;
             font-size: .9rem;
             line-height: 1.5;
         }
@@ -488,16 +488,15 @@
         <div class="wrapper">
             <div class="form-side">
                 <div style="text-align: center;">
-                    <i class="fa-solid fa-envelope-circle-check" style="font-size: clamp(2.5rem, 8vh, 4rem); color: #ffffff; margin-bottom: clamp(5px, 2vh, 15px);"></i>
-                    <h2 style="justify-content: center; font-size: clamp(1.3rem, 4vh, 1.8rem); margin-bottom: clamp(5px, 2vh, 15px);">PORTAL PENDAFTARAN</h2>
+                    <i class="fa-solid fa-envelope-circle-check" style="font-size: clamp(1.75rem, 5.6vh, 2.8rem); color: #ffffff; margin-bottom: clamp(5px, 2vh, 15px);"></i>
+                    <h2 style="justify-content: center; font-size: clamp(0.91rem, 2.8vh, 1.26rem); margin-bottom: clamp(5px, 2vh, 15px);">PORTAL PENDAFTARAN</h2>
                 </div>
 
                 <div class="info">
                     <b>Petunjuk Registrasi:</b><br>
-                    1. Isi NIM<br>
-                    2. Masukkan Email Mahasiswa UNIDA<br>
-                    3. Cek Email Aktivasi<br>
-                    4. Buat Password & Login
+                    1. Isi NIM dan Email Student<br>
+                    2. Cek Email untuk link Aktivasi<br>
+                    3. Jika error, hubungi operator
                 </div>
 
                 <form method="POST" action="{{ route('email.registration.submit') }}">

@@ -269,7 +269,7 @@
         .stats-card {
             background: linear-gradient(135deg, #10b981, #059669);
             color: white;
-            padding: 20px;
+            padding: 10px 20px;
             border-radius: 12px;
             margin-bottom: 20px;
             box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
@@ -398,8 +398,10 @@
 
         {{-- STATS CARD --}}
         <div class="stats-card">
-            <h3>{{ $finalSkpiList->count() }}</h3>
-            <p><i class="fas fa-file-pdf"></i> Total SKPI Final yang sudah diterbitkan</p>
+            <div style="display: flex; align-items: center; gap: 16px; flex-wrap: wrap;">
+                <h3 style="margin: 0;">{{ $finalSkpiList->count() }}</h3>
+                <p style="margin: 0;"><b>Total SKPI Final yang sudah diterbitkan</b></p>
+            </div>
         </div>
 
         {{-- HEADER --}}
