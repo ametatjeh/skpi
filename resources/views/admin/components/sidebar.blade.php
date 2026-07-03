@@ -182,25 +182,7 @@
 
     </nav>
 
-    <div class="admin-sidebar-footer">
-        <div class="admin-footer-user">
-            <div class="admin-sidebar-avatar">
-                <i class="fas fa-user"></i>
-            </div>
-            <div class="admin-sidebar-user-info">
-                <div class="admin-sidebar-user-name">{{ auth('admin')->user()->name ?? 'Admin' }}</div>
-                <div class="admin-sidebar-user-role">Administrator</div>
-            </div>
-        </div>
 
-        {{-- LOGOUT BUTTON --}}
-        <form action="{{ route('admin.logout') }}" method="POST" style="margin-top: 10px;">
-            @csrf
-            <button type="submit" class="admin-sidebar-logout-btn">
-                <i class="fas fa-sign-out-alt"></i> Logout
-            </button>
-        </form>
-    </div>
 </aside>
 
 
@@ -348,7 +330,7 @@
         display: flex;
         align-items: center;
         gap: 12px;
-        padding: 12px 20px;
+        padding: 7.8px 20px;
         color: #475569;
         text-decoration: none;
         font-size: 14px;
@@ -356,7 +338,7 @@
         transition: all 0.3s ease;
         border-left: 3px solid transparent;
         position: relative;
-        margin: 2px 8px;
+        margin: 1.5px 8px;
         border-radius: 8px;
     }
 
