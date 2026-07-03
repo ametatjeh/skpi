@@ -2,11 +2,11 @@
 
 <aside class="admin-sidebar" id="adminSidebar">
     <div class="admin-sidebar-header">
-        <div class="admin-sidebar-logo">
+        <div class="admin-sidebar-logo" style="justify-content: center;">
             <i class="fas fa-graduation-cap"></i>
             SKPI
         </div>
-        <div class="admin-sidebar-title">Admin Panel</div>
+        <div class="admin-sidebar-title" style="margin-left: 0; text-align: center;">Admin Panel</div>
     </div>
 
     <nav class="admin-sidebar-menu">
@@ -182,6 +182,15 @@
 
     </nav>
 
+    <div class="admin-sidebar-footer">
+        {{-- LOGOUT BUTTON --}}
+        <form action="{{ route('admin.logout') }}" method="POST" style="margin-top: 10px;">
+            @csrf
+            <button type="submit" class="admin-sidebar-logout-btn">
+                <i class="fas fa-sign-out-alt"></i> Logout
+            </button>
+        </form>
+    </div>
 
 </aside>
 
@@ -238,7 +247,7 @@
        ======================================== */
 
     .admin-sidebar-header {
-        padding: 25px 20px 20px;
+        padding: 25px 20px 19px;
         border-bottom: 1px solid #e2e8f0;
         background: linear-gradient(135deg, #f8fafc, #ffffff);
         flex-shrink: 0;
@@ -274,7 +283,7 @@
     .admin-sidebar-menu {
         overflow-y: auto;
         overflow-x: hidden;
-        padding: 15px 0 20px;
+        padding: 14px 0 20px;
         flex: 1;
         background: #ffffff;
     }
@@ -470,4 +479,31 @@
         animation: slideIn 0.3s ease;
     }
 </style>
+
+<script>
+    (function () {
+        const SCROLL_KEY = 'adminSidebarScroll';
+        const menu = document.querySelector('.admin-sidebar-menu');
+
+        if (!menu) return;
+
+        // ── Pulihkan posisi scroll sesegera mungkin ──────────────────────────
+        const saved = sessionStorage.getItem(SCROLL_KEY);
+        if (saved !== null) {
+            menu.scrollTop = parseInt(saved, 10);
+        }
+
+        // ── Simpan posisi scroll saat user mengklik menu ─────────────────────
+        document.querySelectorAll('.admin-menu-item').forEach(function (link) {
+            link.addEventListener('click', function () {
+                sessionStorage.setItem(SCROLL_KEY, menu.scrollTop);
+            });
+        });
+
+        // ── Juga simpan setiap kali scroll berubah (fallback) ────────────────
+        menu.addEventListener('scroll', function () {
+            sessionStorage.setItem(SCROLL_KEY, menu.scrollTop);
+        });
+    })();
+</script>
 
